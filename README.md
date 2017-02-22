@@ -41,6 +41,15 @@ ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH, format_price=True)
 ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH, printable=True)
 ```
 
+**Get exchange rates**
+
+```
+from shop.currencies.models import ExchangeRate
+
+# returns: {2: 27.10, 3: 29.00}
+ExchangeRate.get_exchange_rates()
+```
+
 **Save default currency to session**
 
 Add currencies to urls.py:
