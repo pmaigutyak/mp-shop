@@ -26,6 +26,21 @@ CURRENCIES = (
 )
 ```
 
+**Convert price**
+
+```
+from shop.currencies.models import ExchangeRate
+
+# returns: 2700.0
+ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH)
+
+# returns: 2700.00
+ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH, format_price=True)
+
+# returns: 2700.00 UAH
+ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH, printable=True)
+```
+
 **Save default currency to session**
 
 Add currencies to urls.py:
