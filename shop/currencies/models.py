@@ -67,7 +67,7 @@ class ExchangeRate(models.Model):
             raise ValueError(
                 'Unknown currency %s/%s' % (dst_currency, src_currency))
 
-        if format_price:
+        if format_price and not printable:
             new_price = format_number(new_price)
 
         if printable:

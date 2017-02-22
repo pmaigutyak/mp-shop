@@ -1,6 +1,8 @@
 
 from django.test import TestCase
 from django.test.utils import override_settings
+from django.test.client import RequestFactory
+from django.template import Template, RequestContext
 
 from shop.currencies.models import ExchangeRate
 
@@ -97,6 +99,20 @@ class ExchangeRateTest(TestCase):
             self.assertEqual(
                 ExchangeRate.convert(100, currency, currency), 100)
 
+    def test_convert_with_printable_param_returns_printable_price(self):
+
+        for currency, name in CURRENCIES:
+            price = ExchangeRate.convert(
+                100, currency, currency, printable=True)
+            self.assertEqual(price, '100.00 %s' % name)
+
+    def test_convert_with_format_price_param_returns_formatted_price(self):
+
+        for currency, name in CURRENCIES:
+            price = ExchangeRate.convert(
+                100, currency, currency, format_price=True)
+            self.assertEqual(price, '100.00')
+
     def test_convert_to_unknown_currency_raises_value_error(self):
 
         for currency, name in CURRENCIES:
@@ -121,3 +137,23 @@ class ExchangeRateTest(TestCase):
 
             self.assertEqual(
                 int(self.client.session[CURRENCY_SESSION_KEY]), currency)
+
+    def test_get_currency_form_template_tag_returns_currency_form(self):
+
+        factory = RequestFactory()
+
+        request = factory.get('/')
+
+        request.session = {CURRENCY_SESSION_KEY: CURRENCY_UAH}
+
+        html = """
+            {% load currencies %}
+            {% get_currency_form as form %}
+            {{ form }}
+        """
+
+        response = Template(html).render(RequestContext(request))
+
+        self.assertIn('value="1" selected="selected">UAH', response)
+        self.assertIn('value="2">USD', response)
+        self.assertIn('value="3">EUR', response)

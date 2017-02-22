@@ -3,12 +3,12 @@ from django.http import JsonResponse
 from django.views.generic import FormView
 
 from shop.currencies.settings import CURRENCY_SESSION_KEY
-from shop.currencies.forms import SetCurrencyForm
+from shop.currencies.forms import CurrencyForm
 
 
 class SetCurrencyView(FormView):
 
-    form_class = SetCurrencyForm
+    form_class = CurrencyForm
 
     http_method_names = ['post']
 
