@@ -1,4 +1,5 @@
 
+from django.conf import settings
 from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
@@ -26,8 +27,18 @@ class ProductFilter(FilterSet):
         initial=ORDER_BY_NEWEST
     )
 
+    def get_search_fields(cls):
+
+        fields = ['code']
+
+        for language in dict(settings.LANGUAGES).keys():
+            fields.append('title_%s' % language)
+            fields.append('description_%s' % language)
+
+        return fields
+
     def filter_query(self, queryset, name, value):
-        return model_search(value, queryset, ['title', 'code', 'description'])
+        return model_search(value, queryset, self.get_search_fields())
 
     def filter_order_by(self, queryset, name, value):
 

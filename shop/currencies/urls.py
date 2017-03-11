@@ -6,7 +6,6 @@ from shop.currencies import views
 
 urlpatterns = [
 
-    url(r'^set-currency/$', views.SetCurrencyView.as_view(),
-        name='set-currency')
+    url(r'^set-currency/$', views.set_currency, name='set-currency')
 
 ]

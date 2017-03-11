@@ -7,7 +7,8 @@ from pure_pagination import Paginator
 from shop.products.filters import ProductFilter
 
 
-def product_list(request, category_slug, category_pk):
+def product_list(
+        request, category_slug, category_pk, filter_class=ProductFilter):
 
     product_model = apps.get_model('products', 'Product')
     product_category_model = apps.get_model('products', 'ProductCategory')
@@ -18,7 +19,7 @@ def product_list(request, category_slug, category_pk):
 
     products = product_model.objects.filter(category__in=categories)
 
-    product_filter = ProductFilter(request.GET, queryset=products)
+    product_filter = filter_class(request.GET, queryset=products)
 
     paginator = Paginator(product_filter.qs, per_page=12, request=request)
 

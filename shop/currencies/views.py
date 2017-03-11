@@ -1,26 +1,22 @@
 
 from django.http import JsonResponse
-from django.views.generic import FormView
+from django.shortcuts import redirect
+from django.views.decorators.http import require_POST
 
 from shop.currencies.settings import CURRENCY_SESSION_KEY
 from shop.currencies.forms import CurrencyForm
 
 
-class SetCurrencyView(FormView):
+@require_POST
+def set_currency(request):
 
-    form_class = CurrencyForm
+    form = CurrencyForm(request.POST)
 
-    http_method_names = ['post']
-
-    def form_valid(self, form):
-
-        currency = form.cleaned_data['currency']
-        self.request.session[CURRENCY_SESSION_KEY] = currency
-
-        return super(SetCurrencyView, self).form_valid(form)
-
-    def form_invalid(self, form):
+    if not form.is_valid():
         return JsonResponse(form.errors.as_json())
 
-    def get_success_url(self):
-        return self.request.GET.get('next', '/')
+    currency = form.cleaned_data['currency']
+
+    request.session[CURRENCY_SESSION_KEY] = currency
+
+    return redirect(request.GET.get('next', '/'))
