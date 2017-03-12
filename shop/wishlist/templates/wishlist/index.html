@@ -1,0 +1,64 @@
+
+{% extends 'accounts/profile/base.html' %}
+
+{% load i18n thumbnail %}
+
+
+{% block meta_title %}
+    {% trans 'Мій список побажань' %}
+{% endblock %}
+
+
+{% block breadcrumb_items %}
+    <li class="active">{% trans "Мій список побажань" %}</li>
+{% endblock %}
+
+
+{% block content %}
+
+     <div class="col-md-12 my-wishlist">
+        <div class="table-responsive">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th colspan="4">{% trans 'Мій список побажань' %}</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for item in request.user.wishlist_items.all %}
+                        <tr>
+                            <td class="col-md-2">
+                                {% if item.product.logo %}
+                                    {% thumbnail item.product.logo.file "50" crop="top" as img %}
+                                        <img class="thumbnail img-responsive" src="{{ img.url }}" alt="{{ item.product_title }}">
+                                    {% endthumbnail %}
+                                {% else %}
+                                    <img class="img-responsive" src="{{ IMG_URL }}no-image.png" alt="{{ item.product_title }}">
+                                {% endif %}
+                            </td>
+                            <td class="col-md-6">
+                                <div class="product-name">
+                                    <a href="{{ item.product.get_absolute_url }}">{{ item.product_title }}</a>
+                                </div>
+                                <div class="price">
+                                    {{ item.product.price.printable_default }}
+                                </div>
+                            </td>
+                            <td class="col-md-2">
+                                <a class="btn btn-primary" href="{% url 'cart:add' %}?product_pk={{ item.product.pk }}&next={{ request.get_full_path }}" rel="nofollow">
+                                    <i class="fa fa-shopping-cart"></i> {% trans "В кошик" %}
+                                </a>
+                            </td>
+                            <td class="col-md-2 remove-btn">
+                                <a href="{% url 'wishlist:remove' %}?pk={{ item.pk }}&next={{ request.get_full_path }}" class="pull-right" title="{% trans "Видалити" %}">
+                                    <i class="fa fa-times"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+{% endblock %}

@@ -20,10 +20,3 @@ class ProductFlag(models.Model):
     class Meta:
         verbose_name = _('Product flag')
         verbose_name_plural = _('Product flags')
-
-
-class ProductFlagMixin(object):
-
-    flags = models.ManyToManyField(
-        'flags.ProductFlag', verbose_name=_("Flags"),
-        related_name='products', blank=True)
