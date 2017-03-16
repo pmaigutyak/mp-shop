@@ -29,7 +29,7 @@ def add(request):
     else:
         WishListItem.objects.create(
             user=request.user, product=product, product_title=product.title,
-            quantity=request.GET.get('quantity', 1))
+            qty=request.GET.get('qty', 1))
 
         message = _('%s addet to wish list')
         messages.success(request, message % product.title)

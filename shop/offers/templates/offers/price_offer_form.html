@@ -1,0 +1,55 @@
+
+{% load i18n widget_tweaks %}
+
+
+<form method="post">
+    {% csrf_token %}
+
+    <div class="modal fade" id="price-offer-modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">
+                        {% trans "Запропонувати свою ціну для товару" %}
+                    </h4>
+                    <h3>{{ product.title }}</h3>
+                </div>
+                <div class="modal-body">
+                    <div class="input-group {% if form.name.errors %}has-error{% endif %} col-xs-12">
+                        {{ form.name.label_tag }} *
+                        {{ form.name|add_class:"form-control input-lg" }}
+                    </div>
+
+                    <div class="input-group {% if form.mobile.errors %}has-error{% endif %} col-xs-12">
+                        {{ form.mobile.label_tag }} *
+                        {{ form.mobile|add_class:"form-control input-lg" }}
+                    </div>
+
+                    <div class="input-group {% if form.email.errors %}has-error{% endif %} col-xs-12">
+                        {{ form.email.label_tag }} *
+                        {{ form.email|add_class:"form-control input-lg" }}
+                    </div>
+
+                    <div class="input-group {% if form.text.errors %}has-error{% endif %} col-xs-12">
+                        {{ form.text.label_tag }} *
+                        {{ form.text|add_class:"form-control input-lg" }}
+                    </div>
+                    <div class="input-group {% if form.captcha.errors %}has-error{% endif %} col-xs-12">
+                        {{ form.captcha.label_tag }} *
+                        {{ form.captcha }}
+                        <div class="help-block">{{ form.captcha.errors }}</div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left" data-dismiss="modal">
+                        {% trans 'Відмінити' %}
+                    </button>
+                    <button type="submit" class="btn btn-success">
+                        {% trans 'Надіслати пропозицію' %}
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>

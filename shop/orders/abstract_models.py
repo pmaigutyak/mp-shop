@@ -5,6 +5,10 @@ from django.db import models
 from django.core.validators import MinValueValidator
 
 from shop.currencies.lib import format_printable_price
+from shop.orders.settings import (
+    ORDER_DELIVERY_METHODS, ORDER_PAYMENT_METHODS, ORDER_STATUSES,
+    DEFAULT_STATUS, DEFAULT_DELIVERY_METHOD, DEFAULT_PAYMENT_METHOD
+)
 
 
 class AbstractOrder(models.Model):
@@ -12,6 +16,24 @@ class AbstractOrder(models.Model):
     user = models.ForeignKey(
         settings.AUTH_USER_MODEL, related_name='order',
         verbose_name=_('Customer'), null=True, blank=True)
+
+    payment_method = models.PositiveIntegerField(
+        _('Payment method'), null=False,
+        blank=DEFAULT_PAYMENT_METHOD is not None,
+        choices=ORDER_PAYMENT_METHODS,
+        default=DEFAULT_PAYMENT_METHOD
+    )
+
+    delivery_method = models.PositiveIntegerField(
+        _('Delivery method'), null=False,
+        blank=DEFAULT_DELIVERY_METHOD is not None,
+        choices=ORDER_DELIVERY_METHODS,
+        default=DEFAULT_DELIVERY_METHOD
+    )
+
+    status = models.PositiveIntegerField(
+        _('Status'), null=False, choices=ORDER_STATUSES,
+        default=DEFAULT_STATUS)
 
     name = models.CharField(
         _("Name, Surname"), max_length=255, blank=False, null=False)
@@ -41,7 +63,7 @@ class AbstractOrder(models.Model):
 
     @property
     def product_count(self):
-        return sum([item.quantity for item in self.products.all()])
+        return sum([item.qty for item in self.products.all()])
 
     @property
     def default_total(self):
@@ -79,7 +101,7 @@ class AbstractOrderProduct(models.Model):
 
     @property
     def default_subtotal(self):
-        return self.parent.price.default * self.quantity
+        return self.parent.price.default * self.qty
 
     @property
     def printable_default_price(self):

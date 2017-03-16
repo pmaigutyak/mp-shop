@@ -27,6 +27,22 @@ class ProductFilter(FilterSet):
         initial=ORDER_BY_NEWEST
     )
 
+    def __init__(self, category=None, *args, **kwargs):
+        self._category = category
+        super(ProductFilter, self).__init__(*args, **kwargs)
+
+    @property
+    def qs(self):
+
+        qs = super(ProductFilter, self).qs
+
+        if self._category is None:
+            return qs
+
+        categories = self._category.get_descendants(include_self=True)
+
+        return qs.filter(category__in=categories)
+
     def get_search_fields(cls):
 
         fields = ['code']

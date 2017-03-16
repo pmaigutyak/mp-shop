@@ -50,12 +50,7 @@ class Cart(object):
 
             for product in products_queryset:
                 item = cart_representation[str(product.pk)]
-                try:
-                    qty = item['qty']
-                except KeyError:
-                    qty = item['quantity']
-
-                self._items[product.pk] = CartItem(product, qty)
+                self._items[product.pk] = CartItem(product, item['qty'])
 
     def update_session(self):
         self.session[self.session_key] = self.serialize()

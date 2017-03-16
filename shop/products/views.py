@@ -19,7 +19,8 @@ def product_list(
 
     products = product_model.objects.filter(category__in=categories)
 
-    product_filter = filter_class(request.GET, queryset=products)
+    product_filter = filter_class(
+        data=request.GET, queryset=products, category=category)
 
     paginator = Paginator(product_filter.qs, per_page=12, request=request)
 
@@ -34,7 +35,7 @@ def product_list(
 
 def product_search(request):
 
-    product_filter = ProductFilter(request.GET)
+    product_filter = ProductFilter(data=request.GET)
 
     paginator = Paginator(product_filter.qs, per_page=12, request=request)
 

@@ -1,13 +1,20 @@
 
+from django.shortcuts import get_object_or_404, render
 
-def get_products_by_flag(request, flag_pk,
-                         template_name='products/by_flag.html'):
+from pure_pagination import Paginator
+
+from shop.flags.models import ProductFlag
+
+
+def get_products_by_flag(request, flag_pk):
 
     flag = get_object_or_404(ProductFlag, pk=flag_pk)
 
+    paginator = Paginator(flag.products.all(), per_page=18, request=request)
+
     context = {
         'flag': flag,
-        'products': paginate(request, flag.products.all(), items_per_page=18)
+        'products': paginator.page(request.GET.get('page', 1))
     }
 
-    return render(request, template_name, context)
+    return render(request, 'products/by_flag.html', context)

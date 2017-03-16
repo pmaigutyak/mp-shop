@@ -43,7 +43,7 @@ def checkout(request, form_class=CheckoutForm):
             product = item.product
             order.products.create(
                 parent=product, title=product.title,
-                price=product.price.default, quantity=item.qty)
+                price=product.price.default, qty=item.qty)
 
         cart.clear()
 

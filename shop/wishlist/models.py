@@ -14,7 +14,7 @@ class WishListItem(models.Model):
         'products.Product', verbose_name=_('Product'),
         on_delete=models.SET_NULL, blank=True, null=True)
 
-    quantity = models.PositiveIntegerField(_('Quantity'), default=1)
+    qty = models.PositiveIntegerField(_('Quantity'), default=1)
 
     product_title = models.CharField(_("Product title"), max_length=255)
 

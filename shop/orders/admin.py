@@ -64,10 +64,9 @@ class OrderProductAdmin(admin.ModelAdmin):
     form = OrderProductForm
 
     list_display = (
-        'product_title', 'price', 'quantity', 'order_name', 'show_on_site', )
+        'product_title', 'price', 'qty', 'order_name', 'show_on_site', )
 
-    search_fields = (
-        'title', 'price', 'quantity', 'parent__code', 'parent__title', )
+    search_fields = ['title', 'price', 'parent__code', 'parent__title']
 
     list_filter = ('order', )
 
