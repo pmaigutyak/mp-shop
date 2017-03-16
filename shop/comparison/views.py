@@ -45,7 +45,7 @@ def add(request):
     else:
         comparison.add(product)
 
-        message = _('%s addet to comparison')
+        message = _('%s added to comparison')
         messages.success(request, message % product.title)
 
     return redirect(request.GET.get('next', 'home'))
