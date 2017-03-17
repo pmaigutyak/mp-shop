@@ -1,6 +1,7 @@
 
 from random import randint
 
+from django.apps import apps
 from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
@@ -15,7 +16,6 @@ from ordered_model.models import OrderedModelBase
 from shop.currencies.lib import format_printable_price
 from shop.currencies.models import ExchangeRate
 from shop.currencies.settings import CURRENCIES, DEFAULT_CURRENCY
-
 
 
 def get_file_upload_path(folder, filename):
@@ -152,6 +152,20 @@ class AbstractProduct(models.Model):
                 self.category, self.pk)
 
         return self._related_products
+
+    @classmethod
+    def search_fields(cls):
+
+        if not apps.is_installed('modeltranslation'):
+            return ['code', 'title', 'description']
+
+        fields = ['code']
+
+        for language in dict(settings.LANGUAGES).keys():
+            fields.append('title_%s' % language)
+            fields.append('description_%s' % language)
+
+        return fields
 
     def __unicode__(self):
         return self.title

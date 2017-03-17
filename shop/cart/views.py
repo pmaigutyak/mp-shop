@@ -11,11 +11,11 @@ from shop.cart.forms import CartItemForm
 
 def get_product_from_request(request):
 
-    product_model = apps.get_model('products', 'Product')
+    Product = apps.get_model('products', 'Product')
 
     product_id = request.GET.get('product_id')
 
-    return get_object_or_404(product_model, id=product_id)
+    return get_object_or_404(Product, id=product_id)
 
 
 def index(request, template_name='cart/index.html'):

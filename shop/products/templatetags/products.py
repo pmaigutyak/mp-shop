@@ -9,14 +9,14 @@ register = template.Library()
 
 @register.assignment_tag
 def get_categories():
-    category_model = apps.get_model('products', 'ProductCategory')
-    return category_model.objects.all()
+    ProductCategory = apps.get_model('products', 'ProductCategory')
+    return ProductCategory.objects.all()
 
 
 @register.assignment_tag
 def get_root_categories():
-    category_model = apps.get_model('products', 'ProductCategory')
-    return category_model.objects.root_nodes()
+    ProductCategory = apps.get_model('products', 'ProductCategory')
+    return ProductCategory.objects.root_nodes()
 
 
 @register.simple_tag(takes_context=True)

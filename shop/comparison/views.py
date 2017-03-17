@@ -77,11 +77,11 @@ def _format_attributes(category, products):
 
 
 def _get_product_from_request(request):
-    product_model = apps.get_model('products', 'Product')
-    return get_object_or_404(product_model, pk=request.GET.get('product_pk'))
+    Product = apps.get_model('products', 'Product')
+    return get_object_or_404(Product, pk=request.GET.get('product_pk'))
 
 
 def _get_category_from_request(request):
-    category_model = apps.get_model('products', 'ProductCategory')
+    ProductCategory = apps.get_model('products', 'ProductCategory')
     return get_object_or_404(
-        category_model, pk=request.GET.get('category_pk'))
+        ProductCategory, pk=request.GET.get('category_pk'))

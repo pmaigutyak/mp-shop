@@ -17,10 +17,10 @@ def index(request):
 @login_required
 def add(request):
 
-    product_model = apps.get_model('products', 'Product')
+    Product = apps.get_model('products', 'Product')
 
     product = get_object_or_404(
-        product_model, pk=request.GET.get('product_pk'))
+        Product, pk=request.GET.get('product_pk'))
 
     if WishListItem.objects.filter(product=product).exists():
         message = _('%s already in your wish list')

@@ -6,8 +6,8 @@ CURRENCY_UAH = 1
 
 
 def create_category(name='Category name', parent=None):
-    category_model = apps.get_model('products', 'ProductCategory')
-    category = category_model(name=name)
+    ProductCategory = apps.get_model('products', 'ProductCategory')
+    category = ProductCategory(name=name)
 
     if parent is not None:
         category.parent = parent
@@ -31,9 +31,9 @@ def create_product(
         category, title='Product title', price_in_currency=0,
         currency=CURRENCY_UAH):
 
-    product_model = apps.get_model('products', 'Product')
+    Product = apps.get_model('products', 'Product')
 
-    product = product_model(
+    product = Product(
         category=category, title=title, price_in_currency=price_in_currency,
         currency=currency)
 

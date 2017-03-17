@@ -34,9 +34,9 @@ class Comparison(object):
 
             ids = representation.keys()
 
-            product_model = apps.get_model('products', 'Product')
+            Product = apps.get_model('products', 'Product')
 
-            for product in product_model.objects.filter(pk__in=ids)\
+            for product in Product.objects.filter(pk__in=ids)\
                     .select_related('category'):
                 self._items_dict[product.pk] = ComparisonItem(product)
 

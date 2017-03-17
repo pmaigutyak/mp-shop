@@ -102,9 +102,7 @@ class ProductFormMixin(object):
         for attr in self.instance.attr.all():
 
             if attr.full_slug in self.cleaned_data:
-                print attr
                 value = self.cleaned_data[attr.full_slug]
-                print self.instance.attr
                 setattr(self.instance.attr, attr.slug, value)
 
         super(ProductFormMixin, self)._post_clean()

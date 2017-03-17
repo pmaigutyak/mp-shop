@@ -43,12 +43,9 @@ class Cart(object):
 
             ids_in_cart = cart_representation.keys()
 
-            product_model = apps.get_model('products', 'Product')
+            Product = apps.get_model('products', 'Product')
 
-            products_queryset = product_model.objects.filter(
-                pk__in=ids_in_cart)
-
-            for product in products_queryset:
+            for product in Product.objects.filter(pk__in=ids_in_cart):
                 item = cart_representation[str(product.pk)]
                 self._items[product.pk] = CartItem(product, item['qty'])
 
