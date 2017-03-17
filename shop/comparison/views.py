@@ -10,7 +10,7 @@ from shop.comparison import Comparison
 MAX_NUMBER_OF_COMPARISON_PRODUCTS = 4
 
 
-def index(request, template_name='comparison/index.html'):
+def index(request):
 
     comparison = Comparison(request.session)
 
@@ -23,7 +23,7 @@ def index(request, template_name='comparison/index.html'):
         'products': products,
         'attributes': _format_attributes(category, products)
     }
-    return render(request, template_name, context)
+    return render(request, 'comparison/index.html', context)
 
 
 def add(request):
