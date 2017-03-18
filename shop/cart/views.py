@@ -66,7 +66,7 @@ def set_qty(request):
     cart_item = cart.get_item(product)
 
     return JsonResponse({
-        'message': str(_('%s removed from card' % product.title)),
+        'message': str(_('%s quantity changed' % product.title)),
         'subtotal': cart_item.printable_default_subtotal,
         'total': cart.printable_default_total
     })

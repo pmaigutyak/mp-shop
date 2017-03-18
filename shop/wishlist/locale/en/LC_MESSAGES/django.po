@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-09-20 14:31+0300\n"
+"POT-Creation-Date: 2017-03-18 23:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,45 +17,58 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: models.py:13
+#: models.py:11
 msgid "Owner"
 msgstr ""
 
-#: models.py:16
+#: models.py:14
 msgid "Product"
 msgstr ""
 
-#: models.py:19
+#: models.py:17
 msgid "Quantity"
 msgstr ""
 
-#: models.py:21
+#: models.py:19
 msgid "Product title"
 msgstr ""
 
-#: models.py:24
+#: models.py:22
 msgid "Date created"
 msgstr ""
 
-#: models.py:32
+#: models.py:30
 msgid "Wish list item"
 msgstr ""
 
-#: models.py:33
+#: models.py:31
 msgid "Wish list items"
 msgstr ""
 
-#: views.py:18
-#, python-format
-msgid "%s already in your wish list"
+#: templates/wishlist/index.html:8 templates/wishlist/index.html:13
+#: templates/wishlist/index.html:24
+msgid "Мій список побажань"
+msgstr ""
+
+#: templates/wishlist/index.html:49
+msgid "В кошик"
+msgstr ""
+
+#: templates/wishlist/index.html:53
+msgid "Видалити"
 msgstr ""
 
 #: views.py:26
 #, python-format
+msgid "%s already in your wish list"
+msgstr ""
+
+#: views.py:34
+#, python-format
 msgid "%s addet to wish list"
 msgstr ""
 
-#: views.py:38
+#: views.py:46
 #, python-format
 msgid "%s was removed from wish list"
 msgstr ""

@@ -16,159 +16,157 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: abstract_models.py:18
 msgid "Customer"
-msgstr "Клієнт"
+msgstr ""
 
 #: abstract_models.py:21
 msgid "Payment method"
-msgstr "Спосіб оплати"
+msgstr ""
 
 #: abstract_models.py:28
 msgid "Delivery method"
-msgstr "Спосіб доставки"
+msgstr ""
 
 #: abstract_models.py:35
 msgid "Status"
-msgstr "Статус"
+msgstr ""
 
 #: abstract_models.py:38
 msgid "Name"
-msgstr "Ім'я"
+msgstr ""
 
 #: abstract_models.py:41
 msgid "Surname"
-msgstr "Прізвище"
+msgstr ""
 
 #: abstract_models.py:44
 msgid "Address and number of post office"
-msgstr "Адреса та номер поштової служби"
+msgstr ""
 
 #: abstract_models.py:48
 msgid "Mobile phone"
-msgstr "Телефон"
+msgstr ""
 
 #: abstract_models.py:51
 msgid "Email"
-msgstr "Email"
+msgstr ""
 
 #: abstract_models.py:54
 msgid "Date created"
-msgstr "Дата створення"
+msgstr ""
 
 #: abstract_models.py:57
 msgid "Comment"
-msgstr "Коментар"
+msgstr ""
 
 #: abstract_models.py:61
 #, python-format
 msgid "Order #%s"
-msgstr "Замовлення #%s"
+msgstr ""
 
 #: abstract_models.py:80 abstract_models.py:87
 msgid "Order"
-msgstr "Замовлення"
+msgstr ""
 
 #: abstract_models.py:81
 msgid "Orders"
-msgstr "Замовлення"
+msgstr ""
 
 #: abstract_models.py:90
 msgid "Product"
-msgstr "Товар"
+msgstr ""
 
 #: abstract_models.py:93
 msgid "Product title"
-msgstr "Назва товару"
+msgstr ""
 
 #: abstract_models.py:95
 msgid "Price (uah)"
-msgstr "Ціна"
+msgstr ""
 
 #: abstract_models.py:98
 msgid "Quantity"
-msgstr "Кількість"
+msgstr ""
 
 #: abstract_models.py:135
 msgid "Order product"
-msgstr "Замовлений товар"
+msgstr ""
 
 #: abstract_models.py:136
 msgid "Order products"
-msgstr "Замовлені товари"
+msgstr ""
 
 #: admin.py:27
 msgid "Select product or enter title"
-msgstr "Виберіть товар або введіть назву"
+msgstr ""
 
 #: admin.py:41
 msgid "Select product or enter price"
-msgstr "Виберіть товар або введіть ціну"
+msgstr ""
 
 #: admin.py:77 admin.py:83
 msgid "Show on site"
-msgstr "Показати на сайті"
+msgstr ""
 
 #: lib.py:12
 #, python-format
 msgid "New order #%s"
-msgstr "Нове замовлення #%s"
+msgstr ""
 
 #: settings.py:9
 msgid "Self delivery"
-msgstr "Самовивіз"
+msgstr ""
 
 #: settings.py:10
 msgid "Nova Poshta"
-msgstr "Нова Пошта"
+msgstr ""
 
 #: settings.py:11
 msgid "In Time"
-msgstr "ІНТАЙМ"
+msgstr ""
 
 #: settings.py:12
 msgid "Gunsel"
-msgstr "Гюнсел"
+msgstr ""
 
 #: settings.py:13
 msgid "Avtoluks"
-msgstr "Автолюкс"
+msgstr ""
 
 #: settings.py:14
 msgid "Other"
-msgstr "Інше"
+msgstr ""
 
 #: settings.py:18
 msgid "Cash payment"
-msgstr "Оплата готівкою"
+msgstr ""
 
 #: settings.py:19
 msgid "Cashless payment"
-msgstr "Безготівковий розрахунок"
+msgstr ""
 
 #: settings.py:20
 msgid "C.O.D."
-msgstr "Накладений платіж"
+msgstr ""
 
 #: settings.py:21
 msgid "Privat24 Payment"
-msgstr "Оплата через Приват24"
+msgstr ""
 
 #: settings.py:25
 msgid "Not reviewed"
-msgstr "Не переглянуто"
+msgstr ""
 
 #: settings.py:26
 msgid "Processing"
-msgstr "В обробці"
+msgstr ""
 
 #: settings.py:27
 msgid "Canceled"
-msgstr "Відмінено"
+msgstr ""
 
 #: settings.py:28
 msgid "Completed"
-msgstr "Виконано"
+msgstr ""

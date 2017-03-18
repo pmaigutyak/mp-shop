@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:44+0200\n"
+"POT-Creation-Date: 2017-03-18 23:42+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -16,30 +16,17 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
-"%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: constants.py:11
-msgid "UAH"
+#: views.py:34
+msgid "Added"
 msgstr ""
 
-#: constants.py:12
-msgid "USD"
+#: views.py:48
+#, python-format
+msgid "%s removed from card"
 msgstr ""
 
-#: constants.py:13
-msgid "EUR"
+#: views.py:69
+#, python-format
+msgid "%s quantity changed"
 msgstr ""
-
-#: models.py:15
-msgid "Currency"
-msgstr "Валюта"
-
-#: models.py:17
-msgid "Value"
-msgstr ""
-
-#: models.py:79 models.py:80
-msgid "Exchange rate"
-msgstr "Курс валют"

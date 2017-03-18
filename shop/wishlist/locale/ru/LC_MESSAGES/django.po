@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-11-10 09:52+0200\n"
+"POT-Creation-Date: 2017-03-18 23:48+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,59 +19,58 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: external/mpshop/wishlist/models.py:13
+#: models.py:11
 msgid "Owner"
 msgstr "Владелец"
 
-#: external/mpshop/wishlist/models.py:16
+#: models.py:14
 msgid "Product"
 msgstr "Товар"
 
-#: external/mpshop/wishlist/models.py:19
+#: models.py:17
 msgid "Quantity"
 msgstr "Количество"
 
-#: external/mpshop/wishlist/models.py:21
+#: models.py:19
 msgid "Product title"
 msgstr "Название товара"
 
-#: external/mpshop/wishlist/models.py:24
+#: models.py:22
 msgid "Date created"
 msgstr "Дата создания"
 
-#: external/mpshop/wishlist/models.py:32
+#: models.py:30
 msgid "Wish list item"
 msgstr "Елемент списка желаний"
 
-#: external/mpshop/wishlist/models.py:33
+#: models.py:31
 msgid "Wish list items"
 msgstr "Елементы списка желаний"
 
-#: external/mpshop/wishlist/templates/accounts/wish_list.html:8
-#: external/mpshop/wishlist/templates/accounts/wish_list.html:13
-#: external/mpshop/wishlist/templates/accounts/wish_list.html:24
+#: templates/wishlist/index.html:8 templates/wishlist/index.html:13
+#: templates/wishlist/index.html:24
 msgid "Мій список побажань"
 msgstr "Мой список пожеланий"
 
-#: external/mpshop/wishlist/templates/accounts/wish_list.html:49
+#: templates/wishlist/index.html:49
 msgid "В кошик"
 msgstr "В корзину"
 
-#: external/mpshop/wishlist/templates/accounts/wish_list.html:53
+#: templates/wishlist/index.html:53
 msgid "Видалити"
 msgstr "Удалить"
 
-#: external/mpshop/wishlist/views.py:18
+#: views.py:26
 #, python-format
 msgid "%s already in your wish list"
 msgstr "%s уже в списке желаний"
 
-#: external/mpshop/wishlist/views.py:26
+#: views.py:34
 #, python-format
 msgid "%s addet to wish list"
 msgstr "%s добавлено в список желаний"
 
-#: external/mpshop/wishlist/views.py:38
+#: views.py:46
 #, python-format
 msgid "%s was removed from wish list"
 msgstr "%s удалено из списка желаний"
