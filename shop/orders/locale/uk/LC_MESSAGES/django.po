@@ -1,0 +1,472 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-29 18:32+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: admin/__init__.py:68 admin/__init__.py:74
+#: templates/cart/email/new_order_notification_for_admins.html:88
+msgid "Show on site"
+msgstr "Показати на сайті"
+
+#: admin/forms.py:20
+msgid "Select product or enter title"
+msgstr "Виберіть товар або введіть назву"
+
+#: admin/forms.py:34
+msgid "Select product or enter price"
+msgstr "Виберіть товар або введіть ціну"
+
+#: api/views.py:28
+msgid "Added"
+msgstr "Додано"
+
+#: api/views.py:40 views.py:51
+#, python-format
+msgid "%s removed from card"
+msgstr "%s видалено з кошика"
+
+#: apps.py:9
+msgid "Cart"
+msgstr "Кошик"
+
+#: lib.py:27
+#, python-format
+msgid "New order #%s"
+msgstr "Нове замовлення #%s"
+
+#: models.py:18
+msgid "Date created"
+msgstr "Дата створення"
+
+#: models.py:21 templates/cart/email/new_order_notification_for_admins.html:41
+#: templates/cart/email/new_order_notification_for_customer.html:41
+msgid "Comment"
+msgstr "Коментар"
+
+#: models.py:25
+#, python-format
+msgid "Order #%s"
+msgstr "Замовлення #%s"
+
+#: models.py:40
+#, python-format
+msgid "%s uah"
+msgstr "%s грн"
+
+#: models.py:49 templates/cart/email/new_order_notification_for_admins.html:55
+#: templates/cart/email/new_order_notification_for_customer.html:55
+msgid "Product"
+msgstr "Товар"
+
+#: models.py:52
+msgid "Product title"
+msgstr "Назва товару"
+
+#: models.py:54
+msgid "Price (uah)"
+msgstr "Ціна"
+
+#: models.py:57 templates/cart/email/new_order_notification_for_admins.html:56
+#: templates/cart/email/new_order_notification_for_customer.html:56
+msgid "Quantity"
+msgstr "Кількість"
+
+#: models.py:92 models.py:134
+msgid "Customer"
+msgstr "Клієнт"
+
+#: models.py:95
+msgid "Payment method"
+msgstr "Спосіб оплати"
+
+#: models.py:99
+msgid "Delivery method"
+msgstr "Спосіб доставки"
+
+#: models.py:102
+msgid "Status"
+msgstr "Статус"
+
+#: models.py:106
+#: templates/cart/email/new_order_notification_for_admins.html:25
+#: templates/cart/email/new_order_notification_for_customer.html:25
+msgid "Name"
+msgstr "Ім'я"
+
+#: models.py:109
+#: templates/cart/email/new_order_notification_for_admins.html:28
+#: templates/cart/email/new_order_notification_for_customer.html:28
+msgid "Surname"
+msgstr "Прізвище"
+
+#: models.py:112
+#: templates/cart/email/new_order_notification_for_admins.html:31
+#: templates/cart/email/new_order_notification_for_customer.html:31
+msgid "Address and number of post office"
+msgstr "Адреса та номер поштової служби"
+
+#: models.py:116
+msgid "Mobile phone"
+msgstr "Телефон"
+
+#: models.py:119
+#: templates/cart/email/new_order_notification_for_admins.html:37
+#: templates/cart/email/new_order_notification_for_customer.html:37
+msgid "Email"
+msgstr "Email"
+
+#: models.py:126 models.py:144
+msgid "Order"
+msgstr "Замовлення"
+
+#: models.py:127
+msgid "Orders"
+msgstr "Замовлення"
+
+#: models.py:137 models.py:154
+msgid "Rapid order"
+msgstr "Миттєве замовлення"
+
+#: models.py:138
+msgid "Rapid orders"
+msgstr "Миттєві замовлення"
+
+#: models.py:147
+msgid "Order product"
+msgstr "Замовлений товар"
+
+#: models.py:148
+msgid "Order products"
+msgstr "Замовлені товари"
+
+#: models.py:157
+msgid "Rapid order product"
+msgstr "Миттєво замовлений товар"
+
+#: models.py:158
+msgid "Rapid order products"
+msgstr "Миттєво замовлені товари"
+
+#: settings.py:9
+msgid "Self delivery"
+msgstr "Самовивіз"
+
+#: settings.py:10
+msgid "Nova Poshta"
+msgstr "Нова Пошта"
+
+#: settings.py:11
+msgid "In Time"
+msgstr "ІНТАЙМ"
+
+#: settings.py:12
+msgid "Gunsel"
+msgstr "Гюнсел"
+
+#: settings.py:13
+msgid "Avtoluks"
+msgstr "Автолюкс"
+
+#: settings.py:14
+msgid "Other"
+msgstr "Інше"
+
+#: settings.py:18
+msgid "Cash payment"
+msgstr "Оплата готівкою"
+
+#: settings.py:19
+msgid "Cashless payment"
+msgstr "Безготівковий розрахунок"
+
+#: settings.py:20
+msgid "C.O.D."
+msgstr "Накладений платіж"
+
+#: settings.py:21
+msgid "Privat24 Payment"
+msgstr "Оплата через Приват24"
+
+#: settings.py:25
+msgid "Not reviewed"
+msgstr "Не переглянуто"
+
+#: settings.py:26
+msgid "Processing"
+msgstr "В обробці"
+
+#: settings.py:27
+msgid "Canceled"
+msgstr "Відмінено"
+
+#: settings.py:28
+msgid "Completed"
+msgstr "Виконано"
+
+#: templates/cart/admin/statistic.html:12
+msgid "Статистика"
+msgstr ""
+
+#: templates/cart/admin/statistic.html:17 templates/cart/invoice.html:122
+msgid "Замовлення"
+msgstr ""
+
+#: templates/cart/admin/statistic.html:20
+msgid "Кількість замовлень"
+msgstr ""
+
+#: templates/cart/admin/statistic.html:24
+msgid "Кількість замовлених товарів"
+msgstr ""
+
+#: templates/cart/admin/statistic.html:28
+msgid "Загальна сума замовлень"
+msgstr ""
+
+#: templates/cart/checkout.html:16
+msgid "Оформлення замовлення"
+msgstr ""
+
+#: templates/cart/checkout.html:80
+msgid "Підтвердити замовлення"
+msgstr ""
+
+#: templates/cart/checkout.html:81
+msgid "Редагувати замовлення"
+msgstr ""
+
+#: templates/cart/checkout.html:90 templates/cart/index.html:27
+msgid "Назва товару"
+msgstr ""
+
+#: templates/cart/checkout.html:91 templates/cart/index.html:29
+#: templates/cart/invoice.html:190
+msgid "Ціна"
+msgstr ""
+
+#: templates/cart/checkout.html:100 templates/cart/index.html:56
+#: templates/cart/invoice.html:203
+msgid "Код"
+msgstr ""
+
+#: templates/cart/checkout.html:111 templates/cart/index.html:86
+msgid "Загалом"
+msgstr ""
+
+#: templates/cart/checkout.html:123 templates/cart/index.html:98
+msgid "В кошику немає товарів"
+msgstr ""
+
+#: templates/cart/checkout.html:124 templates/cart/index.html:78
+#: templates/cart/index.html:99
+msgid "Продовжити покупки"
+msgstr ""
+
+#: templates/cart/email/new_order_notification_for_admins.html:17
+#: templates/cart/email/new_order_notification_for_customer.html:17
+msgid "New order #"
+msgstr "Нове замовлення #"
+
+#: templates/cart/email/new_order_notification_for_admins.html:19
+#: templates/cart/email/new_order_notification_for_customer.html:19
+msgid "Payment Method"
+msgstr "Спосіб оплати"
+
+#: templates/cart/email/new_order_notification_for_admins.html:22
+#: templates/cart/email/new_order_notification_for_customer.html:22
+msgid "Delivery Method"
+msgstr "Спосіб доставки"
+
+#: templates/cart/email/new_order_notification_for_admins.html:34
+#: templates/cart/email/new_order_notification_for_customer.html:34
+msgid "Mobile"
+msgstr "Телефон"
+
+#: templates/cart/email/new_order_notification_for_admins.html:45
+#: templates/cart/email/new_order_notification_for_customer.html:45
+msgid "Product count"
+msgstr "Кількість товарів"
+
+#: templates/cart/email/new_order_notification_for_admins.html:48
+#: templates/cart/email/new_order_notification_for_customer.html:48
+msgid "Total"
+msgstr "Загальна сума"
+
+#: templates/cart/email/new_order_notification_for_admins.html:51
+#: templates/cart/email/new_order_notification_for_customer.html:51
+msgid "Products"
+msgstr "Товари"
+
+#: templates/cart/email/new_order_notification_for_admins.html:57
+#: templates/cart/email/new_order_notification_for_customer.html:57
+msgid "Price"
+msgstr "Ціна"
+
+#: templates/cart/email/new_order_notification_for_admins.html:58
+#: templates/cart/email/new_order_notification_for_customer.html:58
+msgid "Subtotal"
+msgstr "Сума"
+
+#: templates/cart/email/new_order_notification_for_admins.html:68
+#: templates/cart/email/new_order_notification_for_customer.html:68
+msgid "Code"
+msgstr "Код"
+
+#: templates/cart/email/new_order_notification_for_admins.html:81
+#: templates/cart/email/new_order_notification_for_customer.html:81
+msgid "TOTAL"
+msgstr "Загальна сума"
+
+#: templates/cart/email/new_order_notification_for_admins.html:87
+#: templates/cart/email/new_order_notification_for_customer.html:87
+msgid "Download invoice"
+msgstr "Завантажити звіт"
+
+#: templates/cart/index.html:16
+msgid "Кошик"
+msgstr ""
+
+#: templates/cart/index.html:25 templates/cart/index.html:38
+msgid "Видалити"
+msgstr ""
+
+#: templates/cart/index.html:26
+msgid "Зображення"
+msgstr ""
+
+#: templates/cart/index.html:28
+msgid "Кількість"
+msgstr ""
+
+#: templates/cart/index.html:30
+msgid "Загальна ціна"
+msgstr ""
+
+#: templates/cart/index.html:92
+msgid "Оформити замовлення"
+msgstr ""
+
+#: templates/cart/invoice.html:84
+msgid "РАХУНОК"
+msgstr ""
+
+#: templates/cart/invoice.html:103 templates/cart/invoice.html:158
+msgid "ТЕЛЕФОН"
+msgstr ""
+
+#: templates/cart/invoice.html:108
+msgid "САЙТ"
+msgstr ""
+
+#: templates/cart/invoice.html:113
+msgid "E-MAIL"
+msgstr ""
+
+#: templates/cart/invoice.html:126
+msgid "ДАТА"
+msgstr ""
+
+#: templates/cart/invoice.html:130
+msgid "СТАТУС"
+msgstr ""
+
+#: templates/cart/invoice.html:134
+msgid "ОПЛАТА"
+msgstr ""
+
+#: templates/cart/invoice.html:138
+msgid "ДОСТАВКА"
+msgstr ""
+
+#: templates/cart/invoice.html:150
+msgid "Замовник"
+msgstr ""
+
+#: templates/cart/invoice.html:154
+msgid "ІМʼЯ"
+msgstr ""
+
+#: templates/cart/invoice.html:162
+msgid "EMAIL"
+msgstr ""
+
+#: templates/cart/invoice.html:167
+msgid "АДРЕСА"
+msgstr ""
+
+#: templates/cart/invoice.html:178
+msgid "Коментар"
+msgstr ""
+
+#: templates/cart/invoice.html:188
+msgid "Товар"
+msgstr ""
+
+#: templates/cart/invoice.html:189
+msgid "К-сть"
+msgstr ""
+
+#: templates/cart/invoice.html:191 templates/cart/order.html:20
+msgid "Сума"
+msgstr ""
+
+#: templates/cart/invoice.html:217
+msgid "ЗАГАЛЬНА ВАРТІСТЬ"
+msgstr ""
+
+#: templates/cart/new_order_message.html:5
+msgid "Order successfully added"
+msgstr "Замовлення успішно додано"
+
+#: templates/cart/order.html:10
+msgid "Мої замовлення"
+msgstr ""
+
+#: templates/cart/order.html:18
+msgid "Дата"
+msgstr ""
+
+#: templates/cart/order.html:19
+msgid "К-сть товарів"
+msgstr ""
+
+#: templates/cart/order.html:21
+msgid "Статус"
+msgstr ""
+
+#: templates/cart/order.html:22
+msgid "Звіт"
+msgstr ""
+
+#: templates/cart/order.html:45
+msgid "Завантажити звіт"
+msgstr ""
+
+#: templates/cart/order.html:55
+msgid "У Вас поки немає замовлень"
+msgstr ""
+
+#: views.py:38
+#, python-format
+msgid "%s addet to card"
+msgstr "%s додано до кошика"
+
+#: views.py:151
+msgid "Rapid order successfully added"
+msgstr "Миттєве замовлення успішно додано"

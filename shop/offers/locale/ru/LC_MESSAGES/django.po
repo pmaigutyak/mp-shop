@@ -1,0 +1,424 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-12-30 11:11+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: admin/__init__.py:35 admin/__init__.py:108 models.py:141
+msgid "Qty"
+msgstr "Количество"
+
+#: admin/__init__.py:39
+msgid "Endangered products"
+msgstr "Товары которые заканчиваются на складе"
+
+#: admin/__init__.py:103 admin/__init__.py:143 models.py:321
+msgid "Preview"
+msgstr "Просмотр"
+
+#: admin/__init__.py:111
+msgid "View"
+msgstr "Показать на сайте"
+
+#: admin/__init__.py:113
+msgid "Link"
+msgstr "Ссилка"
+
+#: admin/__init__.py:134
+msgid "Product count"
+msgstr "Количество товаров"
+
+#: admin/__init__.py:174 models.py:112 models.py:129
+msgid "Category"
+msgstr "Категория"
+
+#: admin/forms.py:55
+msgid " [New value]"
+msgstr " [Новое значение]"
+
+#: admin/forms.py:103
+msgid "Option group is required for field type select"
+msgstr "Вариант группы требуется для типа поля опций"
+
+#: forms.py:19
+msgid "Newest"
+msgstr "Новые"
+
+#: forms.py:20
+msgid "Price (high-low)"
+msgstr "От дорогим к дешевым"
+
+#: forms.py:21
+msgid "Price (low-high)"
+msgstr "От дешевых к дорогим"
+
+#: forms.py:22
+msgid "A-Z"
+msgstr "А-Я"
+
+#: forms.py:23
+msgid "Z-A"
+msgstr "Я-А"
+
+#: forms.py:26
+msgid "Query"
+msgstr "Поисковый запрос"
+
+#: forms.py:29
+msgid "Order by"
+msgstr "Сортировать по"
+
+#: lib.py:18
+#, python-format
+msgid "New product price offer #%s"
+msgstr "Новое ценовое предложение товара #%s"
+
+#: models.py:39 models.py:139
+msgid "Currency"
+msgstr "Валюта"
+
+#: models.py:41
+msgid "Value"
+msgstr ""
+
+#: models.py:47 models.py:48
+msgid "Exchange rate"
+msgstr "Курс валют"
+
+#: models.py:56 models.py:349 models.py:399 models.py:597
+#: templates/products/price_offer_notifications/email.html:10
+msgid "Name"
+msgstr "Имя"
+
+#: models.py:59
+msgid "Logo"
+msgstr "Логотип"
+
+#: models.py:86
+msgid "Full name"
+msgstr "Полное название"
+
+#: models.py:113
+msgid "Categories"
+msgstr "Кутегории"
+
+#: models.py:123
+msgid "In stock"
+msgstr "В наличии"
+
+#: models.py:124
+msgid "Not available"
+msgstr "Нет в наличии"
+
+#: models.py:125
+msgid "Should be ordered"
+msgstr "Под заказ"
+
+#: models.py:132 models.py:331
+msgid "Title"
+msgstr "название"
+
+#: models.py:134 models.py:221 models.py:401
+msgid "Code"
+msgstr "Код"
+
+#: models.py:136
+msgid "Price"
+msgstr "Цена"
+
+#: models.py:143
+msgid "Min qty"
+msgstr "Минимальное количество на складе"
+
+#: models.py:146
+msgid "Availability"
+msgstr "Наличие"
+
+#: models.py:149
+msgid "Description"
+msgstr "Описание"
+
+#: models.py:153
+msgid "Attributes"
+msgstr "Атрибуты"
+
+#: models.py:156
+msgid "Flags"
+msgstr "Флаги"
+
+#: models.py:159 models.py:299 models.py:607
+msgid "Date created"
+msgstr "Дата создания"
+
+#: models.py:162
+msgid "Date updated"
+msgstr "Дата обновления"
+
+#: models.py:165
+msgid "Instruction"
+msgstr "Инструкция"
+
+#: models.py:214
+#, python-format
+msgid "%s uah"
+msgstr "%s грн"
+
+#: models.py:219
+msgid "Not specified"
+msgstr "Не указано"
+
+#: models.py:287 models.py:294 models.py:469 models.py:594
+msgid "Product"
+msgstr "Товар"
+
+#: models.py:288
+msgid "Products"
+msgstr "Товары"
+
+#: models.py:297
+msgid "File"
+msgstr "Файл"
+
+#: models.py:301
+msgid "Ordering"
+msgstr "Порядок"
+
+#: models.py:325
+msgid "Product image"
+msgstr "Изображение товара"
+
+#: models.py:326
+msgid "Product images"
+msgstr "Изображения товаров"
+
+#: models.py:343
+msgid "Product flag"
+msgstr "Флаг товара"
+
+#: models.py:344
+msgid "Product flags"
+msgstr "Флаги товаров"
+
+#: models.py:359
+msgid "Attribute option group"
+msgstr "Группа опций атрибута"
+
+#: models.py:360
+msgid "Attribute option groups"
+msgstr "Группы опций атрибутов"
+
+#: models.py:367
+msgid "Group"
+msgstr "Группа"
+
+#: models.py:369 models.py:389
+msgid "Option"
+msgstr "Опция"
+
+#: models.py:376
+msgid "Attribute option"
+msgstr "Опция атрибута"
+
+#: models.py:377
+msgid "Attribute options"
+msgstr "Опции атрибутов"
+
+#: models.py:386 models.py:446
+msgid "Text"
+msgstr "Текст"
+
+#: models.py:387 models.py:447
+msgid "Integer"
+msgstr "Число"
+
+#: models.py:388
+msgid "True / False"
+msgstr "Да / Нет"
+
+#: models.py:397
+msgid "Product category"
+msgstr "Категория товара"
+
+#: models.py:406
+msgid "Type"
+msgstr "Тип"
+
+#: models.py:410
+msgid "Option Group"
+msgstr "Группа опций"
+
+#: models.py:411
+msgid "Select an option group if using type \"Option\""
+msgstr "Выберите вариант группы при использовании типа \"Опции\""
+
+#: models.py:413
+msgid "Required"
+msgstr "Обязательное"
+
+#: models.py:415
+msgid "Is filter"
+msgstr "Фильтр"
+
+#: models.py:442
+msgid "Product attribute"
+msgstr "Атрибут товара"
+
+#: models.py:443
+msgid "Product attributes"
+msgstr "Атрибуты товара"
+
+#: models.py:448
+msgid "Boolean"
+msgstr "Буливое значение"
+
+#: models.py:451
+msgid "Value option"
+msgstr "Опция значения"
+
+#: models.py:464
+msgid "Attribute"
+msgstr "Атрибут"
+
+#: models.py:505
+msgid "Yes"
+msgstr "Да"
+
+#: models.py:505
+msgid "No"
+msgstr "Нет"
+
+#: models.py:518
+msgid "Product attribute value"
+msgstr "Значение атрибута товара"
+
+#: models.py:519
+msgid "Product attribute values"
+msgstr "Значение атрибутов товаров"
+
+#: models.py:578
+msgid "Not reviewed"
+msgstr "не просмотрено"
+
+#: models.py:579
+msgid "Processing"
+msgstr "В обработке"
+
+#: models.py:580
+msgid "Canceled"
+msgstr "Отказано"
+
+#: models.py:581
+msgid "Completed"
+msgstr "Выполнено"
+
+#: models.py:586
+msgid "User"
+msgstr "Пользователь"
+
+#: models.py:589
+msgid "Status"
+msgstr "Статус"
+
+#: models.py:600
+msgid "Mobile phone"
+msgstr "Телефон"
+
+#: models.py:603 templates/products/price_offer_notifications/email.html:13
+msgid "Email"
+msgstr ""
+
+#: models.py:605 templates/products/price_offer_notifications/email.html:19
+msgid "Offer"
+msgstr "Предложение"
+
+#: models.py:614
+msgid "Product price offer"
+msgstr "Ценовое предложение"
+
+#: models.py:615
+msgid "Product price offers"
+msgstr "Ценовые предложения"
+
+#: settings.py:9
+msgid "UAH"
+msgstr ""
+
+#: settings.py:10
+msgid "USD"
+msgstr ""
+
+#: templates/products/admin/statistic.html:13
+msgid "Курс валют"
+msgstr ""
+
+#: templates/products/admin/statistic.html:26
+msgid "Редагувати"
+msgstr "Редактировать"
+
+#: templates/products/admin/statistic.html:37
+msgid "Статистика"
+msgstr ""
+
+#: templates/products/admin/statistic.html:42
+msgid "Товари"
+msgstr "Товары"
+
+#: templates/products/admin/statistic.html:46
+msgid "Кількість товарів"
+msgstr "Количество товаров"
+
+#: templates/products/admin/statistic.html:51
+msgid "Кількість категорій"
+msgstr "Количество категорий"
+
+#: templates/products/info.html:38
+msgid "Запропонувати свою ціну для товару"
+msgstr "Предложить свою цену для товара"
+
+#: templates/products/info.html:65
+msgid "Відмінити"
+msgstr "Отменить"
+
+#: templates/products/info.html:68
+msgid "Надіслати пропозицію"
+msgstr "Отправить предложение"
+
+#: templates/products/price_offer_notifications/email.html:5
+msgid "New price offer #"
+msgstr "Новое ценовое предложение товара #"
+
+#: templates/products/price_offer_notifications/email.html:7
+msgid "Product title"
+msgstr "Название товара"
+
+#: templates/products/price_offer_notifications/email.html:16
+msgid "Mobile"
+msgstr "Телефон"
+
+#: templates/products/price_offer_notifications/email.html:23
+msgid "Show in admin"
+msgstr "Показать в админ зоне"
+
+#: templates/products/price_offer_notifications/email.html:26
+msgid "Show on site"
+msgstr "Показать на сайте"
+
+#: views.py:133
+msgid "Offer successfully added"
+msgstr "Предложение успешно отправлено"
