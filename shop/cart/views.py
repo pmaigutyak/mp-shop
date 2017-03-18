@@ -9,13 +9,13 @@ from shop.cart.lib import Cart
 from shop.cart.forms import CartItemForm
 
 
-def get_product_from_request(request):
+def _get_product_from_request(request):
 
     Product = apps.get_model('products', 'Product')
 
-    product_id = request.GET.get('product_id')
+    product_pk = request.POST.get('product_pk')
 
-    return get_object_or_404(Product, id=product_id)
+    return get_object_or_404(Product, pk=product_pk)
 
 
 def index(request, template_name='cart/index.html'):
@@ -25,7 +25,7 @@ def index(request, template_name='cart/index.html'):
 @require_POST
 def add(request):
 
-    product = get_product_from_request(request)
+    product = _get_product_from_request(request)
 
     cart = Cart(request.session)
     cart.add(product)
@@ -39,7 +39,7 @@ def add(request):
 @require_POST
 def remove(request):
 
-    product = get_product_from_request(request)
+    product = _get_product_from_request(request)
 
     cart = Cart(request.session)
     cart.remove(product)
@@ -53,7 +53,7 @@ def remove(request):
 @require_POST
 def set_qty(request):
 
-    product = get_product_from_request(request)
+    product = _get_product_from_request(request)
 
     form = CartItemForm(data=request.POST)
 

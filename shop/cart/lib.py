@@ -13,6 +13,17 @@ class CartItem(object):
         self.product = product
         self.qty = int(qty)
 
+    def serialize(self):
+
+        product = self.product
+
+        return {
+            'product_pk': product.pk,
+            'qty': self.qty,
+            'price': str(product.price_in_currency),
+            'currency': str(product.currency)
+        }
+
     @property
     def default_subtotal(self):
         return self.product.price.default * self.qty
