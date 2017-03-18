@@ -51,7 +51,7 @@ class SearchProductForm(forms.Form):
 
         if query:
             Product = apps.get_model('products', 'Product')
-            products = model_search(query, products, Product.search_fields)
+            products = model_search(query, products, Product.get_search_fields())
 
         return products
 

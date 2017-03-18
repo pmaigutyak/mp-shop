@@ -22,6 +22,9 @@ class SearchProductAttrMixin(object):
 
         products = super(SearchProductAttrMixin, self)._filter(products)
 
+        if not self.data:
+            return products
+
         for attr in self._attributes:
 
             values = self.data.getlist(attr.full_slug)

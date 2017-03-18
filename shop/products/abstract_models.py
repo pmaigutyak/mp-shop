@@ -154,7 +154,7 @@ class AbstractProduct(models.Model):
         return self._related_products
 
     @classmethod
-    def search_fields(cls):
+    def get_search_fields(cls):
 
         if not apps.is_installed('modeltranslation'):
             return ['code', 'title', 'description']
