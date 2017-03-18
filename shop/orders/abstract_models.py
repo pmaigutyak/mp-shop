@@ -35,8 +35,10 @@ class AbstractOrder(models.Model):
         _('Status'), null=False, choices=ORDER_STATUSES,
         default=DEFAULT_STATUS)
 
-    name = models.CharField(
-        _("Name, Surname"), max_length=255, blank=False, null=False)
+    name = models.CharField(_("Name"), max_length=255, blank=False, null=False)
+
+    surname = models.CharField(
+        _("Surname"), max_length=255, blank=False, null=False)
 
     post_office = models.CharField(
         _("Address and number of post office"),

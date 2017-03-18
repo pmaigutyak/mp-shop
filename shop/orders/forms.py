@@ -7,4 +7,7 @@ class CheckoutForm(forms.ModelForm):
 
     class Meta:
         model = apps.get_model('orders', 'Order')
-        fields = ('name', 'post_office', 'mobile', 'email', 'comment', )
+        fields = [
+            'name', 'surname', 'payment_method', 'delivery_method',
+            'post_office', 'mobile', 'email', 'comment'
+        ]

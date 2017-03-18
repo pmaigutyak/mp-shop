@@ -26,7 +26,7 @@ def checkout(request, form_class=CheckoutForm):
             'mobile': profile.mobile if profile is not None else ''
         }
 
-    form = form_class(request, **form_params)
+    form = form_class(**form_params)
 
     if request.method == 'POST' and form.is_valid():
 
@@ -50,10 +50,10 @@ def checkout(request, form_class=CheckoutForm):
         send_new_order_notifications(order)
 
         message = render_to_string(
-            'cart/new_order_message.html', {'order': order})
+            'orders/new_order_message.html', {'order': order})
 
         messages.success(request, mark_safe(message))
 
         return redirect('home')
 
-    return render(request, 'cart/checkout.html', {'form': form})
+    return render(request, 'orders/checkout.html', {'form': form})
