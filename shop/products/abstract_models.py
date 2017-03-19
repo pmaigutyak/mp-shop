@@ -86,11 +86,11 @@ class AbstractProductCategory(MPTTModel):
 
 class AbstractProduct(models.Model):
 
+    is_visible = models.BooleanField(_('Is visible'), default=True)
+
     category = models.ForeignKey(
         'products.ProductCategory', verbose_name=_("Category"),
         related_name='products', blank=False)
-
-    is_visible = models.BooleanField(_('Is visible'), default=True)
 
     title = models.CharField(_('Title'), max_length=255, blank=True)
 
