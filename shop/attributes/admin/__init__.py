@@ -50,5 +50,4 @@ class ProductAdminMixin(object):
 
 
 admin.site.register(ProductAttribute, ProductAttributeAdmin)
-
 admin.site.register(AttributeOptionGroup, AttributeOptionGroupAdmin)

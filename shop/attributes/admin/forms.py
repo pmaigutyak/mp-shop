@@ -57,8 +57,7 @@ class ProductFormMixin(object):
         if self.instance.pk:
             self._build_attr_fields()
 
-    @staticmethod
-    def get_option_field_name(attr):
+    def get_option_field_name(self, attr):
         return 'option_' + attr.full_slug
 
     def clean(self):
@@ -82,7 +81,7 @@ class ProductFormMixin(object):
 
         for attr in self.instance.attr.all():
 
-            fields[attr.full_slug] = self.get_attribute_field(attr)
+            fields[attr.full_slug] = self._build_attr_field(attr)
 
             if attr.has_options:
                 label = attr.name + unicode(_(' [New value]'))
@@ -107,8 +106,8 @@ class ProductFormMixin(object):
 
         super(ProductFormMixin, self)._post_clean()
 
-    @staticmethod
-    def get_attribute_field(attr):
+    def _build_attr_field(self, attr):
+
         kwargs = {'label': attr.name, 'required': attr.required}
 
         if attr.type is ATTR_TYPE_SELECT:
