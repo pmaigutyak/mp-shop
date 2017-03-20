@@ -14,9 +14,7 @@ def send_new_price_offer_notification(offer):
 
     context = {'offer': offer, 'site': current_site}
 
-    template_name = 'products/price_offer_notifications/email.html'
-
-    html = render_to_string(template_name, context)
+    html = render_to_string('offers/notifications/email.html', context)
 
     mail_managers(subject=subject, message='', html_message=html)
 
@@ -24,6 +22,4 @@ def send_new_price_offer_notification(offer):
 
         from turbosms.lib import send_sms_from_template
 
-        sms_template = 'products/price_offer_notifications/sms.txt'
-
-        send_sms_from_template(sms_template, context)
+        send_sms_from_template('offers/notifications/sms.txt', context)
