@@ -1,0 +1,169 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-20 19:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: abstract_models.py:39
+msgid "Name"
+msgstr "Имя"
+
+#: abstract_models.py:42
+msgid "Logo"
+msgstr "Логотип"
+
+#: abstract_models.py:69
+msgid "Full name"
+msgstr "Полное название"
+
+#: abstract_models.py:83 abstract_models.py:92
+msgid "Category"
+msgstr "Категория"
+
+#: abstract_models.py:84
+msgid "Categories"
+msgstr "Кутегории"
+
+#: abstract_models.py:89
+msgid "Is visible"
+msgstr "Видимость"
+
+#: abstract_models.py:95
+msgid "Title"
+msgstr "Название"
+
+#: abstract_models.py:97
+msgid "Code"
+msgstr "Код"
+
+#: abstract_models.py:99 admin/__init__.py:94
+msgid "Price"
+msgstr "Цена"
+
+#: abstract_models.py:102
+msgid "Currency"
+msgstr "Валюта"
+
+#: abstract_models.py:104
+msgid "Description"
+msgstr "Описание"
+
+#: abstract_models.py:106
+msgid "Date created"
+msgstr "Дата создания"
+
+#: abstract_models.py:109
+msgid "Date updated"
+msgstr "Дата обновления"
+
+#: abstract_models.py:123
+msgid "Not specified"
+msgstr "Не указано"
+
+#: abstract_models.py:180 abstract_models.py:244
+msgid "Product"
+msgstr "Товар"
+
+#: abstract_models.py:181
+msgid "Products"
+msgstr "Товары"
+
+#: abstract_models.py:227
+msgid "In stock"
+msgstr "В наличии"
+
+#: abstract_models.py:228
+msgid "Not available"
+msgstr "Нет в наличии"
+
+#: abstract_models.py:229
+msgid "Should be ordered"
+msgstr "Под заказ"
+
+#: abstract_models.py:232
+msgid "Qty"
+msgstr "Количество"
+
+#: abstract_models.py:234
+msgid "Min qty"
+msgstr "Минимальное количество на складе"
+
+#: abstract_models.py:237
+msgid "Availability"
+msgstr "Наличие"
+
+#: abstract_models.py:247
+msgid "File"
+msgstr "Файл"
+
+#: abstract_models.py:249
+msgid "Ordering"
+msgstr "Порядок"
+
+#: abstract_models.py:269 admin/__init__.py:70 admin/__init__.py:124
+msgid "Preview"
+msgstr "Просмотр"
+
+#: abstract_models.py:274
+msgid "Product image"
+msgstr "Изображение товара"
+
+#: abstract_models.py:275
+msgid "Product images"
+msgstr "Изображения товаров"
+
+#: admin/__init__.py:74
+msgid "View"
+msgstr "Показать на сайте"
+
+#: admin/__init__.py:76
+msgid "Link"
+msgstr "Ссилка"
+
+#: admin/__init__.py:115
+msgid "Product count"
+msgstr "Количество товаров"
+
+#: forms.py:18
+msgid "Newest"
+msgstr "Новые"
+
+#: forms.py:19
+msgid "Price (high-low)"
+msgstr "От дорогим к дешевым"
+
+#: forms.py:20
+msgid "Price (low-high)"
+msgstr "От дешевых к дорогим"
+
+#: forms.py:21
+msgid "A-Z"
+msgstr "А-Я"
+
+#: forms.py:22
+msgid "Z-A"
+msgstr "Я-А"
+
+#: forms.py:25
+msgid "Query"
+msgstr "Поисковый запрос"
+
+#: forms.py:28
+msgid "Order by"
+msgstr "Сортировать по"

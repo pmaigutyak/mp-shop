@@ -1,0 +1,166 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2017-03-20 19:22+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: abstract_models.py:39
+msgid "Name"
+msgstr ""
+
+#: abstract_models.py:42
+msgid "Logo"
+msgstr ""
+
+#: abstract_models.py:69
+msgid "Full name"
+msgstr ""
+
+#: abstract_models.py:83 abstract_models.py:92
+msgid "Category"
+msgstr ""
+
+#: abstract_models.py:84
+msgid "Categories"
+msgstr ""
+
+#: abstract_models.py:89
+msgid "Is visible"
+msgstr ""
+
+#: abstract_models.py:95
+msgid "Title"
+msgstr ""
+
+#: abstract_models.py:97
+msgid "Code"
+msgstr ""
+
+#: abstract_models.py:99 admin/__init__.py:94
+msgid "Price"
+msgstr ""
+
+#: abstract_models.py:102
+msgid "Currency"
+msgstr ""
+
+#: abstract_models.py:104
+msgid "Description"
+msgstr ""
+
+#: abstract_models.py:106
+msgid "Date created"
+msgstr ""
+
+#: abstract_models.py:109
+msgid "Date updated"
+msgstr ""
+
+#: abstract_models.py:123
+msgid "Not specified"
+msgstr ""
+
+#: abstract_models.py:180 abstract_models.py:244
+msgid "Product"
+msgstr ""
+
+#: abstract_models.py:181
+msgid "Products"
+msgstr ""
+
+#: abstract_models.py:227
+msgid "In stock"
+msgstr ""
+
+#: abstract_models.py:228
+msgid "Not available"
+msgstr ""
+
+#: abstract_models.py:229
+msgid "Should be ordered"
+msgstr ""
+
+#: abstract_models.py:232
+msgid "Qty"
+msgstr ""
+
+#: abstract_models.py:234
+msgid "Min qty"
+msgstr ""
+
+#: abstract_models.py:237
+msgid "Availability"
+msgstr ""
+
+#: abstract_models.py:247
+msgid "File"
+msgstr ""
+
+#: abstract_models.py:249
+msgid "Ordering"
+msgstr ""
+
+#: abstract_models.py:269 admin/__init__.py:70 admin/__init__.py:124
+msgid "Preview"
+msgstr ""
+
+#: abstract_models.py:274
+msgid "Product image"
+msgstr ""
+
+#: abstract_models.py:275
+msgid "Product images"
+msgstr ""
+
+#: admin/__init__.py:74
+msgid "View"
+msgstr ""
+
+#: admin/__init__.py:76
+msgid "Link"
+msgstr ""
+
+#: admin/__init__.py:115
+msgid "Product count"
+msgstr ""
+
+#: forms.py:18
+msgid "Newest"
+msgstr ""
+
+#: forms.py:19
+msgid "Price (high-low)"
+msgstr ""
+
+#: forms.py:20
+msgid "Price (low-high)"
+msgstr ""
+
+#: forms.py:21
+msgid "A-Z"
+msgstr ""
+
+#: forms.py:22
+msgid "Z-A"
+msgstr ""
+
+#: forms.py:25
+msgid "Query"
+msgstr ""
+
+#: forms.py:28
+msgid "Order by"
+msgstr ""
