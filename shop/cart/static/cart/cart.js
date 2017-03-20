@@ -36,8 +36,6 @@ CartItemControl = function (params) {
     this.$remove = this.$container.find('[data-role=remove-cart-item]');
     this.$subtotal = this.$container.find('[data-role=cart-item-subtotal]');
 
-    console.log(this.$container);
-
     this.$input.change(function () {
         var data = {
             csrfmiddlewaretoken: self.csrf,
