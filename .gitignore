@@ -15,3 +15,4 @@ media
 static-collect
 debug.log
 dist
+django_mp_shop.egg-info

@@ -2,13 +2,15 @@
 from django import forms
 
 from shop.attributes.models import ProductAttributeValue
+from shop.attributes.constants import ATTR_TYPE_SELECT
 
 
 class SearchProductAttrMixin(object):
 
     def __init__(self, products, category, *args, **kwargs):
 
-        self._attributes = category.attributes.all()
+        self._attributes = category.attributes.all().filter(
+                type=ATTR_TYPE_SELECT, is_filter=True).order_by('name')
 
         super(SearchProductAttrMixin, self).__init__(
             products, category, *args, **kwargs)
