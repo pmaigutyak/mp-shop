@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:46+0200\n"
+"POT-Creation-Date: 2017-03-21 19:59+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -50,7 +50,7 @@ msgstr ""
 msgid "Product"
 msgstr ""
 
-#: models.py:34
+#: models.py:34 templates/offers/notifications/email.html:10
 msgid "Name"
 msgstr ""
 
@@ -58,11 +58,11 @@ msgstr ""
 msgid "Mobile phone"
 msgstr ""
 
-#: models.py:40
+#: models.py:40 templates/offers/notifications/email.html:13
 msgid "Email"
 msgstr ""
 
-#: models.py:42
+#: models.py:42 templates/offers/notifications/email.html:19
 msgid "Offer"
 msgstr ""
 
@@ -78,14 +78,38 @@ msgstr ""
 msgid "Product price offers"
 msgstr ""
 
-#: templates/offers/price_offer_form.html:14
+#: templates/offers/notifications/email.html:5
+msgid "New price offer #"
+msgstr ""
+
+#: templates/offers/notifications/email.html:7
+msgid "Product title"
+msgstr ""
+
+#: templates/offers/notifications/email.html:16
+msgid "Mobile"
+msgstr ""
+
+#: templates/offers/notifications/email.html:23
+msgid "Show in admin"
+msgstr ""
+
+#: templates/offers/notifications/email.html:26
+msgid "Show on site"
+msgstr ""
+
+#: templates/offers/price_offer_modal.html:14
 msgid "Запропонувати свою ціну для товару"
-msgstr ""
+msgstr "Create price offer"
 
-#: templates/offers/price_offer_form.html:46
+#: templates/offers/price_offer_modal.html:23
 msgid "Відмінити"
-msgstr ""
+msgstr "Cancel"
 
-#: templates/offers/price_offer_form.html:49
+#: templates/offers/price_offer_modal.html:26
 msgid "Надіслати пропозицію"
+msgstr "Send offer"
+
+#: views.py:62
+msgid "Offer successfully added"
 msgstr ""
