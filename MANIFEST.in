@@ -1,2 +1,17 @@
-include README.md LICENSE requirements.txt
+include README.md
+include LICENSE
+include requirements.txt
+recursive-include shop/attributes/locale *
+recursive-include shop/cart/locale *
+recursive-include shop/cart/static *
+recursive-include shop/comparison/locale *
+recursive-include shop/currencies/locale *
+recursive-include shop/flags/locale *
+recursive-include shop/offers/locale *
+recursive-include shop/offers/static *
+recursive-include shop/offers/templates *
+recursive-include shop/orders/locale *
+recursive-include shop/products/locale *
+recursive-include shop/wishlist/locale *
+recursive-include shop/wishlist/templates *
 prune *.pyc
