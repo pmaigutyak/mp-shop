@@ -176,7 +176,7 @@ class AbstractProduct(models.Model):
 
     class Meta:
         abstract = True
-        ordering = ['-date_created']
+        ordering = ['-id']
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
 
