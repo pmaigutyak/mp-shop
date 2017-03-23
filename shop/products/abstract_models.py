@@ -84,6 +84,28 @@ class AbstractProductCategory(MPTTModel):
         verbose_name_plural = _('Categories')
 
 
+class ProductQuerySet(models.QuerySet):
+
+    def visible(self):
+        return self.filter(is_visible=True)
+
+
+class ProductManager(models.Manager):
+
+    def get_query_set(self):
+        return ProductQuerySet(self.model, using=self._db)
+
+    def visible(self):
+        return self.filter(is_visible=True)
+
+
+class ProductVisibilityManager(models.Manager):
+
+    def get_queryset(self):
+        queryset = super(ProductVisibilityManager, self).get_queryset()
+        return queryset.filter(is_visible=True)
+
+
 class AbstractProduct(models.Model):
 
     is_visible = models.BooleanField(_('Is visible'), default=True)
@@ -107,6 +129,9 @@ class AbstractProduct(models.Model):
 
     date_updated = models.DateTimeField(
         _("Date updated"), auto_now=True, db_index=True)
+
+    objects = ProductManager()
+    visible = ProductVisibilityManager()
 
     def __init__(self, *args, **kwargs):
 

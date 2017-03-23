@@ -12,7 +12,7 @@ class ProductFlag(models.Model):
         return self.title
 
     def get_random_products(self, count=6):
-        return self.products.order_by('?')[:count]
+        return self.products.visible().order_by('?')[:count]
 
     def get_absolute_url(self):
         return reverse('products:by-flag', kwargs={'flag_pk': self.pk})

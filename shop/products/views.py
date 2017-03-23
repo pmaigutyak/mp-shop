@@ -17,7 +17,7 @@ def product_list(request, category_slug, category_pk,
 
     categories = category.get_descendants(include_self=True)
 
-    products = Product.objects.filter(category__in=categories)
+    products = Product.visible.filter(category__in=categories)
 
     form = search_form_class(
         data=request.GET, products=products, category=category)
@@ -37,7 +37,7 @@ def product_search(request):
 
     Product = apps.get_model('products', 'Product')
 
-    form = SearchProductForm(Product.objects.all(), data=request.GET)
+    form = SearchProductForm(Product.visible.all(), data=request.GET)
 
     paginator = Paginator(form.get_objects(), per_page=12, request=request)
 
@@ -53,6 +53,6 @@ def product_info(request, product_slug, product_pk):
 
     Product = apps.get_model('products', 'Product')
 
-    product = get_object_or_404(Product, pk=product_pk)
+    product = get_object_or_404(Product.visible.all(), pk=product_pk)
 
     return render(request, 'products/info.html', {'product': product})

@@ -10,7 +10,7 @@ def get_products_by_flag(request, flag_pk):
 
     flag = get_object_or_404(ProductFlag, pk=flag_pk)
 
-    paginator = Paginator(flag.products.all(), per_page=18, request=request)
+    paginator = Paginator(flag.products.visible(), per_page=18, request=request)
 
     context = {
         'flag': flag,
