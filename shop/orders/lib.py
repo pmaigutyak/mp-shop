@@ -1,4 +1,5 @@
 
+from django.apps import apps
 from django.conf import settings
 from django.core.mail import mail_managers, send_mail
 from django.utils.translation import ugettext_lazy as _
@@ -18,6 +19,14 @@ def send_new_order_notifications(order):
     html = render_to_string(email_template_name, context)
 
     mail_managers(subject=subject, message='', html_message=html)
+
+    if apps.is_installed('turbosms'):
+
+        from turbosms.lib import send_sms_from_template
+
+        sms_template_name = 'orders/sms/new_order_notification_for_admins.txt'
+
+        send_sms_from_template(sms_template_name, context)
 
     if order.email:
 

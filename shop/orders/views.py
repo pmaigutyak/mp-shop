@@ -28,6 +28,7 @@ def checkout(request, form_class=CheckoutForm):
 
         form_params['initial'] = {
             'name': user.first_name,
+            'surname': user.last_name,
             'email': user.email,
             'mobile': profile.mobile if profile is not None else ''
         }
