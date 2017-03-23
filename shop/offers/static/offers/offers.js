@@ -2,7 +2,7 @@
 PriceOfferModal = function (params) {
     var self = this;
     this.url = params.url;
-    this.$target = $('[data-role=show-price-offer-modal]');
+    this.$target = params.$target;
 
     this.$target.click(function () {
         $.get(self.url, function (response) {

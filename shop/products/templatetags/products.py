@@ -21,9 +21,14 @@ def get_root_categories():
 
 @register.simple_tag(takes_context=True)
 def get_printable_product_price(context, product):
-    currency = context.request.session.get(CURRENCY_SESSION_KEY)
 
-    if currency is not None:
-        return product.price.convert(currency, printable=True)
+    from shop.currencies.models import ExchangeRate
+
+    dst_currency = context.request.session.get(CURRENCY_SESSION_KEY)
+
+    if dst_currency is not None:
+        return ExchangeRate.convert(
+            product.price.initial, product.currency, int(dst_currency),
+            printable=True)
 
     return product.price.printable_default
