@@ -1,6 +1,8 @@
 
 from django import forms
 
+from natsort import natsorted
+
 from shop.attributes.models import ProductAttributeValue
 from shop.attributes.constants import ATTR_TYPE_SELECT
 
@@ -41,7 +43,9 @@ class SearchProductAttrMixin(object):
 
     def _build_attr_field(self, attr, available_options):
 
-        choices = [(o.id, o.option) for o in available_options[attr.pk]]
+        options = natsorted(available_options[attr.pk], key=lambda o: o.option)
+
+        choices = [(o.id, o.option) for o in options]
 
         return forms.MultipleChoiceField(
             widget=forms.CheckboxSelectMultiple, label=attr.name,
