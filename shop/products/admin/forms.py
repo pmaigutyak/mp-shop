@@ -17,6 +17,12 @@ class ProductForm(forms.ModelForm):
         if 'category' in self.changed_data:
             product.attribute_values.all().delete()
 
+        images = self.cleaned_data.get('images', [])
+
+        for image in images:
+            if image:
+                product.images.create(file=image)
+
         return product
 
     class Meta:
