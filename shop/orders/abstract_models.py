@@ -103,11 +103,11 @@ class AbstractOrderProduct(models.Model):
 
     @property
     def default_subtotal(self):
-        return self.parent.price.default * self.qty
+        return self.price * self.qty
 
     @property
     def printable_default_price(self):
-        return format_printable_price(self.parent.price.default)
+        return format_printable_price(self.price)
 
     @property
     def printable_default_subtotal(self):
