@@ -12,16 +12,10 @@ class ProductForm(forms.ModelForm):
     images = MultiFileField(max_num=100, min_num=1, required=False)
 
     def save(self, commit=True):
-        product = super(ProductForm, self).save()
+        product = super(ProductForm, self).save(commit)
 
         if 'category' in self.changed_data:
             product.attribute_values.all().delete()
-
-        images = self.cleaned_data.get('images', [])
-
-        for image in images:
-            if image:
-                product.images.create(file=image)
 
         return product
 

@@ -93,6 +93,16 @@ class ProductAdmin(TranslationAdmin):
 
     printable_price.short_description = _('Price')
 
+    def save_model(self, request, obj, form, change):
+
+        product = form.save()
+
+        images = form.cleaned_data.get('images', [])
+
+        for image in images:
+            if image:
+                product.images.create(file=image)
+
 
 class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
 
