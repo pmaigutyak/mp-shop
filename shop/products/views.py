@@ -49,10 +49,36 @@ def product_search(request):
     return render(request, 'products/search.html', context)
 
 
+def _update_recently_viewed_products(request, product_pk, count=6):
+
+    product_ids = request.session.get('recently_viewed_product_ids', [])
+
+    if product_pk in product_ids:
+        product_ids.remove(product_pk)
+
+    product_ids.insert(0, product_pk)
+
+    if len(product_ids) > count:
+        product_ids = product_ids[:count]
+
+    request.session['recently_viewed_product_ids'] = product_ids
+
+    return product_ids
+
+
 def product_info(request, product_slug, product_pk):
 
     Product = apps.get_model('products', 'Product')
 
     product = get_object_or_404(Product.visible.all(), pk=product_pk)
 
-    return render(request, 'products/info.html', {'product': product})
+    recently_viewed_product_ids = _update_recently_viewed_products(
+        request, product_pk)
+
+    context = {
+        'recently_viewed_products': Product.objects.filter(
+            pk__in=recently_viewed_product_ids),
+        'product': product
+    }
+
+    return render(request, 'products/info.html', context)
