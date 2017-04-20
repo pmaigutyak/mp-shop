@@ -60,12 +60,16 @@ class AbstractOrder(models.Model):
     def printable_name(self):
         return _('Order #%s') % self.id
 
+    printable_name.fget.short_description = _('Order')
+
     def __unicode__(self):
         return self.printable_name
 
     @property
     def product_count(self):
         return sum([item.qty for item in self.products.all()])
+
+    product_count.fget.short_description = _('Product count')
 
     @property
     def default_total(self):
@@ -74,6 +78,8 @@ class AbstractOrder(models.Model):
     @property
     def printable_default_total(self):
         return format_printable_price(self.default_total)
+
+    printable_default_total.fget.short_description = _('Total')
 
     class Meta:
         abstract = True
@@ -101,6 +107,8 @@ class AbstractOrderProduct(models.Model):
     def order_name(self):
         return self.order.printable_name
 
+    order_name.fget.short_description = _('Order')
+
     @property
     def default_subtotal(self):
         return self.price * self.qty
@@ -126,6 +134,8 @@ class AbstractOrderProduct(models.Model):
             return self.parent.title
 
         return self.title
+
+    product_title.fget.short_description = _('Title')
 
     def __unicode__(self):
         return self.product_title
