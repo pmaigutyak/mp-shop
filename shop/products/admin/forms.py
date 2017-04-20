@@ -1,7 +1,7 @@
 
 from django.apps import apps
-
 from django import forms
+from django.utils.translation import ugettext_lazy as _
 
 from suit.sortables import SortableTabularInline
 from multiupload.fields import MultiFileField
@@ -9,7 +9,8 @@ from multiupload.fields import MultiFileField
 
 class ProductForm(forms.ModelForm):
 
-    images = MultiFileField(max_num=100, min_num=1, required=False)
+    images = MultiFileField(
+        label=_('Images'), max_num=100, min_num=1, required=False)
 
     def save(self, commit=True):
         product = super(ProductForm, self).save(commit)
