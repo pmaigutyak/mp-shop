@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:47+0200\n"
+"POT-Creation-Date: 2017-05-08 14:48+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -66,35 +66,48 @@ msgstr ""
 msgid "Order #%s"
 msgstr ""
 
-#: abstract_models.py:80 abstract_models.py:87
+#: abstract_models.py:63 abstract_models.py:86 abstract_models.py:93
+#: abstract_models.py:110
 msgid "Order"
 msgstr ""
 
-#: abstract_models.py:81
+#: abstract_models.py:72
+msgid "Product count"
+msgstr ""
+
+#: abstract_models.py:82
+msgid "Total"
+msgstr ""
+
+#: abstract_models.py:87
 msgid "Orders"
 msgstr ""
 
-#: abstract_models.py:90
+#: abstract_models.py:96
 msgid "Product"
 msgstr ""
 
-#: abstract_models.py:93
+#: abstract_models.py:99
 msgid "Product title"
 msgstr ""
 
-#: abstract_models.py:95
+#: abstract_models.py:101
 msgid "Price (uah)"
 msgstr ""
 
-#: abstract_models.py:98
+#: abstract_models.py:104
 msgid "Quantity"
 msgstr ""
 
-#: abstract_models.py:135
+#: abstract_models.py:138
+msgid "Title"
+msgstr ""
+
+#: abstract_models.py:145
 msgid "Order product"
 msgstr ""
 
-#: abstract_models.py:136
+#: abstract_models.py:146
 msgid "Order products"
 msgstr ""
 
@@ -106,11 +119,11 @@ msgstr ""
 msgid "Select product or enter price"
 msgstr ""
 
-#: admin.py:77 admin.py:83
+#: admin.py:79 admin.py:85
 msgid "Show on site"
 msgstr ""
 
-#: lib.py:12
+#: lib.py:13
 #, python-format
 msgid "New order #%s"
 msgstr ""

@@ -53,10 +53,12 @@ class OrderAdmin(admin.ModelAdmin):
 
     list_display = (
         'printable_name', 'name', 'mobile', 'post_office', 'email',
-        'date_created', 'product_count', 'printable_default_total',
+        'date_created', 'product_count', 'printable_default_total', 'status',
     )
 
     search_fields = ('id', 'name', 'mobile', 'post_office', 'email', )
+
+    list_editable = ['status']
 
 
 class OrderProductAdmin(admin.ModelAdmin):
