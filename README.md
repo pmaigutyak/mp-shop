@@ -46,7 +46,7 @@ ExchangeRate.convert(100, CURRENCY_USD, CURRENCY_UAH, printable=True)
 ```
 from shop.currencies.models import ExchangeRate
 
-# returns: {2: 27.20, 3: 29.00}
+# returns: {2: 27.10, 3: 29.00}
 ExchangeRate.get_exchange_rates()
 ```
 
