@@ -156,8 +156,8 @@ class AbstractProduct(models.Model):
 
         index = 0
 
-        related_products = cls.objects.filter(category=category)\
-            .exclude(pk=exclude_pk)
+        related_products = cls.objects.filter(
+            is_visible=True, category=category).exclude(pk=exclude_pk)
 
         related_products_count = len(related_products)
 
