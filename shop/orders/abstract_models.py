@@ -48,7 +48,7 @@ class AbstractOrder(models.Model):
         _("Mobile phone"), max_length=255, blank=False, null=False)
 
     email = models.EmailField(
-        _("Email"), max_length=255, blank=False, null=False)
+        _("Email"), max_length=255, blank=True, null=True)
 
     date_created = models.DateTimeField(
         _('Date created'), auto_now_add=True, editable=False)
