@@ -1,6 +1,7 @@
 
 from django.apps import apps
 from django.shortcuts import get_object_or_404, render
+from django.views.generic.detail import DetailView
 
 from pure_pagination import Paginator
 
@@ -49,36 +50,44 @@ def product_search(request):
     return render(request, 'products/search.html', context)
 
 
-def _update_recently_viewed_products(request, product_pk, count=6):
+class ProductInfoView(DetailView):
 
-    product_ids = request.session.get('recently_viewed_product_ids', [])
+    model = apps.get_model('products', 'Product')
 
-    if product_pk in product_ids:
-        product_ids.remove(product_pk)
+    pk_url_kwarg = 'product_pk'
 
-    product_ids.insert(0, product_pk)
+    context_object_name = 'product'
 
-    if len(product_ids) > count:
-        product_ids = product_ids[:count]
+    template_name = 'products/info.html'
 
-    request.session['recently_viewed_product_ids'] = product_ids
+    def get_queryset(self):
+        return self.model.visible.all()
 
-    return product_ids
+    def update_viewed_products(self, count=6):
 
+        request = self.request
 
-def product_info(request, product_slug, product_pk):
+        product_pk = self.kwargs.get(self.pk_url_kwarg)
 
-    Product = apps.get_model('products', 'Product')
+        product_pks = request.session.get('viewed_product_pks', [])
 
-    product = get_object_or_404(Product.visible.all(), pk=product_pk)
+        if product_pk in product_pks:
+            product_pks.remove(product_pk)
 
-    recently_viewed_product_ids = _update_recently_viewed_products(
-        request, product_pk)
+        product_pks.insert(0, product_pk)
 
-    context = {
-        'recently_viewed_products': Product.objects.filter(
-            pk__in=recently_viewed_product_ids),
-        'product': product
-    }
+        if len(product_pks) > count:
+            product_pks = product_pks[:count]
 
-    return render(request, 'products/info.html', context)
+        request.session['viewed_product_pks'] = product_pks
+
+        return product_pks
+
+    def get_viewed_products(self):
+        viewed_product_pks = self.update_viewed_products()
+        return self.get_queryset().filter(pk__in=viewed_product_pks)
+
+    def get_context_data(self, **kwargs):
+        context = super(ProductInfoView, self).get_context_data(**kwargs)
+        context['recently_viewed_products'] = self.get_viewed_products()
+        return context
