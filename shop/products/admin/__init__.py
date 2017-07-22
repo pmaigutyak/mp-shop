@@ -123,10 +123,6 @@ class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
     preview.short_description = _('Preview')
 
 
-admin.site.register_view(
-    path='products/product-statistic/', view=views.product_statistic,
-    urlname='product-statistic')
-
 if 'shop.products' in settings.INSTALLED_APPS:
     import shop.products.translation
     from shop.products.models import Product, ProductCategory

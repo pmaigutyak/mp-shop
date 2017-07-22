@@ -242,27 +242,6 @@ class ProductPriceContainer(object):
         return format_printable_price(self.initial, self.currency)
 
 
-class ProductQTYMixin(object):
-
-    AVAILABILITY_IN_STOCK = 0
-    AVAILABILITY_ORDER = 1
-    AVAILABILITY_NOT_AVAILABLE = 2
-
-    AVAILABILITY_CHOICES = (
-        (AVAILABILITY_IN_STOCK, _('In stock')),
-        (AVAILABILITY_NOT_AVAILABLE, _('Not available')),
-        (AVAILABILITY_ORDER, _('Should be ordered')),
-    )
-
-    qty = models.IntegerField(_('Qty'), blank=True, default=1)
-
-    min_qty = models.PositiveIntegerField(_('Min qty'), blank=True, default=0)
-
-    availability = models.PositiveSmallIntegerField(
-        _('Availability'), choices=AVAILABILITY_CHOICES,
-        default=AVAILABILITY_IN_STOCK)
-
-
 class AbstractProductImage(OrderedModelBase):
 
     product = models.ForeignKey(

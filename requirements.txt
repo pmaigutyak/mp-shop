@@ -1,4 +1,11 @@
 
+django
+Pillow
+xhtml2pdf==0.1a3
+django-easy-pdf==0.1.0
 django-model-search
-
+django-pure-pagination
+django-modeltranslation
+django-widget-tweaks
+sorl-thumbnail
 natsort
