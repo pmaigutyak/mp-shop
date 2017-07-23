@@ -1,6 +1,9 @@
 
 import re
 
+from django.utils.translation import ugettext_lazy as _
+from django.utils.safestring import mark_safe
+
 
 def round_number(value, decimal_places=2, down=False):
 
@@ -23,3 +26,8 @@ def format_number(value):
 def format_price(price, round_price=False):
     price = float(price)
     return format_number(round_number(price) if round_price else price)
+
+
+def get_show_on_site_link(url):
+    return mark_safe(
+        '<a href="%s" target="_blank">%s</a>' % (url, _('Show on site')))

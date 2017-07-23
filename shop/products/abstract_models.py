@@ -9,6 +9,7 @@ from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils import timezone
 
+from sorl.thumbnail import get_thumbnail
 from slugify import slugify_url
 from mptt.models import MPTTModel, TreeForeignKey
 from ordered_model.models import OrderedModelBase
@@ -67,6 +68,18 @@ class AbstractProductCategory(MPTTModel):
             return self.name
 
     full_name.fget.short_description = _('Full name')
+
+    @property
+    def preview(self):
+        try:
+            url = get_thumbnail(
+                self.logo.file, '100x100', crop='center', quality=99).url
+        except Exception:
+            return '-----'
+
+        return mark_safe('<img src="%s" style="width: 100px;" />' % url)
+
+    preview.fget.short_description = _('Preview')
 
     def __unicode__(self):
         return self.full_name
@@ -260,13 +273,11 @@ class AbstractProductImage(OrderedModelBase):
 
     @property
     def preview(self):
-        from sorl.thumbnail import get_thumbnail
-
         try:
             url = get_thumbnail(
                 self.file.file, '100x100', crop='center', quality=99).url
         except Exception:
-            url = '%serror.png' % settings.IMG_URL
+            return '-----'
 
         return mark_safe('<img src="%s" style="width: 100px;" />' % url)
 

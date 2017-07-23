@@ -19,6 +19,8 @@ from shop.currencies.models import ExchangeRate
 from shop.products.admin.forms import ProductForm, ProductImageInline
 from shop.products.admin import views
 
+from shop.lib import get_show_on_site_link
+
 
 def get_preview(img):
     from sorl.thumbnail import get_thumbnail
@@ -39,16 +41,19 @@ class ProductAdmin(TranslationAdmin):
 
     list_display = [
         'id', 'title', 'category', 'printable_price', 'code', 'date_updated',
-        'link', 'preview'
+        'get_show_link', 'get_preview'
     ]
 
     list_display_links = ('title', )
 
     list_filter = ('category', )
 
+    ordering = ['-id']
+
     search_fields = apps.get_model('products', 'Product').get_search_fields()
 
     def __init__(self, *args, **kwargs):
+
         if IS_CKEDITOR_ENABLED_FOR_PRODUCT_DESCRIPTION:
             self.formfield_overrides = {
                 models.TextField: {'widget': CKEditorWidget}
@@ -56,24 +61,19 @@ class ProductAdmin(TranslationAdmin):
 
         super(ProductAdmin, self).__init__(*args, **kwargs)
 
-    def preview(self, item):
+    def get_preview(self, item):
 
-        if not item.logo:
-            return '----'
+        if item.logo:
+            return item.logo.preview
 
-        img_tag = get_preview(item.logo.file)
+        return '----'
 
-        template = '<a href="%s" class="preview">%s</a>'
+    get_preview.short_description = _('Preview')
 
-        return mark_safe(template % (item.logo.file.url, img_tag))
+    def get_show_link(self, item):
+        return get_show_on_site_link(item.get_absolute_url())
 
-    preview.short_description = _('Preview')
-
-    def link(self, item):
-        return mark_safe('<a href="%s" target="_blank">%s</a>' % (
-            item.get_absolute_url(), _('View')))
-
-    link.short_description = _('Link')
+    get_show_link.short_description = _('Show on site')
 
     def printable_price(self, item):
 
@@ -112,15 +112,6 @@ class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
         return item.products.count()
 
     product_count.short_description = _('Product count')
-
-    def preview(self, item):
-
-        if not item.logo:
-            return '----'
-
-        return get_preview(item.logo.file)
-
-    preview.short_description = _('Preview')
 
 
 if 'shop.products' in settings.INSTALLED_APPS:
