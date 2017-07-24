@@ -75,6 +75,14 @@ class ProductFormMixin(object):
 
         return data
 
+    def save(self, commit=True):
+        product = super(ProductFormMixin, self).save(commit)
+
+        if 'category' in self.changed_data:
+            product.attribute_values.all().delete()
+
+        return product
+
     def _build_attr_fields(self):
 
         fields = self.fields = deepcopy(self.base_fields)
