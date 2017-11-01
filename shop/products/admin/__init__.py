@@ -18,6 +18,7 @@ from shop.currencies.models import ExchangeRate
 
 from shop.products.admin.forms import ProductForm, ProductImageInline
 from shop.products.admin import views
+from shop.products.admin import actions
 
 from shop.lib import get_show_on_site_link
 
@@ -36,6 +37,8 @@ def get_preview(img):
 class ProductAdmin(TranslationAdmin):
 
     inlines = [ProductImageInline]
+
+    actions = [actions.refresh_product_logos]
 
     form = ProductForm
 
