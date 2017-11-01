@@ -9,25 +9,25 @@ register = template.Library()
 
 @register.assignment_tag
 def get_categories():
-    ProductCategory = apps.get_model('products', 'ProductCategory')
-    return ProductCategory.objects.all()
+    category_model = apps.get_model('products', 'ProductCategory')
+    return category_model.objects.all()
 
 
 @register.assignment_tag
 def get_root_categories():
-    ProductCategory = apps.get_model('products', 'ProductCategory')
-    return ProductCategory.objects.root_nodes()
+    category_model = apps.get_model('products', 'ProductCategory')
+    return category_model.objects.root_nodes()
 
 
 @register.simple_tag(takes_context=True)
 def get_printable_product_price(context, product):
 
-    from shop.currencies.models import ExchangeRate
+    exchange_rate_model = apps.get_model('currencies', 'ExchangeRate')
 
     dst_currency = context.request.session.get(CURRENCY_SESSION_KEY)
 
     if dst_currency is not None:
-        return ExchangeRate.convert(
+        return exchange_rate_model.convert(
             product.price.initial, product.currency, int(dst_currency),
             printable=True)
 

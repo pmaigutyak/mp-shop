@@ -66,7 +66,7 @@ class OrderAdmin(admin.ModelAdmin):
     def get_preview(self, item):
 
         try:
-            return item.products.first().parent.logo.preview
+            return item.products.first().parent.preview
         except Exception:
             return '----'
 
@@ -98,7 +98,7 @@ class OrderProductAdmin(admin.ModelAdmin):
     def get_preview(self, item):
 
         if item.parent:
-            return item.parent.logo.preview
+            return item.parent.preview
 
         return '----'
 

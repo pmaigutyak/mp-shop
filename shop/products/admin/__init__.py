@@ -62,11 +62,7 @@ class ProductAdmin(TranslationAdmin):
         super(ProductAdmin, self).__init__(*args, **kwargs)
 
     def get_preview(self, item):
-
-        if item.logo:
-            return item.logo.preview
-
-        return '----'
+        return item.preview
 
     get_preview.short_description = _('Preview')
 

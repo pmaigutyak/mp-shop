@@ -143,14 +143,30 @@ class AbstractProduct(models.Model):
     date_updated = models.DateTimeField(
         _("Date updated"), auto_now=True, db_index=True)
 
+    logo = models.ImageField(
+        _("Logo"), upload_to=get_product_image_upload_path, max_length=255,
+        blank=True, null=True, editable=False)
+
     objects = ProductManager()
     visible = ProductVisibilityManager()
 
     def __init__(self, *args, **kwargs):
 
+        self._saved = False
+
         super(AbstractProduct, self).__init__(*args, **kwargs)
 
         self.price = ProductPriceContainer(self)
+
+    def save(self, *args, **kwargs):
+        super(AbstractProduct, self).save(*args, **kwargs)
+
+        if not self._saved:
+            self._saved = True
+            photo = self.images.first()
+            if photo:
+                self.logo.name = photo.file.path
+                self.save(update_fields=['logo'])
 
     @property
     def slug(self):
@@ -161,8 +177,16 @@ class AbstractProduct(models.Model):
         return self.code or _('Not specified')
 
     @property
-    def logo(self):
-        return self.images.first()
+    def preview(self):
+        try:
+            url = get_thumbnail(
+                self.logo.file, '100x100', crop='center', quality=99).url
+        except Exception:
+            return '-----'
+
+        return mark_safe('<img src="%s" style="width: 100px;" />' % url)
+
+    preview.fget.short_description = _('Preview')
 
     @classmethod
     def get_related_products(cls, category, exclude_pk, count=6):
