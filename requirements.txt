@@ -1,6 +1,9 @@
 
 xhtml2pdf==0.1a3
 django-easy-pdf==0.1.0
+html5lib==0.9999999
+django-easy-select2
+django-multiupload
 django-model-search
 django-pure-pagination
 django-modeltranslation
