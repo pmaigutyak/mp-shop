@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:45+0200\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,14 +19,18 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: models.py:9
+#: shop/flags/models.py:9
 msgid "Title"
 msgstr "Назва"
 
-#: models.py:21
+#: shop/flags/models.py:21
 msgid "Product flag"
 msgstr "Прапорець товару"
 
-#: models.py:22
+#: shop/flags/models.py:22
 msgid "Product flags"
 msgstr "Прапорці товарів"
+
+#: shop/flags/templates/flags/api/flags.html:16
+msgid "Переглянути всі"
+msgstr ""

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:43+0200\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,22 +17,22 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: views.py:38
+#: shop/comparison/views.py:38
 #, python-format
 msgid "Only %s products can be compared"
 msgstr ""
 
-#: views.py:42
+#: shop/comparison/views.py:42
 #, python-format
 msgid "%s already in comparison list"
 msgstr ""
 
-#: views.py:48
+#: shop/comparison/views.py:48
 #, python-format
 msgid "%s added to comparison"
 msgstr ""
 
-#: views.py:61
+#: shop/comparison/views.py:61
 #, python-format
 msgid "%s removed from comparison"
 msgstr ""

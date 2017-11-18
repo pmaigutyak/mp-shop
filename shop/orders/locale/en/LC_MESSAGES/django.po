@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-08 14:48+0300\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,169 +17,173 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: abstract_models.py:18
+#: shop/orders/abstract_models.py:18
 msgid "Customer"
 msgstr ""
 
-#: abstract_models.py:21
+#: shop/orders/abstract_models.py:21
 msgid "Payment method"
 msgstr ""
 
-#: abstract_models.py:28
+#: shop/orders/abstract_models.py:28
 msgid "Delivery method"
 msgstr ""
 
-#: abstract_models.py:35
+#: shop/orders/abstract_models.py:35
 msgid "Status"
 msgstr ""
 
-#: abstract_models.py:38
+#: shop/orders/abstract_models.py:38
 msgid "Name"
 msgstr ""
 
-#: abstract_models.py:41
+#: shop/orders/abstract_models.py:41
 msgid "Surname"
 msgstr ""
 
-#: abstract_models.py:44
+#: shop/orders/abstract_models.py:44
 msgid "Address and number of post office"
 msgstr ""
 
-#: abstract_models.py:48
+#: shop/orders/abstract_models.py:48
 msgid "Mobile phone"
 msgstr ""
 
-#: abstract_models.py:51
+#: shop/orders/abstract_models.py:51
 msgid "Email"
 msgstr ""
 
-#: abstract_models.py:54
+#: shop/orders/abstract_models.py:54
 msgid "Date created"
 msgstr ""
 
-#: abstract_models.py:57
+#: shop/orders/abstract_models.py:57
 msgid "Comment"
 msgstr ""
 
-#: abstract_models.py:61
+#: shop/orders/abstract_models.py:61
 #, python-format
 msgid "Order #%s"
 msgstr ""
 
-#: abstract_models.py:63 abstract_models.py:86 abstract_models.py:93
-#: abstract_models.py:110
+#: shop/orders/abstract_models.py:63 shop/orders/abstract_models.py:86
+#: shop/orders/abstract_models.py:93 shop/orders/abstract_models.py:110
 msgid "Order"
 msgstr ""
 
-#: abstract_models.py:72
+#: shop/orders/abstract_models.py:72
 msgid "Product count"
 msgstr ""
 
-#: abstract_models.py:82
+#: shop/orders/abstract_models.py:82
 msgid "Total"
 msgstr ""
 
-#: abstract_models.py:87
+#: shop/orders/abstract_models.py:87
 msgid "Orders"
 msgstr ""
 
-#: abstract_models.py:96
+#: shop/orders/abstract_models.py:96
 msgid "Product"
 msgstr ""
 
-#: abstract_models.py:99
+#: shop/orders/abstract_models.py:99
 msgid "Product title"
 msgstr ""
 
-#: abstract_models.py:101
+#: shop/orders/abstract_models.py:101
 msgid "Price (uah)"
 msgstr ""
 
-#: abstract_models.py:104
+#: shop/orders/abstract_models.py:104
 msgid "Quantity"
 msgstr ""
 
-#: abstract_models.py:138
+#: shop/orders/abstract_models.py:138
 msgid "Title"
 msgstr ""
 
-#: abstract_models.py:145
+#: shop/orders/abstract_models.py:145
 msgid "Order product"
 msgstr ""
 
-#: abstract_models.py:146
+#: shop/orders/abstract_models.py:146
 msgid "Order products"
 msgstr ""
 
-#: admin.py:27
+#: shop/orders/admin.py:29
 msgid "Select product or enter title"
 msgstr ""
 
-#: admin.py:41
+#: shop/orders/admin.py:43
 msgid "Select product or enter price"
 msgstr ""
 
-#: admin.py:79 admin.py:85
+#: shop/orders/admin.py:73 shop/orders/admin.py:105
+msgid "Preview"
+msgstr ""
+
+#: shop/orders/admin.py:96
 msgid "Show on site"
 msgstr ""
 
-#: lib.py:13
+#: shop/orders/lib.py:13
 #, python-format
 msgid "New order #%s"
 msgstr ""
 
-#: settings.py:9
+#: shop/orders/settings.py:9
 msgid "Self delivery"
 msgstr ""
 
-#: settings.py:10
+#: shop/orders/settings.py:10
 msgid "Nova Poshta"
 msgstr ""
 
-#: settings.py:11
+#: shop/orders/settings.py:11
 msgid "In Time"
 msgstr ""
 
-#: settings.py:12
+#: shop/orders/settings.py:12
 msgid "Gunsel"
 msgstr ""
 
-#: settings.py:13
+#: shop/orders/settings.py:13
 msgid "Avtoluks"
 msgstr ""
 
-#: settings.py:14
+#: shop/orders/settings.py:14
 msgid "Other"
 msgstr ""
 
-#: settings.py:18
+#: shop/orders/settings.py:18
 msgid "Cash payment"
 msgstr ""
 
-#: settings.py:19
+#: shop/orders/settings.py:19
 msgid "Cashless payment"
 msgstr ""
 
-#: settings.py:20
+#: shop/orders/settings.py:20
 msgid "C.O.D."
 msgstr ""
 
-#: settings.py:21
+#: shop/orders/settings.py:21
 msgid "Privat24 Payment"
 msgstr ""
 
-#: settings.py:25
+#: shop/orders/settings.py:25
 msgid "Not reviewed"
 msgstr ""
 
-#: settings.py:26
+#: shop/orders/settings.py:26
 msgid "Processing"
 msgstr ""
 
-#: settings.py:27
+#: shop/orders/settings.py:27
 msgid "Canceled"
 msgstr ""
 
-#: settings.py:28
+#: shop/orders/settings.py:28
 msgid "Completed"
 msgstr ""

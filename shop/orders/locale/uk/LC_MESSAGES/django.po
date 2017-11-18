@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-08 14:48+0300\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,169 +19,175 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: abstract_models.py:18
+#: shop/orders/abstract_models.py:18
 msgid "Customer"
 msgstr "Клієнт"
 
-#: abstract_models.py:21
+#: shop/orders/abstract_models.py:21
 msgid "Payment method"
 msgstr "Спосіб оплати"
 
-#: abstract_models.py:28
+#: shop/orders/abstract_models.py:28
 msgid "Delivery method"
 msgstr "Спосіб доставки"
 
-#: abstract_models.py:35
+#: shop/orders/abstract_models.py:35
 msgid "Status"
 msgstr "Статус"
 
-#: abstract_models.py:38
+#: shop/orders/abstract_models.py:38
 msgid "Name"
 msgstr "Ім'я"
 
-#: abstract_models.py:41
+#: shop/orders/abstract_models.py:41
 msgid "Surname"
 msgstr "Прізвище"
 
-#: abstract_models.py:44
+#: shop/orders/abstract_models.py:44
 msgid "Address and number of post office"
 msgstr "Адреса та номер поштової служби"
 
-#: abstract_models.py:48
+#: shop/orders/abstract_models.py:48
 msgid "Mobile phone"
 msgstr "Телефон"
 
-#: abstract_models.py:51
+#: shop/orders/abstract_models.py:51
 msgid "Email"
 msgstr "Email"
 
-#: abstract_models.py:54
+#: shop/orders/abstract_models.py:54
 msgid "Date created"
 msgstr "Дата створення"
 
-#: abstract_models.py:57
+#: shop/orders/abstract_models.py:57
 msgid "Comment"
 msgstr "Коментар"
 
-#: abstract_models.py:61
+#: shop/orders/abstract_models.py:61
 #, python-format
 msgid "Order #%s"
 msgstr "Замовлення #%s"
 
-#: abstract_models.py:63 abstract_models.py:86 abstract_models.py:93
-#: abstract_models.py:110
+#: shop/orders/abstract_models.py:63 shop/orders/abstract_models.py:86
+#: shop/orders/abstract_models.py:93 shop/orders/abstract_models.py:110
 msgid "Order"
 msgstr "Замовлення"
 
-#: abstract_models.py:72
+#: shop/orders/abstract_models.py:72
 msgid "Product count"
 msgstr "Кількість товарів"
 
-#: abstract_models.py:82
+#: shop/orders/abstract_models.py:82
 msgid "Total"
 msgstr "Загалом"
 
-#: abstract_models.py:87
+#: shop/orders/abstract_models.py:87
 msgid "Orders"
 msgstr "Замовлення"
 
-#: abstract_models.py:96
+#: shop/orders/abstract_models.py:96
 msgid "Product"
 msgstr "Товар"
 
-#: abstract_models.py:99
+#: shop/orders/abstract_models.py:99
 msgid "Product title"
 msgstr "Назва товару"
 
-#: abstract_models.py:101
+#: shop/orders/abstract_models.py:101
 msgid "Price (uah)"
 msgstr "Ціна"
 
-#: abstract_models.py:104
+#: shop/orders/abstract_models.py:104
 msgid "Quantity"
 msgstr "Кількість"
 
-#: abstract_models.py:138
+#: shop/orders/abstract_models.py:138
 msgid "Title"
 msgstr "Назва"
 
-#: abstract_models.py:145
+#: shop/orders/abstract_models.py:145
 msgid "Order product"
 msgstr "Замовлений товар"
 
-#: abstract_models.py:146
+#: shop/orders/abstract_models.py:146
 msgid "Order products"
 msgstr "Замовлені товари"
 
-#: admin.py:27
+#: shop/orders/admin.py:29
 msgid "Select product or enter title"
 msgstr "Виберіть товар або введіть назву"
 
-#: admin.py:41
+#: shop/orders/admin.py:43
 msgid "Select product or enter price"
 msgstr "Виберіть товар або введіть ціну"
 
-#: admin.py:79 admin.py:85
+#: shop/orders/admin.py:73 shop/orders/admin.py:105
+#, fuzzy
+#| msgid "Not reviewed"
+msgid "Preview"
+msgstr "Не переглянуто"
+
+#: shop/orders/admin.py:96
 msgid "Show on site"
 msgstr "Показати на сайті"
 
-#: lib.py:13
+#: shop/orders/lib.py:13
 #, python-format
 msgid "New order #%s"
 msgstr "Нове замовлення #%s"
 
-#: settings.py:9
+#: shop/orders/settings.py:9
 msgid "Self delivery"
 msgstr "Самовивіз"
 
-#: settings.py:10
+#: shop/orders/settings.py:10
 msgid "Nova Poshta"
 msgstr "Нова Пошта"
 
-#: settings.py:11
+#: shop/orders/settings.py:11
 msgid "In Time"
 msgstr "ІНТАЙМ"
 
-#: settings.py:12
+#: shop/orders/settings.py:12
 msgid "Gunsel"
 msgstr "Гюнсел"
 
-#: settings.py:13
+#: shop/orders/settings.py:13
 msgid "Avtoluks"
 msgstr "Автолюкс"
 
-#: settings.py:14
+#: shop/orders/settings.py:14
 msgid "Other"
 msgstr "Інше"
 
-#: settings.py:18
+#: shop/orders/settings.py:18
 msgid "Cash payment"
 msgstr "Оплата готівкою"
 
-#: settings.py:19
+#: shop/orders/settings.py:19
 msgid "Cashless payment"
 msgstr "Безготівковий розрахунок"
 
-#: settings.py:20
+#: shop/orders/settings.py:20
 msgid "C.O.D."
 msgstr "Накладений платіж"
 
-#: settings.py:21
+#: shop/orders/settings.py:21
 msgid "Privat24 Payment"
 msgstr "Оплата через Приват24"
 
-#: settings.py:25
+#: shop/orders/settings.py:25
 msgid "Not reviewed"
 msgstr "Не переглянуто"
 
-#: settings.py:26
+#: shop/orders/settings.py:26
 msgid "Processing"
 msgstr "В обробці"
 
-#: settings.py:27
+#: shop/orders/settings.py:27
 msgid "Canceled"
 msgstr "Відмінено"
 
-#: settings.py:28
+#: shop/orders/settings.py:28
 msgid "Completed"
 msgstr "Виконано"

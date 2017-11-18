@@ -19,6 +19,7 @@ from shop.currencies.models import ExchangeRate
 from shop.products.admin.forms import ProductForm, ProductImageInline
 from shop.products.admin import views
 from shop.products.admin import actions
+from shop.products.lib import refresh_products_logos
 
 from shop.lib import get_show_on_site_link
 
@@ -38,7 +39,7 @@ class ProductAdmin(TranslationAdmin):
 
     inlines = [ProductImageInline]
 
-    actions = [actions.refresh_product_logos]
+    actions = [actions.refresh_products_logos]
 
     form = ProductForm
 
@@ -96,11 +97,17 @@ class ProductAdmin(TranslationAdmin):
 
         product = form.save()
 
+        self._product_id = product.id
+
         images = form.cleaned_data.get('images', [])
 
         for image in images:
             if image:
                 product.images.create(file=image)
+
+    def save_related(self, request, form, formsets, change):
+        super(ProductAdmin, self).save_related(request, form, formsets, change)
+        refresh_products_logos([self._product_id])
 
 
 class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
@@ -114,7 +121,6 @@ class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
 
 
 if 'shop.products' in settings.INSTALLED_APPS:
-    import shop.products.translation
     from shop.products.models import Product, ProductCategory
 
     admin.site.register(Product, ProductAdmin)

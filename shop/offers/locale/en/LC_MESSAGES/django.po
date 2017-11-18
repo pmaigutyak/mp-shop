@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-22 08:27+0200\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,103 +17,106 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: admin.py:21
+#: shop/offers/admin.py:21
 msgid "View product"
 msgstr ""
 
-#: admin.py:23 models.py:31
+#: shop/offers/admin.py:23 shop/offers/models.py:31
 msgid "Product"
 msgstr ""
 
-#: lib.py:11
+#: shop/offers/lib.py:11
 #, python-format
 msgid "New product price offer #%s"
 msgstr ""
 
-#: models.py:15
+#: shop/offers/models.py:15
 msgid "Not reviewed"
 msgstr ""
 
-#: models.py:16
+#: shop/offers/models.py:16
 msgid "Processing"
 msgstr ""
 
-#: models.py:17
+#: shop/offers/models.py:17
 msgid "Canceled"
 msgstr ""
 
-#: models.py:18
+#: shop/offers/models.py:18
 msgid "Completed"
 msgstr ""
 
-#: models.py:23
+#: shop/offers/models.py:23
 msgid "User"
 msgstr ""
 
-#: models.py:26
+#: shop/offers/models.py:26
 msgid "Status"
 msgstr ""
 
-#: models.py:34 templates/offers/notifications/email.html:10
+#: shop/offers/models.py:34
+#: shop/offers/templates/offers/notifications/email.html:10
 msgid "Name"
 msgstr ""
 
-#: models.py:37
+#: shop/offers/models.py:37
 msgid "Mobile phone"
 msgstr ""
 
-#: models.py:40 templates/offers/notifications/email.html:13
+#: shop/offers/models.py:40
+#: shop/offers/templates/offers/notifications/email.html:13
 msgid "Email"
 msgstr ""
 
-#: models.py:42 templates/offers/notifications/email.html:19
+#: shop/offers/models.py:42
+#: shop/offers/templates/offers/notifications/email.html:19
 msgid "Offer"
 msgstr ""
 
-#: models.py:44
+#: shop/offers/models.py:44
 msgid "Date created"
 msgstr ""
 
-#: models.py:51
+#: shop/offers/models.py:51
 msgid "Product price offer"
 msgstr ""
 
-#: models.py:52
+#: shop/offers/models.py:52
 msgid "Product price offers"
 msgstr ""
 
-#: templates/offers/notifications/email.html:5
+#: shop/offers/templates/offers/notifications/email.html:5
 msgid "New price offer #"
 msgstr ""
 
-#: templates/offers/notifications/email.html:7
+#: shop/offers/templates/offers/notifications/email.html:7
 msgid "Product title"
 msgstr ""
 
-#: templates/offers/notifications/email.html:16
+#: shop/offers/templates/offers/notifications/email.html:16
 msgid "Mobile"
 msgstr ""
 
-#: templates/offers/notifications/email.html:23
+#: shop/offers/templates/offers/notifications/email.html:23
 msgid "Show in admin"
 msgstr ""
 
-#: templates/offers/notifications/email.html:26
+#: shop/offers/templates/offers/notifications/email.html:26
 msgid "Show on site"
 msgstr ""
 
-#: templates/offers/price_offer_modal.html:14
+#: shop/offers/templates/offers/price_offer_modal.html:14
 msgid "Запропонувати свою ціну для товару"
 msgstr "Create price offer"
 
-#: templates/offers/price_offer_modal.html:23
+#: shop/offers/templates/offers/price_offer_modal.html:23
 msgid "Відмінити"
 msgstr "Cancel"
 
-#: templates/offers/price_offer_modal.html:26
+#: shop/offers/templates/offers/price_offer_modal.html:26
 msgid "Надіслати пропозицію"
 msgstr "Send offer"
 
-#: views.py:62
+#: shop/offers/views.py:62
 msgid "Offer successfully added"
 msgstr ""

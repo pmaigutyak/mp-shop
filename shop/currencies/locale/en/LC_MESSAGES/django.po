@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:44+0200\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,26 +17,26 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: constants.py:11
+#: shop/currencies/constants.py:11
 msgid "UAH"
 msgstr ""
 
-#: constants.py:12
+#: shop/currencies/constants.py:12
 msgid "USD"
 msgstr ""
 
-#: constants.py:13
+#: shop/currencies/constants.py:13
 msgid "EUR"
 msgstr ""
 
-#: models.py:15
+#: shop/currencies/models.py:15
 msgid "Currency"
 msgstr ""
 
-#: models.py:17
+#: shop/currencies/models.py:17
 msgid "Value"
 msgstr ""
 
-#: models.py:79 models.py:80
+#: shop/currencies/models.py:79 shop/currencies/models.py:80
 msgid "Exchange rate"
 msgstr ""

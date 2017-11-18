@@ -152,21 +152,9 @@ class AbstractProduct(models.Model):
 
     def __init__(self, *args, **kwargs):
 
-        self._saved = False
-
         super(AbstractProduct, self).__init__(*args, **kwargs)
 
         self.price = ProductPriceContainer(self)
-
-    def save(self, *args, **kwargs):
-        super(AbstractProduct, self).save(*args, **kwargs)
-
-        if not self._saved:
-            self._saved = True
-            photo = self.images.first()
-            if photo:
-                self.logo.name = photo.file.path
-                self.save(update_fields=['logo'])
 
     @property
     def slug(self):

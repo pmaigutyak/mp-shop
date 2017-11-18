@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-03-18 23:39+0200\n"
+"POT-Creation-Date: 2017-11-18 16:46+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,126 +19,126 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin/__init__.py:34
+#: shop/attributes/admin/__init__.py:34
 msgid "Category"
 msgstr "Категорія"
 
-#: admin/forms.py:27
+#: shop/attributes/admin/forms.py:27
 msgid "Option group is required for field type select"
 msgstr "Група опцій є обовʼязковим полем для поля з опціями"
 
-#: admin/forms.py:88
+#: shop/attributes/admin/forms.py:95
 msgid " [New value]"
 msgstr " [Нове значення]"
 
-#: constants.py:11 models.py:11
+#: shop/attributes/constants.py:11 shop/attributes/models.py:11
 msgid "Text"
 msgstr "Текст"
 
-#: constants.py:12 models.py:12
+#: shop/attributes/constants.py:12 shop/attributes/models.py:12
 msgid "Integer"
 msgstr "Число"
 
-#: constants.py:13
+#: shop/attributes/constants.py:13
 msgid "True / False"
 msgstr "Так / Ні"
 
-#: constants.py:14 models.py:44
+#: shop/attributes/constants.py:14 shop/attributes/models.py:44
 msgid "Option"
 msgstr "Опція"
 
-#: models.py:13
+#: shop/attributes/models.py:13
 msgid "Boolean"
 msgstr "Булева змінна"
 
-#: models.py:16
+#: shop/attributes/models.py:16
 msgid "Value option"
 msgstr "Опція значення"
 
-#: models.py:28 models.py:61
+#: shop/attributes/models.py:28 shop/attributes/models.py:61
 msgid "Name"
 msgstr "Ім'я"
 
-#: models.py:34
+#: shop/attributes/models.py:34
 msgid "Attribute option group"
 msgstr "Група опцій атрибуту"
 
-#: models.py:35
+#: shop/attributes/models.py:35
 msgid "Attribute option groups"
 msgstr "Групи опцій атрибутів"
 
-#: models.py:42
+#: shop/attributes/models.py:42
 msgid "Group"
 msgstr "Група"
 
-#: models.py:51
+#: shop/attributes/models.py:51
 msgid "Attribute option"
 msgstr "Опція атрибуту"
 
-#: models.py:52
+#: shop/attributes/models.py:52
 msgid "Attribute options"
 msgstr "Опції атрибутів"
 
-#: models.py:59
+#: shop/attributes/models.py:59
 msgid "Product category"
 msgstr "Категорія товару"
 
-#: models.py:63
+#: shop/attributes/models.py:63
 msgid "Code"
 msgstr "Код"
 
-#: models.py:68
+#: shop/attributes/models.py:68
 msgid "Type"
 msgstr "Тип"
 
-#: models.py:72
+#: shop/attributes/models.py:72
 msgid "Option Group"
 msgstr "Група опцій"
 
-#: models.py:73
+#: shop/attributes/models.py:73
 msgid "Select an option group if using type \"Option\""
 msgstr "Виберіть групу опцій якщо ви використовуєте тип \"Опції\""
 
-#: models.py:75
+#: shop/attributes/models.py:75
 msgid "Required"
 msgstr "Обов'язкове"
 
-#: models.py:77
+#: shop/attributes/models.py:77
 msgid "Is filter"
 msgstr "Фільтр"
 
-#: models.py:104
+#: shop/attributes/models.py:104
 msgid "Product attribute"
 msgstr "Атрибут товару"
 
-#: models.py:105
+#: shop/attributes/models.py:105
 msgid "Product attributes"
 msgstr "Атрибути товару"
 
-#: models.py:111
+#: shop/attributes/models.py:111
 msgid "Attribute"
 msgstr "Атрибут"
 
-#: models.py:116
+#: shop/attributes/models.py:116
 msgid "Product"
 msgstr "Товар"
 
-#: models.py:152
+#: shop/attributes/models.py:152
 msgid "Yes"
 msgstr "Так"
 
-#: models.py:152
+#: shop/attributes/models.py:152
 msgid "No"
 msgstr "Ні"
 
-#: models.py:165
+#: shop/attributes/models.py:165
 msgid "Product attribute value"
 msgstr "Значення атрибуту товару"
 
-#: models.py:166
+#: shop/attributes/models.py:166
 msgid "Product attribute values"
 msgstr "Значення атрибутів товарів"
 
-#: models.py:228
+#: shop/attributes/models.py:228
 msgid "Attributes"
 msgstr "Атрибути"
