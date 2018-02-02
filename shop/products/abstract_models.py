@@ -14,6 +14,8 @@ from slugify import slugify_url
 from mptt.models import MPTTModel, TreeForeignKey
 from ordered_model.models import OrderedModelBase
 
+from shop.lib import get_preview
+
 from shop.currencies.lib import format_printable_price
 from shop.currencies.models import ExchangeRate
 from shop.currencies.settings import CURRENCIES, DEFAULT_CURRENCY
@@ -166,13 +168,7 @@ class AbstractProduct(models.Model):
 
     @property
     def preview(self):
-        try:
-            url = get_thumbnail(
-                self.logo.file, '100x100', crop='center', quality=99).url
-        except Exception:
-            return '-----'
-
-        return mark_safe('<img src="%s" style="width: 100px;" />' % url)
+        return get_preview(self.logo)
 
     preview.fget.short_description = _('Preview')
 
@@ -285,13 +281,7 @@ class AbstractProductImage(OrderedModelBase):
 
     @property
     def preview(self):
-        try:
-            url = get_thumbnail(
-                self.file.file, '100x100', crop='center', quality=99).url
-        except Exception:
-            return '-----'
-
-        return mark_safe('<img src="%s" style="width: 100px;" />' % url)
+        return get_preview(self.file)
 
     preview.fget.short_description = _('Preview')
 

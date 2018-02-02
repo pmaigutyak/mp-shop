@@ -4,6 +4,8 @@ import re
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
+from sorl.thumbnail import get_thumbnail
+
 
 def round_number(value, decimal_places=2, down=False):
 
@@ -31,3 +33,16 @@ def format_price(price, round_price=False):
 def get_show_on_site_link(url):
     return mark_safe(
         '<a href="%s" target="_blank">%s</a>' % (url, _('Show on site')))
+
+
+def get_preview(field, width=100):
+
+    if not field:
+        return '-----'
+    try:
+        url = get_thumbnail(field.file, str(width)).url
+    except IOError:
+        return _('Image not found')
+
+    return mark_safe('<img src="%s" style="width: %spx;" title="%s" />' % (
+        url, width, field.path))

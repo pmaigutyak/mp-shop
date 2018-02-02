@@ -3,7 +3,7 @@ from django.apps import apps
 from django.shortcuts import render
 
 
-def get_categories(request):
+def get_categories(request, template_name='products/api/categories.html'):
 
     root = request.GET.get('root', False)
 
@@ -18,4 +18,4 @@ def get_categories(request):
         'categories': categories
     }
 
-    return render(request, 'products/api/categories.html', context)
+    return render(request, template_name, context)

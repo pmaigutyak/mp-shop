@@ -5,6 +5,9 @@ from django.views.generic import TemplateView
 from shop.products import views
 
 
+app_name = 'products'
+
+
 urlpatterns = [
 
     url(r'^api/', include('shop.products.api.urls', namespace='api')),

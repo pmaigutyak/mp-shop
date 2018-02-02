@@ -24,17 +24,6 @@ from shop.products.lib import refresh_products_logos
 from shop.lib import get_show_on_site_link
 
 
-def get_preview(img):
-    from sorl.thumbnail import get_thumbnail
-
-    try:
-        url = get_thumbnail(img, '100x100', crop='center', quality=99).url
-    except Exception:
-        url = '%s/img/error.png' % settings.STATIC_URL
-
-    return mark_safe('<img src="%s" style="width: 60px;" />' % url)
-
-
 class ProductAdmin(TranslationAdmin):
 
     inlines = [ProductImageInline]
@@ -45,7 +34,7 @@ class ProductAdmin(TranslationAdmin):
 
     list_display = [
         'id', 'title', 'category', 'printable_price', 'code', 'date_updated',
-        'get_show_link', 'get_preview'
+        'get_show_link', 'preview'
     ]
 
     list_display_links = ('title', )
@@ -64,11 +53,6 @@ class ProductAdmin(TranslationAdmin):
             }
 
         super(ProductAdmin, self).__init__(*args, **kwargs)
-
-    def get_preview(self, item):
-        return item.preview
-
-    get_preview.short_description = _('Preview')
 
     def get_show_link(self, item):
         return get_show_on_site_link(item.get_absolute_url())

@@ -5,6 +5,9 @@ from django.contrib.auth.decorators import login_required
 from shop.orders import views
 
 
+app_name = 'orders'
+
+
 urlpatterns = [
 
     url(r'^checkout/$', views.checkout, name='checkout'),
