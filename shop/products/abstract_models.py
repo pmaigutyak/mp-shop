@@ -16,8 +16,7 @@ from ordered_model.models import OrderedModelBase
 
 from shop.lib import get_preview
 
-from shop.currencies.lib import format_printable_price
-from shop.currencies.models import ExchangeRate
+from shop.currencies.lib import Price
 from shop.currencies.settings import CURRENCIES, DEFAULT_CURRENCY
 
 
@@ -156,7 +155,7 @@ class AbstractProduct(models.Model):
 
         super(AbstractProduct, self).__init__(*args, **kwargs)
 
-        self.price = ProductPriceContainer(self)
+        self.price = Price(self)
 
     @property
     def slug(self):
@@ -225,42 +224,6 @@ class AbstractProduct(models.Model):
         ordering = ['-id']
         verbose_name = _('Product')
         verbose_name_plural = _('Products')
-
-
-class ProductPriceContainer(object):
-
-    def __init__(self, product):
-        self.product = product
-
-    @property
-    def currency(self):
-        return self.product.currency
-
-    def printable_currency(self):
-        return self.product.get_currency_display()
-
-    @property
-    def default(self):
-        return ExchangeRate.convert(
-            price=self.product.price_in_currency,
-            src_currency=self.product.currency,
-            dst_currency=DEFAULT_CURRENCY)
-
-    @property
-    def printable_default(self):
-        return ExchangeRate.convert(
-            price=self.product.price_in_currency,
-            src_currency=self.product.currency,
-            dst_currency=DEFAULT_CURRENCY,
-            printable=True)
-
-    @property
-    def initial(self):
-        return self.product.price_in_currency
-
-    @property
-    def printable_initial(self):
-        return format_printable_price(self.initial, self.currency)
 
 
 class AbstractProductImage(OrderedModelBase):
