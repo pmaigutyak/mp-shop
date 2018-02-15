@@ -37,4 +37,4 @@ msgstr "Немає в наявності"
 
 #: constants.py:12
 msgid "Should be ordered"
-msgstr "На замовлення"
+msgstr "Під замовлення"
