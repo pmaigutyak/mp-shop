@@ -13,5 +13,6 @@ recursive-include shop/offers/templates *
 recursive-include shop/orders/locale *
 recursive-include shop/products/locale *
 recursive-include shop/wishlist/locale *
-recursive-include shop/wishlist/templates *
+recursive-include shop/wishlist/locale *
+recursive-include shop/stock/locale *
 prune *.pyc
