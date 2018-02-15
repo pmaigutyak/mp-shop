@@ -19,7 +19,6 @@ from shop.currencies.models import ExchangeRate
 from shop.products.admin.forms import ProductForm, ProductImageInline
 from shop.products.admin import views
 from shop.products.admin import actions
-from shop.products.lib import refresh_products_logos
 
 from shop.lib import get_show_on_site_link
 
@@ -79,9 +78,7 @@ class ProductAdmin(TranslationAdmin):
 
     def save_model(self, request, obj, form, change):
 
-        product = form.save()
-
-        self._product_id = product.id
+        self._product = product = form.save()
 
         images = form.cleaned_data.get('images', [])
 
@@ -91,7 +88,7 @@ class ProductAdmin(TranslationAdmin):
 
     def save_related(self, request, form, formsets, change):
         super(ProductAdmin, self).save_related(request, form, formsets, change)
-        refresh_products_logos([self._product_id])
+        self._product.refresh_logo()
 
 
 class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):

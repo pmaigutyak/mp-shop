@@ -1,11 +1,12 @@
 
 from random import randint
 
+from django.core.files import File
+from django.core.urlresolvers import reverse
 from django.apps import apps
 from django.conf import settings
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
-from django.core.urlresolvers import reverse
 from django.utils.safestring import mark_safe
 from django.utils import timezone
 
@@ -16,7 +17,8 @@ from ordered_model.models import OrderedModelBase
 
 from shop.lib import get_preview
 
-from shop.currencies.lib import Price
+from shop.currencies.lib import format_printable_price
+from shop.currencies.models import ExchangeRate
 from shop.currencies.settings import CURRENCIES, DEFAULT_CURRENCY
 
 
@@ -120,6 +122,42 @@ class ProductVisibilityManager(models.Manager):
         return queryset.filter(is_visible=True)
 
 
+class Price(object):
+
+    def __init__(self, obj):
+        self.obj = obj
+
+    @property
+    def currency(self):
+        return self.obj.currency
+
+    def printable_currency(self):
+        return self.obj.get_currency_display()
+
+    @property
+    def default(self):
+        return ExchangeRate.convert(
+            price=self.obj.price_in_currency,
+            src_currency=self.obj.currency,
+            dst_currency=DEFAULT_CURRENCY)
+
+    @property
+    def printable_default(self):
+        return ExchangeRate.convert(
+            price=self.obj.price_in_currency,
+            src_currency=self.obj.currency,
+            dst_currency=DEFAULT_CURRENCY,
+            printable=True)
+
+    @property
+    def initial(self):
+        return self.obj.price_in_currency
+
+    @property
+    def printable_initial(self):
+        return format_printable_price(self.initial, self.currency)
+
+
 class AbstractProduct(models.Model):
 
     is_visible = models.BooleanField(_('Is visible'), default=True)
@@ -156,6 +194,16 @@ class AbstractProduct(models.Model):
         super(AbstractProduct, self).__init__(*args, **kwargs)
 
         self.price = Price(self)
+
+    def refresh_logo(self):
+
+        first_image = self.images.first()
+
+        if first_image:
+            file = File(open(first_image.file.path))
+            self.logo.save(first_image.file.name, file)
+        else:
+            self.logo.delete()
 
     @property
     def slug(self):
