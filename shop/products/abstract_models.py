@@ -46,6 +46,8 @@ class AbstractProductCategory(MPTTModel):
         _("Logo"), upload_to=get_product_category_logo_upload_path,
         max_length=255, blank=True, null=True)
 
+    description = models.TextField(_('Description'), blank=True)
+
     _slug_separator = '/'
     _full_name_separator = ' > '
 
