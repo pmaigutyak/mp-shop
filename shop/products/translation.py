@@ -11,7 +11,7 @@ class ProductTranslationOptions(TranslationOptions):
 
 class ProductCategoryTranslationOptions(TranslationOptions):
 
-    fields = ('name', )
+    fields = ('name', 'description', )
 
 
 if 'shop.products' in settings.INSTALLED_APPS:
