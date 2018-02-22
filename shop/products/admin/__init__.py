@@ -95,6 +95,14 @@ class ProductCategoryAdmin(MPTTModelAdmin, TranslationAdmin):
 
     list_display = ('full_name', 'product_count', 'preview', )
 
+    def __init__(self, *args, **kwargs):
+
+        self.formfield_overrides = {
+            models.TextField: {'widget': CKEditorWidget}
+        }
+
+        super(ProductCategoryAdmin, self).__init__(*args, **kwargs)
+
     def product_count(self, item):
         return item.products.count()
 
