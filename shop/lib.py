@@ -1,6 +1,7 @@
 
 import re
 
+from django.utils import timezone
 from django.utils.translation import ugettext_lazy as _
 from django.utils.safestring import mark_safe
 
@@ -46,3 +47,8 @@ def get_preview(field, width=100):
 
     return mark_safe('<img src="%s" style="width: %spx;" title="%s" />' % (
         url, width, field.path))
+
+
+def get_file_upload_path(folder, filename):
+    tz_now = timezone.localtime(timezone.now()).strftime('%Y_%m_%d_%H_%M')
+    return '%s/%s.%s' % (folder, tz_now, filename.split('.')[-1])
