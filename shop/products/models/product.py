@@ -9,9 +9,10 @@ from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
 from slugify import slugify_url
-from djmoney.models.fields import MoneyField
 
-from shop.currencies.settings import DEFAULT_CURRENCY
+from shop.currencies.lib import format_printable_price
+from shop.currencies.models import ExchangeRate
+from shop.currencies.settings import CURRENCIES, DEFAULT_CURRENCY
 from shop.lib import get_preview
 
 
@@ -37,6 +38,42 @@ class ProductVisibilityManager(models.Manager):
         return queryset.filter(is_visible=True)
 
 
+class Price(object):
+
+    def __init__(self, obj):
+        self.obj = obj
+
+    @property
+    def currency(self):
+        return self.obj.currency
+
+    def printable_currency(self):
+        return self.obj.get_currency_display()
+
+    @property
+    def default(self):
+        return ExchangeRate.convert(
+            price=self.obj.price_in_currency,
+            src_currency=self.obj.currency,
+            dst_currency=DEFAULT_CURRENCY)
+
+    @property
+    def printable_default(self):
+        return ExchangeRate.convert(
+            price=self.obj.price_in_currency,
+            src_currency=self.obj.currency,
+            dst_currency=DEFAULT_CURRENCY,
+            printable=True)
+
+    @property
+    def initial(self):
+        return self.obj.price_in_currency
+
+    @property
+    def printable_initial(self):
+        return format_printable_price(self.initial, self.currency)
+
+
 class AbstractProduct(models.Model):
 
     is_visible = models.BooleanField(_('Is visible'), default=True)
@@ -49,8 +86,10 @@ class AbstractProduct(models.Model):
 
     code = models.CharField(_('Code'), max_length=255, blank=True)
 
-    price = MoneyField(max_digits=10, decimal_places=2,
-                       default_currency=DEFAULT_CURRENCY)
+    price_in_currency = models.FloatField(_('Price'), blank=False, null=False)
+
+    currency = models.PositiveSmallIntegerField(
+        _('Currency'), choices=CURRENCIES, default=DEFAULT_CURRENCY)
 
     description = models.TextField(_('Description'), blank=True)
 
@@ -65,6 +104,12 @@ class AbstractProduct(models.Model):
 
     objects = ProductManager()
     visible = ProductVisibilityManager()
+
+    def __init__(self, *args, **kwargs):
+
+        super(AbstractProduct, self).__init__(*args, **kwargs)
+
+        self.price = Price(self)
 
     def refresh_logo(self):
 
