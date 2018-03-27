@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-02-15 18:43+0200\n"
+"POT-Creation-Date: 2018-03-20 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,22 +19,26 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: admin/filters.py:3
+#: shop/stock/admin/filters.py:9
 msgid "Qty"
 msgstr "Кількість"
 
-#: admin/filters.py:7
+#: shop/stock/admin/filters.py:13
 msgid "Endangered products"
 msgstr "Товари що закінчуються на складі"
 
-#: constants.py:10
+#: shop/stock/constants.py:10
 msgid "In stock"
 msgstr "В наявності"
 
-#: constants.py:11
+#: shop/stock/constants.py:11
 msgid "Not available"
 msgstr "Немає в наявності"
 
-#: constants.py:12
+#: shop/stock/constants.py:12
 msgid "Should be ordered"
 msgstr "Під замовлення"
+
+#: shop/stock/fields.py:13
+msgid "Availability"
+msgstr "Наявність"

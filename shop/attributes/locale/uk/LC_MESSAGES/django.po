@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 16:46+0000\n"
+"POT-Creation-Date: 2018-03-20 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -107,38 +107,42 @@ msgstr "Обов'язкове"
 msgid "Is filter"
 msgstr "Фільтр"
 
-#: shop/attributes/models.py:104
+#: shop/attributes/models.py:79
+msgid "Is visible"
+msgstr "Видимість на сайті"
+
+#: shop/attributes/models.py:106
 msgid "Product attribute"
 msgstr "Атрибут товару"
 
-#: shop/attributes/models.py:105
+#: shop/attributes/models.py:107
 msgid "Product attributes"
 msgstr "Атрибути товару"
 
-#: shop/attributes/models.py:111
+#: shop/attributes/models.py:119
 msgid "Attribute"
 msgstr "Атрибут"
 
-#: shop/attributes/models.py:116
+#: shop/attributes/models.py:124
 msgid "Product"
 msgstr "Товар"
 
-#: shop/attributes/models.py:152
+#: shop/attributes/models.py:162
 msgid "Yes"
 msgstr "Так"
 
-#: shop/attributes/models.py:152
+#: shop/attributes/models.py:162
 msgid "No"
 msgstr "Ні"
 
-#: shop/attributes/models.py:165
+#: shop/attributes/models.py:175
 msgid "Product attribute value"
 msgstr "Значення атрибуту товару"
 
-#: shop/attributes/models.py:166
+#: shop/attributes/models.py:176
 msgid "Product attribute values"
 msgstr "Значення атрибутів товарів"
 
-#: shop/attributes/models.py:228
+#: shop/attributes/models.py:238
 msgid "Attributes"
 msgstr "Атрибути"

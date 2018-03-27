@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 16:46+0000\n"
+"POT-Creation-Date: 2018-03-20 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,100 +19,118 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: shop/products/__init__.py:9 shop/products/abstract_models.py:231
+#: shop/products/__init__.py:9 shop/products/abstract_models.py:276
+#: shop/products/models/product.py:194
 msgid "Products"
 msgstr "Товари"
 
-#: shop/products/abstract_models.py:40
+#: shop/products/abstract_models.py:43
+#: shop/products/models/product_category.py:20
 msgid "Name"
 msgstr "Ім'я"
 
-#: shop/products/abstract_models.py:43 shop/products/abstract_models.py:147
+#: shop/products/abstract_models.py:46 shop/products/abstract_models.py:188
+#: shop/products/models/product.py:102
+#: shop/products/models/product_category.py:23
 msgid "Logo"
 msgstr "Логотип"
 
-#: shop/products/abstract_models.py:70
-msgid "Full name"
-msgstr "Повна назва"
-
-#: shop/products/abstract_models.py:82 shop/products/abstract_models.py:177
-#: shop/products/abstract_models.py:296 shop/products/admin/__init__.py:71
-msgid "Preview"
-msgstr "Перегляд"
-
-#: shop/products/abstract_models.py:96 shop/products/abstract_models.py:127
-msgid "Category"
-msgstr "Категорія"
-
-#: shop/products/abstract_models.py:97
-msgid "Categories"
-msgstr "Категорії"
-
-#: shop/products/abstract_models.py:124
-msgid "Is visible"
-msgstr "Видимість"
-
-#: shop/products/abstract_models.py:130
-msgid "Title"
-msgstr "Назва"
-
-#: shop/products/abstract_models.py:132
-msgid "Code"
-msgstr "Код"
-
-#: shop/products/abstract_models.py:134 shop/products/admin/__init__.py:94
-msgid "Price"
-msgstr "Ціна"
-
-#: shop/products/abstract_models.py:137
-msgid "Currency"
-msgstr "Валюта"
-
-#: shop/products/abstract_models.py:139
+#: shop/products/abstract_models.py:49 shop/products/abstract_models.py:180
+#: shop/products/models/product.py:94
+#: shop/products/models/product_category.py:26
 msgid "Description"
 msgstr "Опис"
 
-#: shop/products/abstract_models.py:141
+#: shop/products/abstract_models.py:75
+#: shop/products/models/product_category.py:52
+msgid "Full name"
+msgstr "Повна назва"
+
+#: shop/products/abstract_models.py:87 shop/products/abstract_models.py:222
+#: shop/products/abstract_models.py:299 shop/products/models/product.py:136
+#: shop/products/models/product_category.py:58
+#: shop/products/models/product_image.py:35
+msgid "Preview"
+msgstr "Перегляд"
+
+#: shop/products/abstract_models.py:101 shop/products/abstract_models.py:168
+#: shop/products/models/product.py:82
+#: shop/products/models/product_category.py:72
+msgid "Category"
+msgstr "Категорія"
+
+#: shop/products/abstract_models.py:102
+#: shop/products/models/product_category.py:73
+msgid "Categories"
+msgstr "Категорії"
+
+#: shop/products/abstract_models.py:165 shop/products/models/product.py:79
+msgid "Is visible"
+msgstr "Видимість"
+
+#: shop/products/abstract_models.py:171 shop/products/models/product.py:85
+msgid "Title"
+msgstr "Назва"
+
+#: shop/products/abstract_models.py:173 shop/products/models/product.py:87
+msgid "Code"
+msgstr "Код"
+
+#: shop/products/abstract_models.py:175 shop/products/admin/__init__.py:77
+#: shop/products/models/product.py:89
+msgid "Price"
+msgstr "Ціна"
+
+#: shop/products/abstract_models.py:178 shop/products/models/product.py:92
+msgid "Currency"
+msgstr "Валюта"
+
+#: shop/products/abstract_models.py:182 shop/products/models/product.py:96
 msgid "Date created"
 msgstr "Дата створення"
 
-#: shop/products/abstract_models.py:144
+#: shop/products/abstract_models.py:185 shop/products/models/product.py:99
 msgid "Date updated"
 msgstr "Дата оновлення"
 
-#: shop/products/abstract_models.py:165
+#: shop/products/abstract_models.py:216 shop/products/models/product.py:130
 msgid "Not specified"
 msgstr "Не вказано"
 
-#: shop/products/abstract_models.py:230 shop/products/abstract_models.py:273
+#: shop/products/abstract_models.py:275 shop/products/abstract_models.py:282
+#: shop/products/models/product.py:193 shop/products/models/product_image.py:18
 msgid "Product"
 msgstr "Товар"
 
-#: shop/products/abstract_models.py:276
+#: shop/products/abstract_models.py:285
+#: shop/products/models/product_image.py:21
 msgid "File"
 msgstr "Файл"
 
-#: shop/products/abstract_models.py:278
+#: shop/products/abstract_models.py:287
+#: shop/products/models/product_image.py:23
 msgid "Ordering"
 msgstr "Порядок"
 
-#: shop/products/abstract_models.py:301
+#: shop/products/abstract_models.py:304
+#: shop/products/models/product_image.py:40
 msgid "Product image"
 msgstr "Зображення товару"
 
-#: shop/products/abstract_models.py:302
+#: shop/products/abstract_models.py:305
+#: shop/products/models/product_image.py:41
 msgid "Product images"
 msgstr "Зображення товарів"
 
-#: shop/products/admin/__init__.py:76
+#: shop/products/admin/__init__.py:59
 msgid "Show on site"
 msgstr "Показати на сайті"
 
-#: shop/products/admin/__init__.py:120
+#: shop/products/admin/__init__.py:109
 msgid "Product count"
 msgstr "Кількість товарів"
 
-#: shop/products/admin/actions.py:10
+#: shop/products/admin/actions.py:9
 msgid "Refresh product logos"
 msgstr "Оновити логотипи товарів"
 
@@ -147,6 +165,22 @@ msgstr "Пошуковий запит"
 #: shop/products/forms.py:28
 msgid "Order by"
 msgstr "Сортувати за"
+
+#: shop/products/models/product_tag.py:8
+msgid "Text"
+msgstr ""
+
+#: shop/products/models/product_tag.py:15
+#, fuzzy
+#| msgid "Product image"
+msgid "Product tag"
+msgstr "Зображення товару"
+
+#: shop/products/models/product_tag.py:16
+#, fuzzy
+#| msgid "Product images"
+msgid "Products tags"
+msgstr "Зображення товарів"
 
 #: shop/products/templates/products/api/categories.html:6
 msgid "Каталог"

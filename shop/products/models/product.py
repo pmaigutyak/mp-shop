@@ -177,7 +177,11 @@ class AbstractProduct(models.Model):
         return fields
 
     def __unicode__(self):
-        return self.title
+        return ' | '.join([
+            self.title,
+            self.code,
+            self.price.printable_default.decode('utf-8')
+        ])
 
     def get_absolute_url(self):
         return reverse('products:info', kwargs={

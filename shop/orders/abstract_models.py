@@ -98,7 +98,7 @@ class AbstractOrderProduct(models.Model):
 
     title = models.CharField(_("Product title"), max_length=255, blank=True)
 
-    price = models.FloatField(_('Price (uah)'), blank=False, null=False)
+    price = models.FloatField(_('Price (uah)'), blank=True, null=False)
 
     qty = models.PositiveIntegerField(
         _('Quantity'), default=1, validators=[MinValueValidator(1)])
