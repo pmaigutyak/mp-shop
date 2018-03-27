@@ -76,6 +76,8 @@ class ProductAttribute(models.Model):
 
     is_filter = models.BooleanField(_('Is filter'), default=False)
 
+    is_visible = models.BooleanField(_('Is visible'), default=True)
+
     @property
     def has_options(self):
         return self.type == ATTR_TYPE_SELECT
@@ -105,6 +107,12 @@ class ProductAttribute(models.Model):
         verbose_name_plural = _('Product attributes')
 
 
+class ProductAttributeValueManager(models.Manager):
+
+    def visible(self):
+        return self.filter(attribute__is_visible=True)
+
+
 class ProductAttributeValue(models.Model):
 
     attribute = models.ForeignKey(
@@ -114,6 +122,8 @@ class ProductAttributeValue(models.Model):
     product = models.ForeignKey(
         'products.Product', related_name='attribute_values',
         verbose_name=_("Product"))
+
+    objects = ProductAttributeValueManager()
 
     value_text = ATTR_VALUE_TEXT
     value_int = ATTR_VALUE_INT
