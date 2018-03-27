@@ -11,3 +11,10 @@ AVAILABILITY_CHOICES = (
     (AVAILABILITY_NOT_AVAILABLE, _('Not available')),
     (AVAILABILITY_ORDER, _('Should be ordered')),
 )
+
+
+AVAILABILITY_COLORS = {
+    AVAILABILITY_IN_STOCK: 'success',
+    AVAILABILITY_ORDER: 'warning',
+    AVAILABILITY_NOT_AVAILABLE: 'danger'
+}
