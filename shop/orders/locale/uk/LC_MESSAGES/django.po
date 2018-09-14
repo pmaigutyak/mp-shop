@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-11-18 16:46+0000\n"
+"POT-Creation-Date: 2018-03-20 07:49+0000\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -113,21 +113,27 @@ msgstr "Замовлений товар"
 msgid "Order products"
 msgstr "Замовлені товари"
 
-#: shop/orders/admin.py:29
+#: shop/orders/admin.py:24
+msgid "Orders: {}, Products: {}, Sum: {}"
+msgstr "Замовлень: {}, Товарів: {}, Сума: {}"
+
+#: shop/orders/admin.py:32
+msgid "Summarize"
+msgstr "Підсумувати"
+
+#: shop/orders/admin.py:59
 msgid "Select product or enter title"
 msgstr "Виберіть товар або введіть назву"
 
-#: shop/orders/admin.py:43
+#: shop/orders/admin.py:70
 msgid "Select product or enter price"
 msgstr "Виберіть товар або введіть ціну"
 
-#: shop/orders/admin.py:73 shop/orders/admin.py:105
-#, fuzzy
-#| msgid "Not reviewed"
+#: shop/orders/admin.py:109 shop/orders/admin.py:141
 msgid "Preview"
-msgstr "Не переглянуто"
+msgstr "Перегляд"
 
-#: shop/orders/admin.py:96
+#: shop/orders/admin.py:132
 msgid "Show on site"
 msgstr "Показати на сайті"
 

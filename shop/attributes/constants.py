@@ -11,5 +11,5 @@ ATTR_TYPES = (
     (ATTR_TYPE_TEXT, _("Text")),
     (ATTR_TYPE_INT, _("Integer")),
     (ATTR_TYPE_BOOL, _("True / False")),
-    (ATTR_TYPE_SELECT, _("Option")),
+    (ATTR_TYPE_SELECT, _("Options")),
 )

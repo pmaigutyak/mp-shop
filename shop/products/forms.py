@@ -60,7 +60,7 @@ class SearchProductForm(forms.Form):
         order_by = self.cleaned_data.get('order_by')
 
         if not order_by or order_by == self.ORDER_BY_NEWEST:
-            return products.order_by('-id')
+            return products
 
         if order_by == self.ORDER_BY_A_TO_Z:
             return products.order_by('title')

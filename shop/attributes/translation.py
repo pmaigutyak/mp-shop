@@ -1,18 +1,18 @@
 
 from modeltranslation.translator import translator, TranslationOptions
 
-from shop.attributes.models import ProductAttribute, AttributeOption
+from shop.attributes.models import ProductAttr, ProductAttrOption
 
 
-class ProductAttributeTranslationOptions(TranslationOptions):
+class ProductAttrTranslationOptions(TranslationOptions):
 
     fields = ('name', )
 
 
-class AttributeOptionTranslationOptions(TranslationOptions):
+class ProductAttrOptionTranslationOptions(TranslationOptions):
 
-    fields = ('option', )
+    fields = ('name', )
 
 
-translator.register(ProductAttribute, ProductAttributeTranslationOptions)
-translator.register(AttributeOption, AttributeOptionTranslationOptions)
+translator.register(ProductAttr, ProductAttrTranslationOptions)
+translator.register(ProductAttrOption, ProductAttrOptionTranslationOptions)
