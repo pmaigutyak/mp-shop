@@ -10,6 +10,16 @@ from slugify import slugify_url
 
 class Category(MPTTModel):
 
+    SEX_MALE = 'male'
+    SEX_FEMALE = 'female'
+    SEX_BOTH = 'both'
+
+    SEX_CHOICES = (
+        (SEX_MALE, _('Male')),
+        (SEX_FEMALE, _('Female')),
+        (SEX_BOTH, _('Both')),
+    )
+
     parent = TreeForeignKey(
         'self',
         on_delete=models.CASCADE,
@@ -63,6 +73,12 @@ class Category(MPTTModel):
             ('child', _('Child'))
         )
     )
+
+    sex = models.CharField(
+        _('Sex'),
+        max_length=10,
+        choices=SEX_CHOICES,
+        blank=True)
 
     def __str__(self):
         return self.name

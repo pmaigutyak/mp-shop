@@ -13,7 +13,7 @@ from categories.models import Category
 from categories.config import IS_CLOTHES_BUSINESS
 
 
-def get_formfield_overrides():
+def _get_formfield_overrides():
 
     if apps.is_installed('ckeditor'):
         from ckeditor.widgets import CKEditorWidget
@@ -22,6 +22,19 @@ def get_formfield_overrides():
         }
 
     return {}
+
+
+def _get_list_display():
+    result = (
+        ['id'] +
+        get_translation_fields('name') +
+        get_translation_fields('title')
+    )
+
+    if IS_CLOTHES_BUSINESS:
+        result += ['age']
+
+    return result + ['code', 'icon', 'product_count', 'get_preview']
 
 
 @admin.register(Category)
@@ -40,20 +53,9 @@ class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
         tuple(get_translation_fields('description')),
     )
 
-    formfield_overrides = get_formfield_overrides()
+    list_display = _get_list_display()
 
-    @property
-    def list_display(self):
-        result = (
-            ['id'] +
-            get_translation_fields('name') +
-            get_translation_fields('title')
-        )
-
-        if IS_CLOTHES_BUSINESS:
-            result += ['age']
-
-        return result + ['code', 'icon', 'product_count', 'get_preview']
+    formfield_overrides = _get_formfield_overrides()
 
     @property
     def fields(self):
