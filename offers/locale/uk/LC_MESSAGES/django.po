@@ -1,0 +1,128 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-09-14 14:08+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: offers/__init__.py:9
+msgid "Offers"
+msgstr "Цінові пропозиції"
+
+#: offers/admin.py:21
+msgid "View product"
+msgstr "Показати товар"
+
+#: offers/admin.py:23 offers/models.py:31
+msgid "Product"
+msgstr "Товар"
+
+#: offers/lib.py:11
+msgid "New product price offer #{}"
+msgstr "Нова цінова пропозиція товару #{}"
+
+#: offers/models.py:15
+msgid "Not reviewed"
+msgstr "Не переглянуто"
+
+#: offers/models.py:16
+msgid "Processing"
+msgstr "В обробці"
+
+#: offers/models.py:17
+msgid "Canceled"
+msgstr "Відхилено"
+
+#: offers/models.py:18
+msgid "Completed"
+msgstr "Виконанно"
+
+#: offers/models.py:23
+msgid "User"
+msgstr "Користувач"
+
+#: offers/models.py:26
+msgid "Status"
+msgstr "Статус"
+
+#: offers/models.py:34
+msgid "Name"
+msgstr "Ім'я"
+
+#: offers/models.py:37
+msgid "Mobile phone"
+msgstr "Телефон"
+
+#: offers/models.py:40 offers/templates/offers/notifications/email.html:13
+msgid "Email"
+msgstr ""
+
+#: offers/models.py:42 offers/templates/offers/notifications/email.html:19
+msgid "Offer"
+msgstr "Пропозиція"
+
+#: offers/models.py:44
+msgid "Date created"
+msgstr "Дата створення"
+
+#: offers/models.py:51
+msgid "Product price offer"
+msgstr "Цінова пропозиція"
+
+#: offers/models.py:52
+msgid "Product price offers"
+msgstr "Цінові пропозиції"
+
+#: offers/templates/offers/notifications/email.html:5
+msgid "New price offer #"
+msgstr "Нова цінова пропозиція товару #"
+
+#: offers/templates/offers/notifications/email.html:7
+msgid "Product title"
+msgstr "Назва товару"
+
+#: offers/templates/offers/notifications/email.html:10
+msgid "Sender"
+msgstr "Відправник"
+
+#: offers/templates/offers/notifications/email.html:16
+msgid "Mobile"
+msgstr "Телефон"
+
+#: offers/templates/offers/notifications/email.html:23
+msgid "Show offer in admin"
+msgstr "Показати пропозицію в адмін зоні"
+
+#: offers/templates/offers/notifications/email.html:26
+msgid "Show product on site"
+msgstr "Показати товар на сайті"
+
+#: offers/templates/offers/price_offer_modal.html:14
+msgid "New price offer"
+msgstr "Нова цінова пропозиція"
+
+#: offers/templates/offers/price_offer_modal.html:23
+msgid "Cancel"
+msgstr "Відмінити"
+
+#: offers/templates/offers/price_offer_modal.html:26
+msgid "Send offer"
+msgstr "Надіслати пропозицію"
+
+#: offers/views.py:62
+msgid "Offer successfully sent"
+msgstr "Пропозиція успішно надіслана"

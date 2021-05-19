@@ -1,0 +1,33 @@
+
+{% load widget_tweaks %}
+
+{% csrf_token %}
+
+<div class="input-group {% if form.name.errors %}has-error{% endif %} col-xs-12">
+    {{ form.name.label_tag }} *
+    {{ form.name|add_class:"form-control input-lg" }}
+    <div class="help-block">{{ form.name.errors }}</div>
+</div>
+
+<div class="input-group {% if form.mobile.errors %}has-error{% endif %} col-xs-12">
+    {{ form.mobile.label_tag }} *
+    {{ form.mobile|add_class:"form-control input-lg" }}
+    <div class="help-block">{{ form.mobile.errors }}</div>
+</div>
+
+<div class="input-group {% if form.email.errors %}has-error{% endif %} col-xs-12">
+    {{ form.email.label_tag }} *
+    {{ form.email|add_class:"form-control input-lg" }}
+    <div class="help-block">{{ form.email.errors }}</div>
+</div>
+
+<div class="input-group {% if form.text.errors %}has-error{% endif %} col-xs-12">
+    {{ form.text.label_tag }} *
+    {{ form.text|add_class:"form-control input-lg" }}
+    <div class="help-block">{{ form.text.errors }}</div>
+</div>
+<div class="input-group {% if form.captcha.errors %}has-error{% endif %} col-xs-12">
+    {{ form.captcha.label_tag }} *
+    {{ form.captcha }}
+    <div class="help-block">{{ form.captcha.errors }}</div>
+</div>
