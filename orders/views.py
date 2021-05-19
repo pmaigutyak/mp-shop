@@ -1,6 +1,7 @@
 
 from django.db import transaction
 from django.shortcuts import redirect, render
+from django.contrib.auth.decorators import login_required
 
 from cart.lib import get_cart
 
@@ -52,3 +53,9 @@ def checkout(request):
         return redirect('home')
 
     return render(request, 'orders/checkout.html', {'form': form})
+
+
+@login_required
+def get_history(request):
+    context = {'order_items': request.user.order.all()}
+    return render(request, 'orders/history.html', context)

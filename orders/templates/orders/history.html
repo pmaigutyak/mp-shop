@@ -1,0 +1,60 @@
+
+{% extends 'account/profile/base.html' %}
+
+{% load i18n thumbnail %}
+
+
+{% block content %}
+
+    <div class="col-md-12">
+        <h2>{% trans 'Мої замовлення' %}</h2>
+
+        {% if order_items %}
+            <div class="table-responsive">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>{% trans 'Дата' %}</th>
+                        <th>{% trans 'К-сть товарів' %}</th>
+                        <th>{% trans 'Сума' %}</th>
+                        <th>{% trans 'Статус' %}</th>
+                        <th>{% trans 'Звіт' %}</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {% for item in order_items %}
+                        <tr>
+                            <td class="col-md-1">
+                                {{ item.id }}
+                            </td>
+                            <td class="col-md-3">
+                                {{ item.date_created }}
+                            </td>
+                            <td class="col-md-2">
+                                {{ item.product_count }}
+                            </td>
+                            <td class="col-md-2">
+                                {{ item.printable_total }}
+                            </td>
+                            <td class="col-md-4">
+                                {{ item.get_status_display }}
+                            </td>
+                            <td class="col-md-4">
+                                <a href="{% url 'orders:download-invoice' pk=item.pk %}" class="btn btn-sm btn-success" target="_blank">
+                                    {% trans 'Завантажити звіт' %}
+                                </a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        {% else %}
+            <div class="alert alert-warning">
+                {% trans 'У Вас поки немає замовлень' %}
+            </div>
+        {% endif %}
+    </div>
+
+{% endblock %}

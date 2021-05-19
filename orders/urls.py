@@ -10,14 +10,14 @@ app_name = 'orders'
 
 
 urlpatterns = [
-    path('checkout/', views.checkout, name='checkout')
+    path('checkout/', views.checkout, name='checkout'),
+
+    path('history/', views.get_history, name='history'),
 ]
 
 
 app_urls = i18n_patterns(
 
     path('orders/', include((urlpatterns, app_name))),
-
-    path('delivery/', include('delivery.urls'))
 
 )
