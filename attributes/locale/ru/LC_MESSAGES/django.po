@@ -1,0 +1,109 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-03-12 17:20+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: attributes/__init__.py:8 attributes/models/attribute.py:113
+msgid "Attributes"
+msgstr "Атрибуты"
+
+#: attributes/admin/__init__.py:38 attributes/models/attribute.py:48
+msgid "Categories"
+msgstr "Категории"
+
+#: attributes/admin/__init__.py:43 attributes/models/attribute.py:57
+msgid "Type"
+msgstr "Тип"
+
+#: attributes/constants.py:11
+msgid "Text"
+msgstr "Текст"
+
+#: attributes/constants.py:12
+msgid "Integer"
+msgstr "Число"
+
+#: attributes/constants.py:13
+msgid "True / False"
+msgstr "Да / Нет"
+
+#: attributes/constants.py:14
+msgid "Options"
+msgstr "Опции"
+
+#: attributes/forms.py:111
+msgid "{} is required"
+msgstr "{} бязательное"
+
+#: attributes/forms.py:143
+msgid " [New value]"
+msgstr " [Новое значение]"
+
+#: attributes/models/attribute.py:50 attributes/models/attribute_option.py:14
+msgid "Name"
+msgstr "Имя"
+
+#: attributes/models/attribute.py:52
+msgid "Code"
+msgstr "Код"
+
+#: attributes/models/attribute.py:60
+msgid "Required"
+msgstr "Обязательное"
+
+#: attributes/models/attribute.py:61
+msgid "You will not be able to update record without filling this field"
+msgstr "Вы не сможете оновить запись не заполнив это поле"
+
+#: attributes/models/attribute.py:65
+msgid "Is visible"
+msgstr "Видимость"
+
+#: attributes/models/attribute.py:66
+msgid "Display this attribute for users"
+msgstr "Отображать етот аттрибут для пользователей"
+
+#: attributes/models/attribute.py:69
+msgid "Is filter"
+msgstr "Фильтр"
+
+#: attributes/models/attribute.py:70
+msgid "Display this attribute in records filter"
+msgstr "Отображать этот аттрибут в фильтре записей"
+
+#: attributes/models/attribute.py:112 attributes/models/attribute_option.py:11
+msgid "Attribute"
+msgstr "Атрибут"
+
+#: attributes/models/attribute_option.py:21
+msgid "Attribute option"
+msgstr "Опция атрибута"
+
+#: attributes/models/attribute_option.py:22
+msgid "Attribute options"
+msgstr "Опции атрибутов"
+
+#: attributes/models/attribute_value.py:85
+msgid "Yes"
+msgstr "Да"
+
+#: attributes/models/attribute_value.py:85
+msgid "No"
+msgstr "Нет"

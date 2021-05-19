@@ -1,0 +1,23 @@
+
+{% load i18n thumbnail %}
+
+
+{% for item in object.items.all %}
+
+    {% thumbnail item.product.logo "40" crop="top" as img %}
+        <img src="{{ img.url }}" class="pull-left" style="margin-right: 5px">
+    {% empty %}
+        ----
+    {% endthumbnail %}
+
+    <a href="{{ item.product.get_absolute_url }}" target="_blank">
+        {{ item.product.name }} {% if item.product.code %}({{ item.product.code }}){% endif %}
+    </a> <br />
+    <b>{{ item.qty }} x {{ item.product.printable_price }}</b> <br />
+
+    <div class="clearfix" style="margin: 5px 0;"></div>
+
+    <hr />
+{% endfor %}
+
+<b>{% trans 'Total' %}:</b> {{ object.printable_total }}

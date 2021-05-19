@@ -1,0 +1,17 @@
+
+{% load widget_tweaks %}
+
+<div class="input-group {% if form.delivery_method.errors %}has-error{% endif %} col-xs-12">
+    {{ form.delivery_method.label_tag }} *
+    {{ form.delivery_method|add_class:"form-control" }}
+</div>
+
+<div class="input-group {% if form.city.errors %}has-error{% endif %} col-xs-12">
+    {{ form.city.label_tag }} *
+    {{ form.city|add_class:"form-control" }}
+</div>
+
+<div class="input-group {% if form.warehouse.errors %}has-error{% endif %} col-xs-12">
+    {{ form.warehouse.label_tag }} *
+    {{ form.warehouse|add_class:"form-control" }}
+</div>

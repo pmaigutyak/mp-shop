@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-09-09 09:54+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: orders/__init__.py:8 orders/models.py:72
+msgid "Orders"
+msgstr "Замовлення"
+
+#: orders/admin.py:29
+msgid "Customer"
+msgstr "Клієнт"
+
+#: orders/admin.py:33
+msgid "Delivery"
+msgstr "Доставка"
+
+#: orders/admin.py:37 orders/templates/orders/checkout.html:46
+msgid "Products"
+msgstr "Товари"
+
+#: orders/admin.py:41 orders/models.py:51 orders/models.py:71
+#: orders/models.py:79
+msgid "Order"
+msgstr "Замовлення"
+
+#: orders/constants.py:6
+msgid "Monday"
+msgstr "Понеділок"
+
+#: orders/constants.py:7
+msgid "Tuesday"
+msgstr "Вівторок"
+
+#: orders/constants.py:8
+msgid "Wednesday"
+msgstr "Середа"
+
+#: orders/constants.py:9
+msgid "Thursday"
+msgstr "Четвер"
+
+#: orders/constants.py:10
+msgid "Friday"
+msgstr "Пʼятниця"
+
+#: orders/constants.py:11
+msgid "Saturday"
+msgstr "Субота"
+
+#: orders/constants.py:12
+msgid "Sunday"
+msgstr "Неділя"
+
+#: orders/constants.py:21 orders/utils.py:14
+msgid "New order"
+msgstr "Нове замовлення"
+
+#: orders/constants.py:22
+msgid "In progress"
+msgstr "В обробці"
+
+#: orders/constants.py:23
+msgid "Completed"
+msgstr "Виконано"
+
+#: orders/constants.py:24
+msgid "Cancelled"
+msgstr "Відмінено"
+
+#: orders/constants.py:33
+msgid "Cash payment"
+msgstr "Оплата готівкою"
+
+#: orders/constants.py:34
+msgid "Privat 24"
+msgstr "Приват 24"
+
+#: orders/constants.py:35
+msgid "Cash on delivery"
+msgstr "Накладений платіж"
+
+#: orders/constants.py:36
+msgid "Cashless payment"
+msgstr "Безготівковий розрахунок"
+
+#: orders/models.py:18
+msgid "Status"
+msgstr "Статус"
+
+#: orders/models.py:24 orders/templates/orders/admin/delivery.html:6
+#: orders/templates/orders/new_order_email_for_manager.html:29
+msgid "Payment method"
+msgstr "Спосіб оплати"
+
+#: orders/models.py:30
+msgid "First name"
+msgstr "Імʼя"
+
+#: orders/models.py:32
+msgid "Last name"
+msgstr "Прізвище"
+
+#: orders/models.py:35
+msgid "Middle name"
+msgstr "По батькові"
+
+#: orders/models.py:37 orders/templates/orders/admin/delivery.html:4
+#: orders/templates/orders/new_order_email_for_manager.html:50
+msgid "Address"
+msgstr "Адреса"
+
+#: orders/models.py:39
+msgid "Mobile number"
+msgstr "Номер телефону"
+
+#: orders/models.py:42
+msgid "Date created"
+msgstr "Дата створення"
+
+#: orders/models.py:44
+#: orders/templates/orders/new_order_email_for_manager.html:58
+msgid "Comment"
+msgstr "Коментар"
+
+#: orders/models.py:85
+#: orders/templates/orders/new_order_email_for_manager.html:68
+msgid "Product"
+msgstr "Продукт"
+
+#: orders/models.py:89 orders/templates/orders/checkout.html:64
+msgid "Quantity"
+msgstr "Кількість"
+
+#: orders/models.py:102
+msgid "Ordered product"
+msgstr "Замовлений товар"
+
+#: orders/models.py:103
+msgid "Ordered products"
+msgstr "Замовлені товари"
+
+#: orders/templates/orders/admin/delivery.html:5
+#: orders/templates/orders/new_order_email_for_manager.html:33
+msgid "Delivery method"
+msgstr "Спосіб доставки"
+
+#: orders/templates/orders/admin/products.html:23
+#: orders/templates/orders/new_order_email_for_manager.html:88
+msgid "Total"
+msgstr "Загалом"
+
+#: orders/templates/orders/checkout.html:13
+msgid "Site logo"
+msgstr "Логотип сайту"
+
+#: orders/templates/orders/checkout.html:18
+#: orders/templates/orders/checkout.html:92
+msgid "Continue shopping"
+msgstr "Продовжити покупки"
+
+#: orders/templates/orders/checkout.html:38
+msgid "Order registration"
+msgstr "Оформлення замовлення"
+
+#: orders/templates/orders/checkout.html:63
+#: orders/templates/orders/new_order_email_for_manager.html:69
+msgid "Price"
+msgstr "Ціна"
+
+#: orders/templates/orders/checkout.html:75
+msgid "To pay"
+msgstr "До оплати"
+
+#: orders/templates/orders/checkout.html:90
+msgid "Cart is empty"
+msgstr "Кошик порожній"
+
+#: orders/templates/orders/checkout_form.html:64
+msgid "Confirm order"
+msgstr "Підтвердити замовлення"
+
+#: orders/templates/orders/new_order_email_for_manager.html:10
+#: orders/templates/orders/new_order_email_for_manager.html:79
+msgid "View on site"
+msgstr "Показати на сайті"
+
+#: orders/templates/orders/new_order_email_for_manager.html:19
+msgid "Full name"
+msgstr "ПІБ"
+
+#: orders/templates/orders/new_order_email_for_manager.html:23
+msgid "Phone"
+msgstr "Телефон"
+
+#: orders/templates/orders/new_order_email_for_manager.html:39
+msgid "Product count"
+msgstr "Кількість товарів"
+
+#: orders/templates/orders/new_order_email_for_manager.html:43
+msgid "Email"
+msgstr "Ел. пошта"
+
+#: orders/templates/orders/new_order_message.html:1
+msgid "Thank you for your order!"
+msgstr "Щиро дякуємо за замовлення"
+
+#: orders/templates/orders/new_order_message.html:2
+msgid "Your order"
+msgstr "Ваше замовлення"
+
+#: orders/templates/orders/new_order_message.html:2
+msgid "from"
+msgstr "від"
+
+#: orders/templates/orders/new_order_message.html:3
+msgid "successfully accepted."
+msgstr "успішно прийняте"
+
+#: orders/templates/orders/new_order_message.html:4
+msgid "We will get back to you shortly."
+msgstr "Ми звʼяжемося з вами найближчим часом"
+
+#: orders/templates/orders/new_order_message.html:5
+msgid "Thank you for being with us."
+msgstr "Дякуємо що Ви з нами"

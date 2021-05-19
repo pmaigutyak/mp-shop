@@ -1,0 +1,17 @@
+<link rel="stylesheet" href="{{ STATIC_URL }}delivery.css">
+
+<script src="{{ STATIC_URL }}jquery.autocomplete.min.js"></script>
+<script src="{{ STATIC_URL }}delivery.js"></script>
+
+<script>
+    (function ($) {
+        new DeliveryForm({
+            $deliveryMethod: $('#{{ form.delivery_method.auto_id }}'),
+            $city: $('#{{ form.city.auto_id }}'),
+            $warehouse: $('#{{ form.warehouse.auto_id }}'),
+            citiesUrl: '{% url 'delivery:cities' %}',
+            warehousesUrl: '{% url 'delivery:warehouses' %}',
+            deliveryMethods: {{ form.delivery_methods|safe }}
+        });
+    })(jQuery);
+</script>

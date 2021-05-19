@@ -1,7 +1,7 @@
 
 from setuptools import setup, find_packages
 
-from shop import __version__
+__version__ = '4.0.0'
 
 
 with open('requirements.txt') as f:

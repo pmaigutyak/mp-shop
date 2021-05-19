@@ -1,0 +1,66 @@
+
+{% load i18n widget_tweaks %}
+
+
+<form action="{{ request.get_full_path }}" method="post">
+    {% csrf_token %}
+
+    {% if form.errors %}
+        <div class="col-xs-12 alert alert-danger">
+            {{ form.errors.as_text }}
+        </div>
+    {% endif %}
+
+    <div class="row">
+        <div class="form-group col-md-6 {% if form.first_name.errors %}has-error{% endif %}">
+            <label for="{{ form.first_name.auto_id }}">
+                {{ form.first_name.label }} *
+            </label>
+            {{ form.first_name|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-6 {% if form.last_name.errors %}has-error{% endif %}">
+            <label for="{{ form.last_name.auto_id }}">
+                {{ form.last_name.label }} *
+            </label>
+            {{ form.last_name|add_class:"form-control" }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group col-md-6 {% if form.middle_name.errors %}has-error{% endif %}">
+            <label for="{{ form.middle_name.auto_id }}">
+                {{ form.middle_name.label }}
+            </label>
+            {{ form.middle_name|add_class:"form-control" }}
+        </div>
+        <div class="form-group col-md-6 {% if form.mobile.errors %}has-error{% endif %}">
+            <label for="{{ form.mobile.auto_id }}">
+                {{ form.mobile.label }} *
+            </label>
+            {{ form.mobile|add_class:"form-control" }}
+        </div>
+    </div>
+
+    <div class="form-group {% if form.payment_method.errors %}has-error{% endif %}">
+        <label for="{{ form.payment_method.auto_id }}">
+            {{ form.payment_method.label }} *
+        </label>
+        {{ form.payment_method|add_class:"form-control" }}
+    </div>
+
+    <hr />
+
+    {{ form.delivery }}
+
+    <div class="form-group {% if form.comment.errors %}has-error{% endif %}">
+        <label for="{{ form.comment.auto_id }}">
+            {{ form.comment.label }}
+        </label>
+        {{ form.comment|add_class:"form-control"|attr:'rows:4' }}
+    </div>
+
+    <button type="submit" class="btn btn-block btn-success">
+        <i class="fa fa-check"></i>
+        {% trans 'Confirm order' %}
+    </button>
+</form>

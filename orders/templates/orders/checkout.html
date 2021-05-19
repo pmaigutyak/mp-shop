@@ -1,0 +1,108 @@
+
+{% extends 'base.html' %}
+
+{% load i18n cart widget_tweaks thumbnail %}
+
+
+{% block meta_title %}
+    {% trans 'Order registration' %}
+{% endblock %}
+
+
+{% block header %}
+    <div class="container">
+        <a href="{% url 'home' %}">
+            <img src="{{ STATIC_URL }}img/site-logo.png"
+                 width="150"
+                 class="m-t-10"
+                 alt="{% trans 'Site logo' %}">
+        </a>
+
+        <a href="{% url 'home' %}"
+           class="btn btn-default pull-right m-t-30">
+            {% trans 'Continue shopping' %}
+            <i class="fa fa-chevron-right"></i>
+        </a>
+    </div>
+    <hr class="m-t-10" />
+{% endblock %}
+
+{% block breadcrumbs %}
+{% endblock %}
+
+
+{% block content %}
+
+    {% get_cart as cart %}
+
+    {% if not cart.is_empty %}
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h2 class="m-t-0">
+                        {% trans 'Order registration' %}
+                    </h2>
+
+                    {% include 'orders/checkout_form.html' %}
+                </div>
+                <div class="col-md-5">
+                    <div>
+                        <h4>
+                            {% trans 'Products' %} ({{ cart.count }})
+                        </h4>
+                        <div style="max-height: 420px;overflow-y: auto;">
+                            {% for item in cart.items %}
+                                <div class="container-fluid">
+                                    <div class="row">
+                                        <div class="col-xs-3">
+                                            {% thumbnail item.logo "100x70" crop="center" as img %}
+                                                <img class="img-responsive img-thumbnail"
+                                                     src="{{ img.url }}">
+                                            {% endthumbnail %}
+                                        </div>
+                                        <div class="col-xs-9">
+                                            <a href="{{ item.url }}">
+                                                <b>{{ item.name }}</b>
+                                            </a>
+                                            <div>
+                                                {% trans 'Price' %}: {{ item.printable_price }} <br />
+                                                {% trans 'Quantity' %}: {{ item.qty }}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr />
+                            {% endfor %}
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-6 p-t-10">
+                            {% trans 'To pay' %}
+                        </div>
+                        <div class="col-xs-6">
+                            <h4>
+                                {{ cart.printable_total }}
+                            </h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    {% else %}
+        <div class="container alert alert-info">
+            {% trans 'Cart is empty' %}.
+            <a href="{% url 'home' %}">
+                {% trans 'Continue shopping' %}
+            </a>
+        </div>
+    {% endif %}
+{% endblock %}
+
+
+{% block js %}
+    {{ block.super }}
+
+    {{ form.fields.delivery.media }}
+{% endblock %}

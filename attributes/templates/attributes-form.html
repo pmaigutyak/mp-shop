@@ -1,0 +1,22 @@
+
+{% load i18n widget_tweaks %}
+
+{{ form.errors }}
+
+<div class="col-multi-fields" data-role="attibute-field">
+    {% for field in form %}
+
+        {% if field|widget_type == 'select' %}
+            </div>
+            <div class="col-multi-fields">
+        {% endif %}
+
+        <div class="multi-field">
+            {{ field.label_tag }}
+            <div class="clearfix"></div>
+            {{ field|add_class:'form-control'|attr:'data-role:attibute-field' }}
+        </div>
+    {% endfor %}
+</div>
+
+{{ form.media }}

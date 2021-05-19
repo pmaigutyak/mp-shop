@@ -1,0 +1,80 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-16 08:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+#: cargo/__init__.py:9
+msgid "Cargo"
+msgstr ""
+
+#: cargo/model_fields.py:10
+msgid "Is visible"
+msgstr "Видимость"
+
+#: cargo/model_fields.py:23
+msgid "Is new"
+msgstr "Новый"
+
+#: cargo/model_fields.py:36
+msgid "Product name"
+msgstr "Название товара"
+
+#: cargo/model_fields.py:53
+msgid "Code"
+msgstr "Код"
+
+#: cargo/model_fields.py:70
+msgid "Additional codes"
+msgstr "Дополнительные коды"
+
+#: cargo/model_fields.py:85
+msgid "Price"
+msgstr "Цена"
+
+#: cargo/model_fields.py:96
+msgid "Old price"
+msgstr "Старая цена"
+
+#: cargo/model_fields.py:111
+msgid "Description"
+msgstr "Описание"
+
+#: cargo/model_fields.py:124
+msgid "Tags"
+msgstr "Теги"
+
+#: cargo/model_fields.py:141
+msgid "Creation date"
+msgstr "Дата создания"
+
+#: cargo/models.py:18
+msgid "Is visible on site"
+msgstr "Видимость на сайте"
+
+#: cargo/models.py:67
+msgid "Not specified"
+msgstr "Не указано"
+
+#: cargo/models.py:85
+msgid "Product"
+msgstr "Товар"
+
+#: cargo/models.py:86
+msgid "Products"
+msgstr "Товары"

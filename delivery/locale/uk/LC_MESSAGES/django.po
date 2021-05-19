@@ -1,0 +1,73 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-06-19 19:50+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+
+#: delivery/__init__.py:8
+msgid "Delivery"
+msgstr "Доставка"
+
+#: delivery/forms.py:11 delivery/models.py:53 delivery/models.py:67
+msgid "Delivery method"
+msgstr "Спосіб доставки"
+
+#: delivery/forms.py:15 delivery/models.py:39 delivery/models.py:61
+msgid "City"
+msgstr "Місто"
+
+#: delivery/forms.py:20 delivery/models.py:78
+msgid "Warehouse"
+msgstr "Поштове відділення"
+
+#: delivery/models.py:8 delivery/models.py:31 delivery/models.py:45
+#: delivery/models.py:70
+msgid "Name"
+msgstr "Назва"
+
+#: delivery/models.py:10 delivery/models.py:33 delivery/models.py:72
+msgid "Reference"
+msgstr ""
+
+#: delivery/models.py:16
+msgid "region"
+msgstr "область"
+
+#: delivery/models.py:19 delivery/models.py:27
+msgid "Region"
+msgstr "Область"
+
+#: delivery/models.py:20
+msgid "Regions"
+msgstr "Регіони"
+
+#: delivery/models.py:40
+msgid "Cities"
+msgstr "Міста"
+
+#: delivery/models.py:47
+msgid "Code"
+msgstr "Код"
+
+#: delivery/models.py:54
+msgid "Delivery methods"
+msgstr "Способи доставки"
+
+#: delivery/models.py:79
+msgid "Warehouses"
+msgstr "Поштові відділення"

@@ -1,0 +1,84 @@
+
+{% extends 'email.html' %}
+
+{% load i18n %}
+
+
+{% block header %}
+    {{ site.domain|capfirst }} | {{ title }}
+    <a href="http://{{ site.domain }}{% url 'admin:orders_order_change' order.id %}" class="show-link">
+        [{% trans 'View on site' %}]
+    </a>
+{% endblock %}
+
+
+{% block content %}
+    <table class="order">
+        <tr>
+            <td>
+                <b>{% trans 'Full name' %}:</b> <br />
+                {{ order.full_name }}
+            </td>
+            <td>
+                <b>{% trans 'Phone' %}:</b> <br />
+                {{ order.mobile }}
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <b>{% trans 'Payment method' %}:</b> <br />
+                {{ order.get_payment_method_display }}
+            </td>
+            <td>
+                <b>{% trans 'Delivery method' %}:</b> <br />
+                {{ order.delivery_method }}
+            </td>
+        </tr>
+        {% if order.address %}
+            <tr>
+                <td colspan="2">
+                    <b>{% trans 'Address' %}:</b> <br />
+                    {{ order.address }}
+                </td>
+            </tr>
+        {% endif %}
+        {% if order.comment %}
+            <tr>
+                <td colspan="2">
+                    <b>{% trans 'Comment' %}:</b> <br />
+                    {{ order.comment }}
+                </td>
+            </tr>
+        {% endif %}
+    </table>
+
+    <table class="products">
+        {% block products %}
+            <tr>
+                <td><b>{% trans 'Product' %}</b></td>
+                <td><b>{% trans 'Price' %}</b></td>
+            </tr>
+
+            {% for item in order.items.all %}
+                <tr style="border-top: 1px solid #b6b6b6;">
+                    <td>
+                        {{ item.product.name }} ({{ item.product.code }})
+                        <a href="https://{{ site.domain }}{{ item.product.get_absolute_url }}"
+                           target="_blank"
+                           class="show-link">
+                            [{% trans 'View on site' %}]
+                        </a>
+                    </td>
+                    <td>{{ item.qty }} x {{ item.product.printable_price }}</td>
+                </tr>
+            {% endfor %}
+
+            <tr>
+                <td colspan="4" align="right">
+                    {% trans 'Total' %}:
+                    <b>{{ order.printable_total }}</b>
+                </td>
+            </tr>
+        {% endblock %}
+    </table>
+{% endblock %}
