@@ -10,7 +10,7 @@ class ProductImage(ImageRecord, metaclass=ImageRecordMeta):
     parent_field = 'product'
 
     class Meta(ImageRecord.Meta):
-        db_table = 'products_images'
+        db_table = 'products_image'
 
 
 def _process_product_image(sender, instance, created, **kwargs):
