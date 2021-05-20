@@ -67,10 +67,7 @@ class AbstractProduct(MultiCurrencyPrice):
         return self.code or _('Not specified')
 
     def get_absolute_url(self):
-        return reverse('products:product', kwargs={
-            'product_slug': self.slug,
-            'product_id': self.id
-        })
+        return reverse('products:product', args=[self.slug, self.id])
 
     @classmethod
     def get_translation_fields(cls):
