@@ -1,5 +1,5 @@
 
-from django.urls import path
+from django.urls import path, include
 
 from comparison import views
 
@@ -17,4 +17,9 @@ urlpatterns = [
 
     path('toggle/<int:product_id>/', views.toggle, name='toggle')
 
+]
+
+
+app_urls = [
+    path('comparison/', include((urlpatterns, app_name)))
 ]
