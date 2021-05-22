@@ -16,8 +16,6 @@ def get_price_offer_modal(request, product_id):
 
     Product = apps.get_model('products', 'Product')
 
-    product = get_object_or_404(Product, id=product_id)
-
     if user.is_authenticated:
         profile = getattr(user, 'profile', None)
         initial = {
@@ -28,14 +26,10 @@ def get_price_offer_modal(request, product_id):
     else:
         initial = {}
 
-    form = ProductPriceOfferForm(initial=initial)
-
-    context = {
-        'form': form,
-        'product': product
-    }
-
-    return render(request, 'offers/price_offer_modal.html', context)
+    return render(request, 'offers/price_offer_modal.html', {
+        'form': ProductPriceOfferForm(initial=initial),
+        'product': get_object_or_404(Product, id=product_id)
+    })
 
 
 @require_POST

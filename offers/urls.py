@@ -1,5 +1,5 @@
 
-from django.urls import path
+from django.urls import path, include
 
 from offers import views
 
@@ -14,3 +14,9 @@ urlpatterns = [
     path('send/<int:product_id>/', views.send_price_offer, name='send'),
 
 ]
+
+
+app_urls = [
+    path('offers/', include((urlpatterns, app_name)))
+]
+

@@ -6,6 +6,7 @@ from django.utils.safestring import mark_safe
 from offers.models import ProductPriceOffer
 
 
+@admin.register(ProductPriceOffer)
 class ProductPriceOfferAdmin(admin.ModelAdmin):
 
     list_display = [
@@ -21,6 +22,3 @@ class ProductPriceOfferAdmin(admin.ModelAdmin):
             item.product.get_absolute_url(), _('View product')))
 
     product_link.short_description = _('Product')
-
-
-admin.site.register(ProductPriceOffer, ProductPriceOfferAdmin)

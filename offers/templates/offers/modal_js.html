@@ -1,0 +1,11 @@
+
+<script src="{{ STATIC_URL }}offers/offers.js"></script>
+
+<script>
+    $(window).on('load', function() {
+        new PriceOfferModal({
+            url: '{% url 'offers:modal' obj.id %}',
+            $target: $('{{ selector }}')
+        });
+    });
+</script>
