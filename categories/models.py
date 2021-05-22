@@ -37,6 +37,11 @@ class Category(MPTTModel):
         max_length=255,
         blank=True)
 
+    product_name = models.CharField(
+        _('Product name'),
+        max_length=255,
+        blank=True)
+
     logo = models.ImageField(
         _('Logo'),
         upload_to='categories',

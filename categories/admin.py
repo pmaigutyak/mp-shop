@@ -45,14 +45,6 @@ class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
         get_translation_fields('name')
     )
 
-    fields = (
-        ('parent', 'code', ),
-        tuple(get_translation_fields('name')),
-        tuple(get_translation_fields('title')),
-        ('logo', 'icon', ),
-        tuple(get_translation_fields('description')),
-    )
-
     list_display = _get_list_display()
 
     formfield_overrides = _get_formfield_overrides()
@@ -63,7 +55,7 @@ class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
             ('parent', 'code',),
             tuple(get_translation_fields('name')),
             tuple(get_translation_fields('title')),
-
+            tuple(get_translation_fields('product_name')),
         )
 
         if IS_CLOTHES_BUSINESS:

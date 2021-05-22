@@ -5,6 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 from exchange.models import MultiCurrencyPrice
 from availability.models import AvailabilityField
 from manufacturers.models import ManufacturerField
+from modeltranslation.utils import get_translation_fields
 from categories.models import CategoryField
 from basement.images.models import LogoField
 from slugify import slugify_url
@@ -75,6 +76,26 @@ class AbstractProduct(MultiCurrencyPrice):
 
     def __str__(self):
         return self.name
+
+    def save(self, **kwargs):
+        self._set_default_name_field()
+        return super().save(**kwargs)
+
+    def _set_default_name_field(self):
+
+        fields = tuple(
+            zip(
+                get_translation_fields('name'),
+                get_translation_fields('product_name')
+            )
+        ) + (('name', 'product_name',), )
+
+        for src_field, dst_field in fields:
+
+            if getattr(self, src_field):
+                continue
+
+            setattr(self, src_field, getattr(self.category, dst_field))
 
     class Meta:
         abstract = True

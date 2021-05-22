@@ -6,5 +6,5 @@ from categories.models import Category
 
 translator.register(
     Category,
-    fields=['name', 'title', 'description', 'grid']
+    fields=['name', 'title', 'description', 'grid', 'product_name']
 )
