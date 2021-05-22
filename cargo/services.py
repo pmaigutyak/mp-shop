@@ -11,14 +11,14 @@ class ProductService(object):
         self._user = user
         self._session = session
 
-    def filter(self, query):
+    def filter(self, query={}):
 
         queryset = self.product_class.objects.all()
 
         if 'id' in query:
             queryset = queryset.filter(id=query['id'])
 
-        if 'is_visible' is not None:
+        if 'is_visible' in query:
             queryset = queryset.filter(is_visible=query['is_visible'])
 
         return queryset.set_currency(self._exchange.get_active_currency())
