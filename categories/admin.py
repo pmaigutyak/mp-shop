@@ -10,7 +10,6 @@ from modeltranslation.utils import get_translation_fields
 from cap.decorators import short_description, template_list_item
 
 from categories.models import Category
-from categories.config import IS_CLOTHES_BUSINESS
 
 
 def _get_formfield_overrides():
@@ -31,8 +30,8 @@ def _get_list_display():
         get_translation_fields('title')
     )
 
-    if IS_CLOTHES_BUSINESS:
-        result += ['age']
+    if apps.is_installed('clothes'):
+        result += ['age', 'sex']
 
     return result + ['code', 'icon', 'product_count', 'get_preview']
 
@@ -58,9 +57,9 @@ class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
             tuple(get_translation_fields('product_name')),
         )
 
-        if IS_CLOTHES_BUSINESS:
+        if apps.is_installed('clothes'):
             fields += (
-                ('age', 'grid',),
+                ('age', 'sex', 'grid', ),
             )
 
         return fields + (
