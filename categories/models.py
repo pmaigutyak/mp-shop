@@ -8,11 +8,12 @@ from mptt.models import MPTTModel, TreeForeignKey
 from slugify import slugify_url
 
 
-class Category(MPTTModel):
+SEX_MALE = 'male'
+SEX_FEMALE = 'female'
+SEX_BOTH = 'both'
 
-    SEX_MALE = 'male'
-    SEX_FEMALE = 'female'
-    SEX_BOTH = 'both'
+
+class Category(MPTTModel):
 
     SEX_CHOICES = (
         (SEX_MALE, _('Male')),
