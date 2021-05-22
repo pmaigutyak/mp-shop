@@ -8,7 +8,7 @@ from exchange.models import ExchangeRates, _MULTI_CURRENCY_MODELS
 
 def update_all_prices():
 
-    rates = ExchangeRates.objects.get()
+    rates = ExchangeRates.get()
 
     field = lambda c: 'price_{}'.format(CURRENCY_NAMES[c])
 

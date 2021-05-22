@@ -26,6 +26,11 @@ class ExchangeRates(SingletonModel):
 
     usd_eur = models.FloatField(_('USD - EUR'), default=1)
 
+    @classmethod
+    def get(cls):
+        rates, created = cls.objects.get_or_create()
+        return rates
+
     def __str__(self):
         return ugettext('Exchange rates')
 
@@ -68,7 +73,7 @@ class MultiCurrencyPrice(models.Model):
 
     def save(self, **kwargs):
 
-        rates = ExchangeRates.objects.get()
+        rates = ExchangeRates.get()
 
         field = lambda c: 'price_{}'.format(CURRENCY_NAMES[c])
 
