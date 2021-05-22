@@ -10,13 +10,13 @@ app_name = 'cart'
 
 urlpatterns = [
 
-    path('modal/', views.get_modal, name='modal'),
+    path('modal', views.get_modal, name='modal'),
 
-    path('add/', views.add, name='add'),
+    path('add', views.add, name='add'),
 
-    path('remove/', views.remove, name='remove'),
+    path('remove', views.remove, name='remove'),
 
-    path('set-qty/', views.set_qty, name='set-qty')
+    path('set-qty', views.set_qty, name='set-qty')
 
 ]
 
