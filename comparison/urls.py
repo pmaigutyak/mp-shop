@@ -1,5 +1,6 @@
 
 from django.urls import path, include
+from django.conf.urls.i18n import i18n_patterns
 
 from comparison import views
 
@@ -20,6 +21,6 @@ urlpatterns = [
 ]
 
 
-app_urls = [
+app_urls = i18n_patterns(
     path('comparison/', include((urlpatterns, app_name)))
-]
+)
