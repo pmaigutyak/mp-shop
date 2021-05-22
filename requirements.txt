@@ -1,4 +1,6 @@
 
+django-mp-basement==3.0.5
+
 # attributes
 six==1.15.0
 
