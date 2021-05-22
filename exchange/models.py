@@ -4,10 +4,11 @@ from django.utils.translation import ugettext, ugettext_lazy as _
 
 from solo.models import SingletonModel
 
+from basement.services import register_service
+
 from exchange.utils import format_printable_price, get_price_factory
-
 from exchange.managers import MultiCurrencyManager
-
+from exchange.services import ExchangeService
 from exchange.constants import (
     CURRENCY_UAH,
     CURRENCIES,
@@ -137,3 +138,8 @@ class MultiCurrencyPrice(models.Model):
 def subscribe_on_exchange_rates(model):
     _MULTI_CURRENCY_MODELS.add(model)
     return model
+
+
+@register_service('exchange')
+def factory(services, user, session, **kwargs):
+    return ExchangeService(user, session)
