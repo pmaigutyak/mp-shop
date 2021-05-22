@@ -10,7 +10,7 @@ app_name = 'clothes'
 
 urlpatterns = [
 
-    path('sizes/<int:product_id>/', views.get_sizes, name='sizes')
+    path('sizes', views.get_sizes, name='sizes')
 
 ]
 
