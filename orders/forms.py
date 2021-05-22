@@ -1,8 +1,7 @@
 
 from django import forms
 
-from orders.models import Order, ClothesSize
-from orders.constants import MALE_CLOTHES_FIELDS, FEMALE_CLOTHES_FIELDS
+from orders.models import Order
 
 from delivery.fields import DeliveryFormField
 
@@ -22,17 +21,3 @@ class CheckoutForm(forms.ModelForm):
             'first_name', 'last_name', 'middle_name', 'payment_method',
             'mobile', 'comment'
         ]
-
-
-class MaleSizeForm(forms.ModelForm):
-
-    class Meta:
-        model = ClothesSize
-        fields = MALE_CLOTHES_FIELDS
-
-
-class FemaleSizeForm(forms.ModelForm):
-
-    class Meta:
-        model = ClothesSize
-        fields = FEMALE_CLOTHES_FIELDS
