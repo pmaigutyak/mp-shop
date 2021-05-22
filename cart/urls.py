@@ -15,9 +15,7 @@ urlpatterns = [
 
     path('remove/', views.remove, name='remove'),
 
-    path('set-qty/', views.set_qty, name='set-qty'),
-
-    path('get-sizes/', views.get_sizes, name='get-sizes')
+    path('set-qty/', views.set_qty, name='set-qty')
 
 ]
 

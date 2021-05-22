@@ -63,14 +63,3 @@ def set_qty(request):
         form_class=SetQtyForm,
         message=ugettext('Quantity updated')
     )
-
-
-def get_sizes(request):
-    sex = request.GET.get('sex')
-    size = request.GET.get('size')
-
-    try:
-        sizes = DEFAULT_SIZES[sex][int(size)]
-        return JsonResponse(sizes)
-    except Exception:
-        return HttpResponse('Incorrect params', status=403)
