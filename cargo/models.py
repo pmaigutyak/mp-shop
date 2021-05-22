@@ -3,10 +3,12 @@ from django.urls import reverse
 from django.utils.translation import ugettext_lazy as _
 
 from exchange.models import MultiCurrencyPrice
+from exchange.constants import DEFAULT_CURRENCY_NAME
+
 from availability.models import AvailabilityField
 from manufacturers.models import ManufacturerField
 from modeltranslation.utils import get_translation_fields
-from categories.models import CategoryField
+from categories.models import CategoryField, SEX_MALE, SEX_FEMALE, SEX_BOTH
 from basement.images.models import LogoField
 from slugify import slugify_url
 
@@ -67,12 +69,26 @@ class AbstractProduct(MultiCurrencyPrice):
     def printable_code(self):
         return self.code or _('Not specified')
 
+    @property
+    def printable_price(self):
+        return '{} {}'.format(self.price_retail, DEFAULT_CURRENCY_NAME)
+
     def get_absolute_url(self):
         return reverse('products:product', args=[self.slug, self.id])
 
     @classmethod
     def get_translation_fields(cls):
         return ['name', 'description']
+
+    @property
+    def sex(self):
+        return self.category.sex
+
+    def has_male_size(self):
+        return self.sex in [SEX_MALE, SEX_BOTH]
+
+    def has_female_size(self):
+        return self.sex in [SEX_FEMALE, SEX_BOTH]
 
     def __str__(self):
         return self.name
