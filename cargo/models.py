@@ -90,6 +90,18 @@ class AbstractProduct(MultiCurrencyPrice):
     def has_female_size(self):
         return self.sex in [SEX_FEMALE, SEX_BOTH]
 
+    @property
+    def add_to_cart_attrs(self):
+        attrs = [
+            'data-role=add-to-cart',
+            'data-product-id={}'.format(self.id)
+        ]
+
+        if self.sex:
+            attrs.append('data-product-sex={}'.format(self.sex))
+
+        return ' '.join(attrs)
+
     def __str__(self):
         return self.name
 
