@@ -2,7 +2,10 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from basement.services import register_service
+
 from clothes.constants import CLOTHES_FIELDS
+from clothes.storage import SizeStorage
 
 
 class ClothesSize(models.Model):
@@ -99,3 +102,19 @@ class ClothesSize(models.Model):
                 getattr(self, f_name)
             ), )
         return values
+
+
+class ClothesService(object):
+
+    @staticmethod
+    @register_service('clothes')
+    def factory(services, user, session, **kwargs):
+        return ClothesService(session)
+
+    def __init__(self, session):
+        self._storage = SizeStorage(session)
+
+    def create_size(self, ordered_product):
+        size = self._storage.get(ordered_product.product_id)
+        for data in size.values():
+            ClothesSize.objects.create(ordered_product=ordered_product, **data)

@@ -1,7 +1,7 @@
 
 {% extends 'base.html' %}
 
-{% load i18n cart widget_tweaks thumbnail %}
+{% load i18n widget_tweaks thumbnail %}
 
 
 {% block meta_title %}
@@ -33,9 +33,7 @@
 
 {% block content %}
 
-    {% get_cart as cart %}
-
-    {% if not cart.is_empty %}
+    {% if not request.env.cart.is_empty %}
         <div class="container">
             <div class="row">
                 <div class="col-md-7">
@@ -48,10 +46,10 @@
                 <div class="col-md-5">
                     <div>
                         <h4>
-                            {% trans 'Products' %} ({{ cart.count }})
+                            {% trans 'Products' %} ({{ request.env.cart.count }})
                         </h4>
                         <div style="max-height: 420px;overflow-y: auto;">
-                            {% for item in cart.items %}
+                            {% for item in request.env.cart.items %}
                                 <div class="container-fluid">
                                     <div class="row">
                                         <div class="col-xs-3">
@@ -81,7 +79,7 @@
                         </div>
                         <div class="col-xs-6">
                             <h4>
-                                {{ cart.printable_total }}
+                                {{ request.env.cart.printable_total }}
                             </h4>
                         </div>
                     </div>
