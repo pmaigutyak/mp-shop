@@ -15,6 +15,14 @@
     </a> <br />
     <b>{{ item.qty }} x {{ item.product.printable_price }}</b> <br />
 
+    {% if is_clothes_app_enabled %}
+        {% for size in item.clothe_sizes.all %}
+            {% for label, value in size.get_values %}
+                <b>{{ label }}</b>: {{ value }} <br />
+            {% endfor %}
+        {% endfor %}
+    {% endif %}
+
     <div class="clearfix" style="margin: 5px 0;"></div>
 
     <hr />

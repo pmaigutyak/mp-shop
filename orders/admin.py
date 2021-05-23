@@ -1,4 +1,5 @@
 
+from django.apps import apps
 from django.contrib import admin
 from django.utils.timezone import localtime
 from django.utils.translation import ugettext_lazy as _
@@ -37,7 +38,10 @@ class OrderAdmin(admin.ModelAdmin):
 
     @template_list_item('orders/admin/products.html', _('Products'))
     def products_tag(self, obj):
-        return {'object': obj}
+        return {
+            'object': obj,
+            'is_clothes_app_enabled': apps.is_installed('clothes')
+        }
 
     @short_description(_('Order'))
     def order_tag(self, obj):

@@ -97,10 +97,12 @@ class ClothesSize(models.Model):
     def get_values(self):
         values = []
         for f_name in CLOTHES_FIELDS:
-            values.append((
-                self._meta.get_field(f_name).verbose_name,
-                getattr(self, f_name)
-            ), )
+            value = getattr(self, f_name)
+
+            if value:
+                values.append((
+                    self._meta.get_field(f_name).verbose_name, value
+                ), )
         return values
 
 
