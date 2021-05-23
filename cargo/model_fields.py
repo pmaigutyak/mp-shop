@@ -2,6 +2,8 @@
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from ckeditor_uploader.fields import RichTextUploadingField
+
 
 class IsVisibleField(models.BooleanField):
 
@@ -104,7 +106,7 @@ class OldPriceField(models.FloatField):
             *args, **kwargs)
 
 
-class DescriptionField(models.TextField):
+class DescriptionField(RichTextUploadingField):
 
     def __init__(
             self,

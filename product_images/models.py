@@ -1,7 +1,7 @@
 
 from django.db.models.signals import post_save
 
-from basement.images.models import ImageRecord, ImageRecordMeta
+from images.models import ImageRecord, ImageRecordMeta
 
 
 class ProductImage(ImageRecord, metaclass=ImageRecordMeta):

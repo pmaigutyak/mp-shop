@@ -3,6 +3,8 @@ from django.db import models
 from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
+from basement.widgets import Select
+from mptt.fields import TreeNodeChoiceField
 from mptt.models import MPTTModel, TreeForeignKey
 
 from slugify import slugify_url
@@ -78,6 +80,10 @@ class Category(MPTTModel):
         verbose_name_plural = _('Categories')
 
 
+class CategoryFormField(TreeNodeChoiceField):
+    widget = Select(select2attrs={'width': '100%'})
+
+
 class CategoryField(models.ForeignKey):
 
     def __init__(
@@ -92,3 +98,8 @@ class CategoryField(models.ForeignKey):
             verbose_name=verbose_name,
             on_delete=on_delete,
             *args, **kwargs)
+
+    def formfield(self, *, using=None, **kwargs):
+        defaults = {'form_class': CategoryFormField}
+        defaults.update(kwargs)
+        return super().formfield(using=using, **defaults)

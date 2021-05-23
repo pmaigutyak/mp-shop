@@ -1,5 +1,5 @@
 
-from basement.images import fields
+from images import fields
 
 from product_images.models import ProductImage
 

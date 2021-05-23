@@ -10,7 +10,7 @@ from manufacturers.models import ManufacturerField
 from modeltranslation.utils import get_translation_fields
 from categories.models import CategoryField
 from clothes.constants import SEX_MALE, SEX_FEMALE, SEX_BOTH
-from basement.images.models import LogoField
+from images.models import LogoField
 from slugify import slugify_url
 
 from cargo import model_fields

@@ -3,6 +3,8 @@ from django.apps import apps
 from django.db import models
 from django.utils.translation import ugettext_lazy as _
 
+from basement.widgets import Select
+
 from manufacturers.signals import manufacturer_replaced
 
 
@@ -83,3 +85,8 @@ class ManufacturerField(models.ForeignKey):
             blank=blank,
             null=null,
             *args, **kwargs)
+
+    def formfield(self, *, using=None, **kwargs):
+        defaults = {'widget': Select(select2attrs={'width': '100%'})}
+        defaults.update(kwargs)
+        return super().formfield(using=using, **defaults)

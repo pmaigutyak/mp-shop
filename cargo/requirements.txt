@@ -1,5 +1,0 @@
-django-mp-availability==0.4
-django-mp-exchange==0.10
-django-mp-manufacturers==0.3
-django-watermarks==2.0
-django-mp-attributes==1.1
