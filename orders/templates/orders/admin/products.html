@@ -17,9 +17,14 @@
 
     {% if is_clothes_app_enabled %}
         {% for size in item.clothe_sizes.all %}
-            {% for label, value in size.get_values %}
-                <b>{{ label }}</b>: {{ value }} <br />
-            {% endfor %}
+            <table class="table">
+                {% for label, value in size.get_values %}
+                    <tr>
+                        <td><b>{{ label }}</b></td>
+                        <td>{{ value }}</td>
+                    </tr>
+                {% endfor %}
+            </table>
         {% endfor %}
     {% endif %}
 

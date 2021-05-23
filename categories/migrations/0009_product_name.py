@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('categories', '0009_clothes_fields'),
+        ('categories', '0008_mptt'),
     ]
 
     operations = [

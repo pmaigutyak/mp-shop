@@ -23,19 +23,6 @@ def _get_formfield_overrides():
     return {}
 
 
-def _get_list_display():
-    result = (
-        ['id'] +
-        get_translation_fields('name') +
-        get_translation_fields('title')
-    )
-
-    if apps.is_installed('clothes'):
-        result += ['age', 'sex']
-
-    return result + ['code', 'icon', 'product_count', 'get_preview']
-
-
 @admin.register(Category)
 class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
 
@@ -44,28 +31,23 @@ class CategoryAdmin(TranslationAdmin, MPTTModelAdmin):
         get_translation_fields('name')
     )
 
-    list_display = _get_list_display()
+    list_display = (
+        ['id'] +
+        get_translation_fields('name') +
+        get_translation_fields('title') +
+        ['code', 'icon', 'product_count', 'get_preview']
+    )
 
     formfield_overrides = _get_formfield_overrides()
 
-    @property
-    def fields(self):
-        fields = (
-            ('parent', 'code',),
-            tuple(get_translation_fields('name')),
-            tuple(get_translation_fields('title')),
-            tuple(get_translation_fields('product_name')),
-        )
-
-        if apps.is_installed('clothes'):
-            fields += (
-                ('age', 'sex', 'grid', ),
-            )
-
-        return fields + (
-            ('logo', 'icon',),
-            tuple(get_translation_fields('description')),
-        )
+    fields = (
+        ('parent', 'code',),
+        tuple(get_translation_fields('name')),
+        tuple(get_translation_fields('title')),
+        tuple(get_translation_fields('product_name')),
+        ('logo', 'icon',),
+        tuple(get_translation_fields('description')),
+    )
 
     @template_list_item('admin/list_item_preview.html', _('Preview'))
     def get_preview(self, item):

@@ -4,8 +4,51 @@ from django.utils.translation import ugettext_lazy as _
 
 from basement.services import register_service
 
-from clothes.constants import CLOTHES_FIELDS
+from clothes.constants import CLOTHES_FIELDS, SEX_CHOICES, SEX_MALE, SEX_FEMALE
 from clothes.storage import SizeStorage
+
+
+class SexField(models.CharField):
+
+    def __init__(
+            self,
+            verbose_name=_('Sex'),
+            max_length=10,
+            choices=SEX_CHOICES,
+            blank=True):
+        super().__init__(
+            verbose_name=verbose_name,
+            max_length=max_length,
+            choices=choices,
+            blank=blank
+        )
+
+
+class CategoryProfile(models.Model):
+
+    category = models.OneToOneField(
+        'categories.Category',
+        on_delete=models.CASCADE,
+        verbose_name=_('Category'),
+        related_name='clothes_profile'
+    )
+
+    grid = models.TextField(
+        _('Size grid'),
+        blank=True,
+        max_length=4096)
+
+    age = models.CharField(
+        _('Age'),
+        max_length=100,
+        blank=True,
+        choices=(
+            ('adult', _('Adult')),
+            ('child', _('Child'))
+        )
+    )
+
+    sex = SexField()
 
 
 class ClothesSize(models.Model):
@@ -37,6 +80,8 @@ class ClothesSize(models.Model):
     )
 
     SIZE_CHOICES = MALE_SIZES + FEMALE_SIZES
+
+    sex = SexField(blank=False)
 
     size = models.IntegerField(
         _('Size'),
@@ -95,8 +140,13 @@ class ClothesSize(models.Model):
         _('Length of dress from waist'), blank=True, null=True)
 
     def get_values(self):
-        values = []
-        for f_name in CLOTHES_FIELDS:
+
+        values = [
+            (_('Sex'), self.get_sex_display()),
+        ]
+
+        for f_name in CLOTHES_FIELDS[self.sex]:
+
             value = getattr(self, f_name)
 
             if value:
@@ -118,5 +168,19 @@ class ClothesService(object):
 
     def create_size(self, ordered_product):
         size = self._storage.get(ordered_product.product_id)
-        for data in size.values():
-            ClothesSize.objects.create(ordered_product=ordered_product, **data)
+
+        male_values = size.get('male_form')
+
+        if male_values:
+            ClothesSize.objects.create(
+                ordered_product=ordered_product,
+                sex=SEX_MALE,
+                **male_values)
+
+        female_values = size.get('female_form')
+
+        if female_values:
+            ClothesSize.objects.create(
+                ordered_product=ordered_product,
+                sex=SEX_FEMALE,
+                **female_values)

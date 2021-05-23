@@ -1,4 +1,5 @@
 
+from django.apps import apps
 from django.conf import settings
 from django.contrib import messages
 from django.template.loader import render_to_string
@@ -12,7 +13,8 @@ def get_new_order_context(order):
     return {
         'order': order,
         'title': '{} #{}'.format(_('New order'), order.id),
-        'site': Site.objects.get_current()
+        'site': Site.objects.get_current(),
+        'is_clothes_app_enabled': apps.is_installed('clothes')
     }
 
 

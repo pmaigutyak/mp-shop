@@ -8,7 +8,8 @@ from exchange.constants import DEFAULT_CURRENCY_NAME
 from availability.models import AvailabilityField
 from manufacturers.models import ManufacturerField
 from modeltranslation.utils import get_translation_fields
-from categories.models import CategoryField, SEX_MALE, SEX_FEMALE, SEX_BOTH
+from categories.models import CategoryField
+from clothes.constants import SEX_MALE, SEX_FEMALE, SEX_BOTH
 from basement.images.models import LogoField
 from slugify import slugify_url
 
@@ -82,7 +83,10 @@ class AbstractProduct(MultiCurrencyPrice):
 
     @property
     def sex(self):
-        return self.category.sex
+        try:
+            return self.category.clothes_profile.sex
+        except Exception:
+            return ''
 
     def has_male_size(self):
         return self.sex in [SEX_MALE, SEX_BOTH]

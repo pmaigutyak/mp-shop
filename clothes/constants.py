@@ -1,4 +1,18 @@
 
+from django.utils.translation import ugettext_lazy as _
+
+
+SEX_MALE = 'male'
+SEX_FEMALE = 'female'
+SEX_BOTH = 'both'
+
+
+SEX_CHOICES = (
+    (SEX_MALE, _('Male')),
+    (SEX_FEMALE, _('Female')),
+    (SEX_BOTH, _('Both')),
+)
+
 
 DEFAULT_CLOTHES_SIZES = {
     'male': {
@@ -107,11 +121,13 @@ DEFAULT_CLOTHES_SIZES = {
     }
 }
 
+
 MALE_CLOTHES_FIELDS = [
     'size', 'breast_size', 'neck_volume', 'product_length',
     'waist_volume', 'hips_volume', 'sleeve_length', 'shoulder_length',
     'back_width'
 ]
+
 
 FEMALE_CLOTHES_FIELDS = [
     'size', 'breast_size', 'waist_volume', 'hips_volume',
@@ -119,4 +135,8 @@ FEMALE_CLOTHES_FIELDS = [
     'length_of_dress_up_to_waist', 'length_of_dress_from_waist'
 ]
 
-CLOTHES_FIELDS = set(MALE_CLOTHES_FIELDS + FEMALE_CLOTHES_FIELDS)
+
+CLOTHES_FIELDS = {
+    SEX_MALE: MALE_CLOTHES_FIELDS,
+    SEX_FEMALE: FEMALE_CLOTHES_FIELDS
+}

@@ -8,18 +8,7 @@ from mptt.models import MPTTModel, TreeForeignKey
 from slugify import slugify_url
 
 
-SEX_MALE = 'male'
-SEX_FEMALE = 'female'
-SEX_BOTH = 'both'
-
-
 class Category(MPTTModel):
-
-    SEX_CHOICES = (
-        (SEX_MALE, _('Male')),
-        (SEX_FEMALE, _('Female')),
-        (SEX_BOTH, _('Both')),
-    )
 
     parent = TreeForeignKey(
         'self',
@@ -64,27 +53,6 @@ class Category(MPTTModel):
         _('Description'),
         blank=True,
         max_length=4096)
-
-    grid = models.TextField(
-        _('Size grid'),
-        blank=True,
-        max_length=4096)
-
-    age = models.CharField(
-        _('Age'),
-        max_length=100,
-        blank=True,
-        choices=(
-            ('adult', _('Adult')),
-            ('child', _('Child'))
-        )
-    )
-
-    sex = models.CharField(
-        _('Sex'),
-        max_length=10,
-        choices=SEX_CHOICES,
-        blank=True)
 
     def __str__(self):
         return self.name

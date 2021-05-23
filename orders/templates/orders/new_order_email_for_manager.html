@@ -68,6 +68,19 @@
                            class="show-link">
                             [{% trans 'View on site' %}]
                         </a>
+                        {% if is_clothes_app_enabled %}
+                            <br />
+                            {% for size in item.clothe_sizes.all %}
+                                <table>
+                                    {% for label, value in size.get_values %}
+                                        <tr>
+                                            <td><b>{{ label }}</b></td>
+                                            <td>{{ value }}</td>
+                                        </tr>
+                                    {% endfor %}
+                                </table>
+                            {% endfor %}
+                        {% endif %}
                     </td>
                     <td>{{ item.qty }} x {{ item.product.printable_price }}</td>
                 </tr>
