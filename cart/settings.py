@@ -16,11 +16,5 @@ class CartSettings(object):
             'cart.js',
         )
 
-    @property
-    def CONTEXT_PROCESSORS(self):
-        return super().CONTEXT_PROCESSORS + [
-            'cart.context_processors.cart'
-        ]
-
 
 default = CartSettings

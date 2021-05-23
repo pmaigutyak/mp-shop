@@ -21,6 +21,9 @@ class ProductService(object):
         if 'is_visible' in query:
             queryset = queryset.filter(is_visible=query['is_visible'])
 
+        if 'id__in' in query:
+            queryset = queryset.filter(id__in=query['id__in'])
+
         return queryset.set_currency(self._exchange.get_active_currency())
 
     def add_to_history(self, product_id):
@@ -59,6 +62,9 @@ class ProductService(object):
             return related_products[index:index + count]
 
         return []
+
+    def format_printable_price(self, *args, **kwargs):
+        return self.product_class.format_printable_price(*args, **kwargs)
 
     @property
     def product_class(self):

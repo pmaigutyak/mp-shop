@@ -1,9 +1,8 @@
 
+from django.apps import apps
 from django.db import transaction
 from django.shortcuts import redirect, render
 from django.contrib.auth.decorators import login_required
-
-from cart.lib import get_cart
 
 from orders.utils import send_new_order_notifications
 from orders.forms import CheckoutForm
@@ -28,7 +27,7 @@ def checkout(request):
 
     if request.method == 'POST' and form.is_valid():
 
-        cart = get_cart(request)
+        cart = request.env.cart
 
         order = form.save(commit=False)
 
@@ -41,10 +40,13 @@ def checkout(request):
         order.save()
 
         for item in cart.items:
-            order.items.create(
+            ordered_product = order.items.create(
                 product_id=item.id,
                 qty=item.qty,
                 **item.price_values)
+
+            if apps.is_installed('clothes'):
+                request.env.clothes.create_size(ordered_product)
 
         cart.clear()
 
