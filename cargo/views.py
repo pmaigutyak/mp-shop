@@ -10,7 +10,10 @@ def get_product_page_context(request, product_id, queryset=None):
         queryset = products.filter({
             'is_visible': True,
             'id': product_id,
-        }).select_related('category')
+        }).select_related(
+            'category',
+            'availability'
+        )
 
     product = queryset.get()
 
