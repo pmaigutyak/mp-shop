@@ -4,6 +4,8 @@ from django.urls import reverse_lazy
 from django.utils.translation import ugettext_lazy as _
 
 from basement.widgets import Select
+from basement.services import register_service
+
 from mptt.fields import TreeNodeChoiceField
 from mptt.models import MPTTModel, TreeForeignKey
 
@@ -103,3 +105,14 @@ class CategoryField(models.ForeignKey):
         defaults = {'form_class': CategoryFormField}
         defaults.update(kwargs)
         return super().formfield(using=using, **defaults)
+
+
+class CategoryService(object):
+
+    @staticmethod
+    @register_service('categories')
+    def factory(services, user, session, **kwargs):
+        return CategoryService()
+
+    def get(self, category_id):
+        return Category.objects.get(id=category_id)
