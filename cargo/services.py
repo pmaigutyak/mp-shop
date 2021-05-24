@@ -26,6 +26,9 @@ class ProductService(object):
 
         return queryset.set_currency(self._exchange.get_active_currency())
 
+    def latest(self):
+        return self.filter({'is_available': True}).order_by('-id')
+
     def add_to_history(self, product_id):
 
         product_ids = self._session.get('PRODUCT_HISTORY', [])

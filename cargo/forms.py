@@ -3,12 +3,8 @@ from django import forms
 from django.apps import apps
 from django.utils.translation import ugettext_lazy as _
 
-from ckeditor_uploader.widgets import CKEditorUploadingWidget
 from attributes.fields import AttributesFormField
 from product_images.fields import ImagesFormField
-from availability.fields import AvailabilityField
-from categories.fields import CategoryChoiceField
-from cap.widgets import TagsInput, Select, SelectMultiple
 from basement.forms import BasementModelForm
 
 from cargo import constants
@@ -16,29 +12,15 @@ from cargo import constants
 
 class ProductForm(BasementModelForm):
 
-    # images = ImagesFormField()
-    # attributes = AttributesFormField(label='')
+    images = ImagesFormField()
+    attributes = AttributesFormField(label='')
 
     class Meta:
-        # field_classes = {
-        #     'availability': AvailabilityField,
-        #     'category': CategoryChoiceField
-        # }
-        # widgets = {
-        #     'tags': TagsInput,
-        #     'additional_codes': TagsInput,
-        #     'description': CKEditorUploadingWidget,
-        #     'manufacturer': Select(select2attrs={'width': '100%'}),
-        #     'category': Select(select2attrs={'width': '100%'}),
-        #     'cars': SelectMultiple(select2attrs={
-        #         'width': 'calc(100% - 20px)'
-        #     })
-        # }
         model = apps.get_model('products', 'Product')
         fields = '__all__'
 
 
-class SearchProductForm(forms.Form):
+class ProductFilterForm(forms.Form):
 
     query = forms.CharField(label=_('Search query'), required=False)
 
