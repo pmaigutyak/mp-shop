@@ -2,6 +2,7 @@
 from django.db.models.signals import post_save
 
 from images.models import ImageRecord, ImageRecordMeta
+from watermarks.utils import insert_watermark
 
 
 class ProductImage(ImageRecord, metaclass=ImageRecordMeta):
@@ -29,8 +30,7 @@ def _process_product_image(sender, instance, created, **kwargs):
     # image.save(instance.file.path)
 
     try:
-        watermark = WatermarkImage.get('product')
-        watermark.process(instance.file.path)
+        insert_watermark('product', instance.file.path)
     except Exception as e:
         pass
 
