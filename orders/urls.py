@@ -13,6 +13,12 @@ urlpatterns = [
     path('checkout/', views.checkout, name='checkout'),
 
     path('history/', views.get_history, name='history'),
+
+    path('resend/<int:order_id>', views.resend_new_order_notifications,
+         name='resend-notifications'),
+
+    path('render-email/<int:order_id>', views.render_new_order_email,
+         name='render-email'),
 ]
 
 

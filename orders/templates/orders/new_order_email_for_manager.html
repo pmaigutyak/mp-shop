@@ -4,16 +4,17 @@
 {% load i18n %}
 
 
-{% block header %}
-    {{ site.domain|capfirst }} | {{ title }}
-    <a href="http://{{ site.domain }}{% url 'admin:orders_order_change' order.id %}" class="show-link">
-        [{% trans 'View on site' %}]
-    </a>
-{% endblock %}
-
-
 {% block content %}
     <table class="order">
+        <tr>
+            <td colspan="2">
+                <a href="https://{{ site.domain }}{% url 'admin:orders_order_change' order.id %}" target="_blank">
+                    <h2 class="title">
+                        {{ title }}
+                    </h2>
+                </a>
+            </td>
+        </tr>
         <tr>
             <td>
                 <b>{% trans 'Full name' %}:</b> <br />
@@ -21,9 +22,10 @@
             </td>
             <td>
                 <b>{% trans 'Phone' %}:</b> <br />
-                {{ order.mobile }}
+                <a href="tel:{{ order.mobile }}">{{ order.mobile }}</a>
             </td>
         </tr>
+        <tr><td colspan="2" class="spacer"></td></tr>
         <tr>
             <td>
                 <b>{% trans 'Payment method' %}:</b> <br />
@@ -34,6 +36,7 @@
                 {{ order.delivery_method }}
             </td>
         </tr>
+        <tr><td colspan="2" class="spacer"></td></tr>
         {% if order.address %}
             <tr>
                 <td colspan="2">
@@ -42,6 +45,7 @@
                 </td>
             </tr>
         {% endif %}
+        <tr><td colspan="2" class="spacer"></td></tr>
         {% if order.comment %}
             <tr>
                 <td colspan="2">
@@ -50,39 +54,36 @@
                 </td>
             </tr>
         {% endif %}
+        <tr><td colspan="2" class="spacer"></td></tr>
     </table>
 
-    <table class="products">
+    <table class="items-table">
         {% block products %}
             <tr>
                 <td><b>{% trans 'Product' %}</b></td>
-                <td><b>{% trans 'Price' %}</b></td>
+                <td style="text-align: right"><b>{% trans 'Price' %}</b></td>
             </tr>
 
             {% for item in order.items.all %}
                 <tr style="border-top: 1px solid #b6b6b6;">
-                    <td>
-                        {{ item.product.name }} ({{ item.product.code }})
-                        <a href="https://{{ site.domain }}{{ item.product.get_absolute_url }}"
-                           target="_blank"
-                           class="show-link">
-                            [{% trans 'View on site' %}]
+                    <td width="80%">
+                        <a href="https://{{ site.domain }}{{ item.product.get_absolute_url }}" target="_blank">
+                            {{ item.product.name }} ({{ item.product.code }})
                         </a>
                         {% if is_clothes_app_enabled %}
                             <br />
                             {% for size in item.clothe_sizes.all %}
-                                <table>
-                                    {% for label, value in size.get_values %}
-                                        <tr>
-                                            <td><b>{{ label }}</b></td>
-                                            <td>{{ value }}</td>
-                                        </tr>
-                                    {% endfor %}
-                                </table>
+                                {% for label, value in size.get_values %}
+                                    <small>
+                                        <b>{{ label }}</b>: {{ value }}
+                                    </small>
+                                    <br />
+                                {% endfor %}
+                                <div class="spacer"></div>
                             {% endfor %}
                         {% endif %}
                     </td>
-                    <td>{{ item.qty }} x {{ item.product.printable_price }}</td>
+                    <td width="20%">{{ item.qty }} x {{ item.product.printable_price }}</td>
                 </tr>
             {% endfor %}
 

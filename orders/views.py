@@ -1,10 +1,12 @@
 
 from django.apps import apps
 from django.db import transaction
-from django.shortcuts import redirect, render
+from django.shortcuts import redirect, render, get_object_or_404, HttpResponse
 from django.contrib.auth.decorators import login_required
+from django.contrib.admin.views.decorators import staff_member_required
 
-from orders.utils import send_new_order_notifications
+from orders import utils
+from orders.models import Order
 from orders.forms import CheckoutForm
 
 
@@ -50,11 +52,26 @@ def checkout(request):
 
         cart.clear()
 
-        send_new_order_notifications(request, order)
+        utils.send_new_order_notifications(request, order)
 
         return redirect('home')
 
     return render(request, 'orders/checkout.html', {'form': form})
+
+
+@staff_member_required
+def resend_new_order_notifications(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    utils.send_new_order_notifications(request, order)
+    return HttpResponse('Message sent')
+
+
+@staff_member_required
+def render_new_order_email(request, order_id):
+    order = get_object_or_404(Order, id=order_id)
+    context = utils.get_new_order_context(order)
+    context['debug'] = True
+    return render(request, 'orders/new_order_email_for_manager.html', context)
 
 
 @login_required
