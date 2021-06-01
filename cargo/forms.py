@@ -22,16 +22,18 @@ class ProductForm(BasementModelForm):
 
 class ProductFilterForm(forms.Form):
 
-    query = forms.CharField(label=_('Search query'), required=False)
+    query = forms.CharField(
+        label=_('Search query'),
+        required=False)
 
     order_by = forms.ChoiceField(
-        label=_('Order by'), choices=constants.PRODUCT_ORDER_CHOICES)
+        label=_('Order by'),
+        choices=constants.PRODUCT_ORDER_CHOICES,
+        required=False)
 
     price_from = forms.FloatField(required=False)
 
     price_to = forms.FloatField(required=False)
-
-    page = forms.IntegerField()
 
     def set_filters(self, min_price=None, max_price=None):
 
