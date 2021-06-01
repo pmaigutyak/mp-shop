@@ -1,0 +1,137 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-06-01 12:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: __init__.py:9
+msgid "Clothes"
+msgstr "Одежда"
+
+#: constants.py:11
+msgid "Male"
+msgstr "Мужской"
+
+#: constants.py:12
+msgid "Female"
+msgstr "Женский"
+
+#: constants.py:13
+msgid "Both"
+msgstr "Оба"
+
+#: models.py:15 models.py:149
+msgid "Sex"
+msgstr "Стать"
+
+#: models.py:32
+msgid "Category"
+msgstr "Категория"
+
+#: models.py:37
+msgid "Size grid"
+msgstr "Размерная сетка"
+
+#: models.py:42
+msgid "Age"
+msgstr "Возвраст"
+
+#: models.py:46
+msgid "Adult"
+msgstr "Взрослый"
+
+#: models.py:47
+msgid "Child"
+msgstr "Ребенок"
+
+#: models.py:54
+msgid "Category profile"
+msgstr "Профиль категории"
+
+#: models.py:55
+msgid "Category profiles"
+msgstr "Профили категорий"
+
+#: models.py:91
+msgid "Size"
+msgstr "Размер"
+
+#: models.py:96
+msgid "Ordered product"
+msgstr "Заказаный товар"
+
+#: models.py:101
+msgid "Breast size"
+msgstr ""
+
+#: models.py:106
+msgid "Waist volume"
+msgstr ""
+
+#: models.py:111
+msgid "Hips volume"
+msgstr ""
+
+#: models.py:116
+msgid "Length of the sleeve from the shoulder"
+msgstr ""
+
+#: models.py:121
+msgid "Shoulder length"
+msgstr ""
+
+#: models.py:126
+msgid "Product length"
+msgstr ""
+
+#: models.py:131
+msgid "Back width"
+msgstr ""
+
+#: models.py:136
+msgid "Neck volume"
+msgstr ""
+
+#: models.py:141
+msgid "Length of dress up to waist"
+msgstr ""
+
+#: models.py:144
+msgid "Length of dress from waist"
+msgstr ""
+
+#: templates/clothes/modal.html:8
+msgid "Please insert sizes"
+msgstr ""
+
+#: templates/clothes/modal.html:21
+msgid "Чоловічі розміри"
+msgstr ""
+
+#: templates/clothes/modal.html:44
+msgid "Жіночі розміри"
+msgstr ""
+
+#: templates/clothes/modal.html:72
+msgid "Save"
+msgstr ""
+
+#: templates/clothes/modal.html:76
+msgid "Cancel"
+msgstr ""

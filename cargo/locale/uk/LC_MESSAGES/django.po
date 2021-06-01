@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-16 08:48+0300\n"
+"POT-Creation-Date: 2021-06-01 12:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,62 +20,99 @@ msgstr ""
 "11 ? 0 : n % 1 == 0 && n % 10 >= 2 && n % 10 <= 4 && (n % 100 < 12 || n % "
 "100 > 14) ? 1 : n % 1 == 0 && (n % 10 ==0 || (n % 10 >=5 && n % 10 <=9) || "
 "(n % 100 >=11 && n % 100 <=14 )) ? 2: 3);\n"
-#: cargo/__init__.py:9
+
+#: __init__.py:9
 msgid "Cargo"
 msgstr ""
 
-#: cargo/model_fields.py:10
-msgid "Is visible"
-msgstr "Видимість"
-
-#: cargo/model_fields.py:23
-msgid "Is new"
-msgstr "Новий"
-
-#: cargo/model_fields.py:36
-msgid "Product name"
-msgstr "Назва товару"
-
-#: cargo/model_fields.py:53
-msgid "Code"
-msgstr "Код"
-
-#: cargo/model_fields.py:70
-msgid "Additional codes"
-msgstr "Додаткові коди"
-
-#: cargo/model_fields.py:85
+#: admin.py:27 model_fields.py:87
 msgid "Price"
 msgstr "Ціна"
 
-#: cargo/model_fields.py:96
+#: admin.py:31
+msgid "Preview"
+msgstr "Зображення"
+
+#: admin.py:35
+msgid "Actions"
+msgstr "Дії"
+
+#: constants.py:12
+msgid "Newest"
+msgstr "Найновіші"
+
+#: constants.py:13
+msgid "Price (high-low)"
+msgstr "Ціна (висока-низька)"
+
+#: constants.py:14
+msgid "Price (low-high)"
+msgstr "Ціна (низька-висока)"
+
+#: constants.py:15
+msgid "A-Z"
+msgstr "А-Я"
+
+#: constants.py:16
+msgid "Z-A"
+msgstr "Я-А"
+
+#: forms.py:26
+msgid "Search query"
+msgstr "Пошуковий запит"
+
+#: forms.py:30
+msgid "Order by"
+msgstr "Сортувати за"
+
+#: model_fields.py:12
+msgid "Is visible"
+msgstr "Видимість"
+
+#: model_fields.py:25
+msgid "Is new"
+msgstr "Новий"
+
+#: model_fields.py:38
+msgid "Product name"
+msgstr "Назва товару"
+
+#: model_fields.py:55
+msgid "Code"
+msgstr "Код"
+
+#: model_fields.py:72
+msgid "Additional codes"
+msgstr "Додаткові коди"
+
+#: model_fields.py:98
 msgid "Old price"
 msgstr "Стара ціна"
 
-#: cargo/model_fields.py:111
+#: model_fields.py:113
 msgid "Description"
 msgstr "Опис"
 
-#: cargo/model_fields.py:124
+#: model_fields.py:126
 msgid "Tags"
 msgstr "Теги"
 
-#: cargo/model_fields.py:141
+#: model_fields.py:143
 msgid "Creation date"
 msgstr "Дата створення"
 
-#: cargo/models.py:18
+#: models.py:22
 msgid "Is visible on site"
 msgstr "Видимість на сайті"
 
-#: cargo/models.py:67
+#: models.py:71
 msgid "Not specified"
 msgstr "Не вказано"
 
-#: cargo/models.py:85
+#: models.py:135
 msgid "Product"
 msgstr "Товар"
 
-#: cargo/models.py:86
+#: models.py:136
 msgid "Products"
 msgstr "Товари"

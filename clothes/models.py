@@ -50,6 +50,10 @@ class CategoryProfile(models.Model):
 
     sex = SexField()
 
+    class Meta:
+        verbose_name = _('Category profile')
+        verbose_name_plural = _('Category profiles')
+
 
 class ClothesSize(models.Model):
 
