@@ -24,7 +24,7 @@ class Migration(migrations.Migration):
             options={
                 'verbose_name': 'Image',
                 'verbose_name_plural': 'Images',
-                'db_table': 'products_images',
+                'db_table': 'products_image',
                 'ordering': ['order'],
                 'abstract': False,
             },
