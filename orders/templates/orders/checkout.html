@@ -102,5 +102,10 @@
 {% block js %}
     {{ block.super }}
 
+    <script src="{{ STATIC_URL }}jquery.maskedinput.js"></script>
+    <script>
+        $('#{{ form.mobile.auto_id }}').mask('+380999999999');
+    </script>
+
     {{ form.fields.delivery.media }}
 {% endblock %}
