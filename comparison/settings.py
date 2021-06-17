@@ -17,4 +17,10 @@ class ComparisonSettings(object):
             'comparison.middleware.ComparisonMiddleware'
         ]
 
+    @property
+    def JAVASCRIPT(self):
+        return super().JAVASCRIPT + (
+            'comparison/comparison.js',
+        )
+
 default = ComparisonSettings
