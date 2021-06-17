@@ -1,0 +1,23 @@
+
+{% load i18n %}
+
+<div class="m-t-20">
+    {% for label in labels %}
+        <hr>
+        <h3 class="text-center">{{ label.title|upper }}</h3>
+        <hr>
+
+        <div class="row category-product">
+            {% for object in label.get_random_products|slice:':4' %}
+                <div class="col-sm-4 col-md-3">
+                    {% include 'products/list_item.html' %}
+                </div>
+            {% endfor %}
+            <div class="clearfix"></div>
+            <a href="{{ label.get_absolute_url }}" class="pull-right h4">
+                {% trans 'View all' %}
+                <i class="fa fa-chevron-right"></i>
+            </a>
+        </div>
+    {% endfor %}
+</div>

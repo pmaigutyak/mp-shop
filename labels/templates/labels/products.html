@@ -1,0 +1,29 @@
+
+{% extends "base.html" %}
+
+{% load i18n %}
+
+
+{% block breadcrumb_items %}
+    <li class="active">{{ label.title }}</li>
+{% endblock %}
+
+
+{% block content %}
+
+    <h2>{{ label.title }}</h2>
+
+    <div class="row category-product">
+        {% for object in page_obj.object_list %}
+            <div class="col-sm-6 col-md-4">
+                {% include 'products/list_item.html' %}
+            </div>
+        {% endfor %}
+
+        <div class="clearfix"></div>
+
+        {{ page_obj.render }}
+
+    </div>
+
+{% endblock %}
