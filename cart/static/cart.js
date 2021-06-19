@@ -158,4 +158,6 @@ $(window).on('load', function () {
             setQty: urlPrefix + 'set-qty'
         }
     });
+
+    $(window).trigger('cart-ready');
 });
