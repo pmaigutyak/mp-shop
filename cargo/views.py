@@ -8,14 +8,13 @@ def get_product_page_context(request, product_id, queryset=None):
 
     if queryset is None:
         queryset = products.filter({
-            'is_visible': True,
-            'id': product_id,
+            'is_visible': True
         }).select_related(
             'category',
             'availability'
         )
 
-    product = queryset.get()
+    product = queryset.get(id=product_id)
 
     products.add_to_history(product_id)
 
@@ -23,10 +22,8 @@ def get_product_page_context(request, product_id, queryset=None):
 
     return {
         'object': product,
-        'recently_viewed_products': (
-            products.get_from_history(queryset, count=4)),
-        'related_products': products.get_related(
-            related_products, product_id, count=4)
+        'recently_viewed_products': products.get_from_history(queryset),
+        'related_products': products.get_related(related_products, product_id)
     }
 
 

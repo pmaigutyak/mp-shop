@@ -6,6 +6,9 @@ from django.apps import apps
 
 class ProductService(object):
 
+    history_product_count = 6
+    related_product_count = 6
+
     def __init__(self, services, user, session):
         self._exchange = services.exchange
         self._user = user
@@ -40,7 +43,10 @@ class ProductService(object):
 
         self._session['PRODUCT_HISTORY'] = product_ids
 
-    def get_from_history(self, queryset, count=6):
+    def get_from_history(self, queryset, count=None):
+
+        if count is None:
+            count = self.history_product_count
 
         ids = self._session.get('PRODUCT_HISTORY', [])[:count]
 
@@ -49,18 +55,21 @@ class ProductService(object):
 
         return queryset.filter(id__in=ids)
 
-    def get_related(self, queryset, product_id, count=6):
+    def get_related(self, queryset, product_id, count=None):
+
+        if count is None:
+            count = self.related_product_count
 
         index = 0
 
         related_products = queryset.exclude(pk=product_id)
 
-        related_products_count = len(related_products)
+        products_count = len(related_products)
 
-        if related_products_count:
+        if products_count:
 
-            if related_products_count > count:
-                index = randint(0, related_products_count - count)
+            if products_count > count:
+                index = randint(0, products_count - count)
 
             return related_products[index:index + count]
 
