@@ -32,9 +32,15 @@ class DeliveryFormField(Field):
         return self.form.cleaned_data['delivery_method']
 
     def get_address(self):
-        return '{}, {}'.format(
-            self.form.cleaned_data['warehouse'],
-            self.form.cleaned_data['city'])
+        return ', '.join(
+            filter(
+                bool,
+                [
+                    self.form.cleaned_data['warehouse'],
+                    self.form.cleaned_data['city']
+                ]
+            )
+        )
 
     @property
     def media(self):
