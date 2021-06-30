@@ -3,11 +3,22 @@ from random import randint
 
 from django.apps import apps
 
+from cargo import constants
+
+from model_search import model_search
+from modeltranslation.utils import get_translation_fields
+
 
 class ProductService(object):
 
     history_product_count = 6
     related_product_count = 6
+
+    SORT_MAP = {
+        constants.PRODUCT_ORDER_BY_NEWEST: '-id',
+        constants.PRODUCT_ORDER_BY_PRICE_LOW_TO_HIGH: 'price_retail',
+        constants.PRODUCT_ORDER_BY_PRICE_HIGH_TO_LOW: '-price_retail',
+    }
 
     def __init__(self, services, user, session):
         self._exchange = services.exchange
@@ -27,10 +38,45 @@ class ProductService(object):
         if 'id__in' in query:
             queryset = queryset.filter(id__in=query['id__in'])
 
+        if 'category' in query:
+            queryset = queryset.filter(category=query['category'])
+
+        if 'attr_values' in query and query['attr_values']:
+            queryset = queryset.filter(
+                attr_values__value_option__in=query['attr_values'])
+
+        if 'query' in query and query['query']:
+            queryset = model_search(
+                query['query'], queryset, self.get_search_fields())
+
+        order_by = query.get('order_by')
+
+        if order_by:
+            queryset = self.order_queryset(queryset, order_by)
+
         return queryset.set_currency(self._exchange.get_active_currency())
 
+    def get_search_fields(self):
+        return (
+            ['code'] +
+            get_translation_fields('name') +
+            get_translation_fields('description')
+        )
+
+    def order_queryset(self, queryset, order_by):
+
+        try:
+            order_by = self.SORT_MAP[order_by]
+        except KeyError:
+            pass
+
+        return queryset.order_by(order_by)
+
     def latest(self):
-        return self.filter({'is_available': True}).order_by('-id')
+        return self.filter({
+            'is_available': True,
+            'order_by': constants.PRODUCT_ORDER_BY_NEWEST
+        })
 
     def add_to_history(self, product_id):
 

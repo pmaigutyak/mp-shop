@@ -5,7 +5,7 @@ from django.utils.translation import ugettext_lazy as _
 
 from attributes.fields import AttributesFormField
 from product_images.fields import ImagesFormField
-from basement.forms import BasementModelForm
+from basement.forms import BasementModelForm, get_clean_data
 
 from cargo import constants
 
@@ -43,3 +43,6 @@ class ProductFilterForm(forms.Form):
         fields['price_from'].widget.attrs['max'] = max_price
         fields['price_to'].widget.attrs['min'] = min_price
         fields['price_to'].widget.attrs['max'] = max_price
+
+    def get_clean_data(self):
+        return get_clean_data(self)
