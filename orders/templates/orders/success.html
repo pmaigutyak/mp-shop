@@ -1,0 +1,31 @@
+
+{% extends 'base.html' %}
+
+{% load i18n %}
+
+
+{% block meta_title %}
+    {{ order.printable_name }}
+{% endblock %}
+
+
+{% block content %}
+    <div class="container p-t-50 p-b-50">
+        <div class="row">
+            <div class="col-md-6">
+                {% include 'orders/new_order_message.html' %}
+            </div>
+            <div class="col-md-6">
+                {% if order.is_paynow_form_visible %}
+                    <form action="{{ checkout_form.action }}" method="{{ checkout_form.method }}" target="_blank">
+                        {{ checkout_form }}
+                        <button type="submit" class="btn btn-success btn-lg pull-left">
+                            <i class="fa fa-credit-card"></i>
+                            {% trans 'Pay the order' %} ({{ order.printable_total }})
+                        </button>
+                    </form>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endblock %}

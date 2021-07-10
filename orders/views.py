@@ -1,6 +1,8 @@
 
 from django.apps import apps
+from django.urls import reverse
 from django.db import transaction
+from django.utils.translation import ugettext_lazy as _
 from django.shortcuts import redirect, render, get_object_or_404, HttpResponse
 from django.contrib.auth.decorators import login_required
 from django.contrib.admin.views.decorators import staff_member_required
@@ -54,9 +56,31 @@ def checkout(request):
 
         utils.send_new_order_notifications(request, order)
 
+        if order.is_liqpay_payment():
+            return redirect('orders:success', order.hash)
+
         return redirect('home')
 
     return render(request, 'orders/checkout.html', {'form': form})
+
+
+def success(request, order_hash):
+
+    order = get_object_or_404(Order, hash=order_hash)
+
+    callback_url = request.build_absolute_uri(reverse('home'))
+
+    return render(request, 'orders/success.html', {
+        'order': order,
+        'checkout_form': request.env.liqpay.get_checkout_form(
+            amount=order.total,
+            order_id=order.id,
+            description=_('Products sale'),
+            result_url=callback_url,
+            server_url=callback_url,
+            language=request.LANGUAGE_CODE
+        )
+    })
 
 
 @staff_member_required

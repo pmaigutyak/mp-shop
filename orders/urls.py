@@ -19,6 +19,8 @@ urlpatterns = [
 
     path('render-email/<int:order_id>', views.render_new_order_email,
          name='render-email'),
+
+    path('<str:order_hash>/success/', views.success, name='success')
 ]
 
 

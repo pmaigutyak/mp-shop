@@ -1,6 +1,8 @@
 
+from django.apps import apps
 from django.db import models
 from django.conf import settings
+from django.utils.crypto import get_random_string
 from django.utils.translation import ugettext_lazy as _
 
 from exchange.models import format_printable_price, MultiCurrencyPrice
@@ -9,8 +11,13 @@ from delivery.models import DeliveryMethodField
 from orders.constants import (
     PAYMENT_METHODS,
     ORDER_STATUSES,
-    ORDER_STATUS_NEW
+    ORDER_STATUS_NEW,
+    PAYMENT_METHOD_PRIVAT24
 )
+
+
+def _generate_hash():
+    return get_random_string(length=10)
 
 
 class Order(models.Model):
@@ -49,6 +56,11 @@ class Order(models.Model):
 
     comment = models.TextField(_('Comment'), max_length=1000, blank=True)
 
+    hash = models.CharField(
+        max_length=10,
+        default=_generate_hash,
+        unique=True)
+
     def __str__(self):
         return self.printable_name
 
@@ -72,6 +84,12 @@ class Order(models.Model):
     @property
     def delivery_method(self):
         return self.delivery.name
+
+    def is_liqpay_payment(self):
+        return self.is_paynow_form_visible() and apps.is_installed('liqpay')
+
+    def is_paynow_form_visible(self):
+        return self.payment_method == PAYMENT_METHOD_PRIVAT24
 
     class Meta:
         verbose_name = _('Order')

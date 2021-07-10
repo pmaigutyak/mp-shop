@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-06-01 12:59+0300\n"
+"POT-Creation-Date: 2021-07-02 20:56+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,248 +20,252 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: __init__.py:8 models.py:78
+#: orders/__init__.py:8 orders/models.py:96
 msgid "Orders"
 msgstr "Заказы"
 
-#: admin.py:31
-msgid "Customer"
-msgstr "Клиент"
+#: orders/admin.py:28
+msgid "Details"
+msgstr "Детали"
 
-#: admin.py:35
-msgid "Delivery"
-msgstr "Доставка"
-
-#: admin.py:39 templates/orders/checkout.html:49
+#: orders/admin.py:34 orders/templates/orders/checkout.html:49
 msgid "Products"
 msgstr "Товары"
 
-#: admin.py:46 models.py:57 models.py:77 models.py:85
+#: orders/admin.py:41 orders/models.py:69 orders/models.py:95
+#: orders/models.py:103
 msgid "Order"
 msgstr "Заказ"
 
-#: constants.py:6
+#: orders/constants.py:6
 msgid "Monday"
 msgstr "Понедельник"
 
-#: constants.py:7
+#: orders/constants.py:7
 msgid "Tuesday"
 msgstr "Вторник"
 
-#: constants.py:8
+#: orders/constants.py:8
 msgid "Wednesday"
 msgstr "Среда"
 
-#: constants.py:9
+#: orders/constants.py:9
 msgid "Thursday"
 msgstr "Четверг"
 
-#: constants.py:10
+#: orders/constants.py:10
 msgid "Friday"
 msgstr "Пятница"
 
-#: constants.py:11
+#: orders/constants.py:11
 msgid "Saturday"
 msgstr "Суббота"
 
-#: constants.py:12
+#: orders/constants.py:12
 msgid "Sunday"
 msgstr "Воскресенье"
 
-#: constants.py:21 utils.py:15
+#: orders/constants.py:21 orders/utils.py:15
 msgid "New order"
 msgstr "Новый заказ"
 
-#: constants.py:22
+#: orders/constants.py:22
 msgid "In progress"
 msgstr "О обработке"
 
-#: constants.py:23
+#: orders/constants.py:23
 msgid "Completed"
 msgstr "Выполнено"
 
-#: constants.py:24
+#: orders/constants.py:24
 msgid "Cancelled"
 msgstr "Отменено"
 
-#: constants.py:33
+#: orders/constants.py:33
 msgid "Cash payment"
 msgstr "Оплата наличными"
 
-#: constants.py:34
+#: orders/constants.py:34
 msgid "Privat 24"
 msgstr "Приват 24"
 
-#: constants.py:35
+#: orders/constants.py:35
 msgid "Cash on delivery"
 msgstr "Наложеный платеж"
 
-#: constants.py:36
+#: orders/constants.py:36
 msgid "Cashless payment"
 msgstr "Безналичный расчет"
 
-#: models.py:20
+#: orders/models.py:27
 msgid "Owner"
 msgstr "Собственник"
 
-#: models.py:24
+#: orders/models.py:31
 msgid "Status"
 msgstr "Статус"
 
-#: models.py:30 templates/orders/admin/delivery.html:6
-#: templates/orders/new_order_email_for_manager.html:29
+#: orders/models.py:37 orders/templates/orders/admin/details.html:9
+#: orders/templates/orders/new_order_email_for_manager.html:31
 msgid "Payment method"
 msgstr "Способ оплаты"
 
-#: models.py:36
+#: orders/models.py:43
 msgid "First name"
 msgstr "Имя"
 
-#: models.py:38
+#: orders/models.py:45
 msgid "Last name"
 msgstr "Фамилия"
 
-#: models.py:41
+#: orders/models.py:48
 msgid "Middle name"
 msgstr "Отчество"
 
-#: models.py:43 templates/orders/admin/delivery.html:4
-#: templates/orders/new_order_email_for_manager.html:40
+#: orders/models.py:50 orders/templates/orders/admin/details.html:7
+#: orders/templates/orders/new_order_email_for_manager.html:43
 msgid "Address"
 msgstr "Адрес"
 
-#: models.py:45
+#: orders/models.py:52
 msgid "Mobile number"
 msgstr "Номер телефона"
 
-#: models.py:48
+#: orders/models.py:55
 msgid "Date created"
 msgstr "Дата создания"
 
-#: models.py:50 templates/orders/new_order_email_for_manager.html:48
+#: orders/models.py:57
+#: orders/templates/orders/new_order_email_for_manager.html:52
 msgid "Comment"
 msgstr "Комментарий"
 
-#: models.py:91 templates/orders/new_order_email_for_manager.html:58
+#: orders/models.py:109
+#: orders/templates/orders/new_order_email_for_manager.html:63
 msgid "Product"
 msgstr "Товар"
 
-#: models.py:95 templates/orders/checkout.html:67
+#: orders/models.py:113 orders/templates/orders/checkout.html:67
 msgid "Quantity"
 msgstr "Количество"
 
-#: models.py:108
+#: orders/models.py:126
 msgid "Ordered product"
 msgstr "Заказанный товар"
 
-#: models.py:109
+#: orders/models.py:127
 msgid "Ordered products"
 msgstr "Заказанные товары"
 
-#: templates/orders/admin/delivery.html:5
-#: templates/orders/new_order_email_for_manager.html:33
+#: orders/templates/orders/admin/details.html:8
+#: orders/templates/orders/new_order_email_for_manager.html:35
 msgid "Delivery method"
 msgstr "Способ доставки"
 
-#: templates/orders/admin/products.html:36
-#: templates/orders/new_order_email_for_manager.html:91
+#: orders/templates/orders/admin/products.html:38
+#: orders/templates/orders/new_order_email_for_manager.html:92
 msgid "Total"
 msgstr "Всего"
 
-#: templates/orders/checkout.html:8 templates/orders/checkout.html:41
+#: orders/templates/orders/checkout.html:8
+#: orders/templates/orders/checkout.html:41
 msgid "Order registration"
 msgstr "Оформление заказа"
 
-#: templates/orders/checkout.html:18
+#: orders/templates/orders/checkout.html:18
 msgid "Site logo"
 msgstr "Логотип сайта"
 
-#: templates/orders/checkout.html:23 templates/orders/checkout.html:95
+#: orders/templates/orders/checkout.html:23
+#: orders/templates/orders/checkout.html:95
 msgid "Continue shopping"
 msgstr "Продолжить покупки"
 
-#: templates/orders/checkout.html:66
-#: templates/orders/new_order_email_for_manager.html:59
+#: orders/templates/orders/checkout.html:66
+#: orders/templates/orders/new_order_email_for_manager.html:64
 msgid "Price"
 msgstr "Цена"
 
-#: templates/orders/checkout.html:78
+#: orders/templates/orders/checkout.html:78
 msgid "To pay"
 msgstr "К оплате"
 
-#: templates/orders/checkout.html:93
+#: orders/templates/orders/checkout.html:93
 msgid "Cart is empty"
 msgstr "Корзина пустая"
 
-#: templates/orders/checkout_form.html:64
+#: orders/templates/orders/checkout_form.html:64
 msgid "Confirm order"
 msgstr "Подтвердить заказ"
 
-#: templates/orders/history.html:10
+#: orders/templates/orders/history.html:10
 msgid "Мої замовлення"
 msgstr ""
 
-#: templates/orders/history.html:18
+#: orders/templates/orders/history.html:18
 msgid "Дата"
 msgstr ""
 
-#: templates/orders/history.html:19
+#: orders/templates/orders/history.html:19
 msgid "К-сть товарів"
 msgstr ""
 
-#: templates/orders/history.html:20
+#: orders/templates/orders/history.html:20
 msgid "Сума"
 msgstr ""
 
-#: templates/orders/history.html:21
+#: orders/templates/orders/history.html:21
 msgid "Статус"
 msgstr ""
 
-#: templates/orders/history.html:22
+#: orders/templates/orders/history.html:22
 msgid "Звіт"
 msgstr ""
 
-#: templates/orders/history.html:45
+#: orders/templates/orders/history.html:45
 msgid "Завантажити звіт"
 msgstr ""
 
-#: templates/orders/history.html:55
+#: orders/templates/orders/history.html:55
 msgid "У Вас поки немає замовлень"
 msgstr ""
 
-#: templates/orders/new_order_email_for_manager.html:10
-#: templates/orders/new_order_email_for_manager.html:69
-msgid "View on site"
-msgstr "Показать на сайте"
-
-#: templates/orders/new_order_email_for_manager.html:19
+#: orders/templates/orders/new_order_email_for_manager.html:20
 msgid "Full name"
 msgstr "ФИО"
 
-#: templates/orders/new_order_email_for_manager.html:23
+#: orders/templates/orders/new_order_email_for_manager.html:24
 msgid "Phone"
 msgstr "Телефон"
 
-#: templates/orders/new_order_message.html:1
+#: orders/templates/orders/new_order_message.html:1
 msgid "Thank you for your order!"
 msgstr "Спасибо за заказ!"
 
-#: templates/orders/new_order_message.html:2
+#: orders/templates/orders/new_order_message.html:2
 msgid "Your order"
 msgstr "Ваш заказ"
 
-#: templates/orders/new_order_message.html:2
+#: orders/templates/orders/new_order_message.html:2
 msgid "from"
 msgstr "от"
 
-#: templates/orders/new_order_message.html:3
+#: orders/templates/orders/new_order_message.html:3
 msgid "successfully accepted."
 msgstr "успешно принят."
 
-#: templates/orders/new_order_message.html:4
+#: orders/templates/orders/new_order_message.html:4
 msgid "We will get back to you shortly."
 msgstr "Мы свяжемся с вами в ближайшее время"
 
-#: templates/orders/new_order_message.html:5
+#: orders/templates/orders/new_order_message.html:5
 msgid "Thank you for being with us."
 msgstr "Спасибо что Вы с нами."
+
+#: orders/templates/orders/success.html:24
+msgid "Pay the order"
+msgstr "Оплатить заказ"
+
+#: orders/views.py:78
+msgid "Products sale"
+msgstr "Оплата товаров"

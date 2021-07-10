@@ -52,4 +52,6 @@ def send_new_order_notifications(request, order):
 
     send_new_order_email(context)
     send_new_order_sms(context)
-    push_new_order_message_to_session(request, context)
+
+    if not order.is_liqpay_payment():
+        push_new_order_message_to_session(request, context)
