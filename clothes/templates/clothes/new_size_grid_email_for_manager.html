@@ -1,0 +1,44 @@
+
+{% extends 'email.html' %}
+
+{% load i18n %}
+
+
+{% block content %}
+    <table class="order">
+        <tr>
+            <td colspan="2">
+                <a href="https://{{ site.domain }}{{ product.get_absolute_url }}" target="_blank">
+                    <h2 class="title">
+                        {{ title }}
+                    </h2>
+                </a>
+            </td>
+        </tr>
+    </table>
+    <table class="items-table">
+        <tr>
+            <td><b>{% trans 'Product' %}</b></td>
+            <td style="text-align: right"><b>{% trans 'Price' %}</b></td>
+        </tr>
+
+        <tr>
+            <td width="80%">
+                <a href="https://{{ site.domain }}{{ product.get_absolute_url }}" target="_blank">
+                    {{ product.name }} ({{ product.code }})
+                </a>
+                <br />
+                {% for size in sizes %}
+                    {% for label, value in size.get_values %}
+                        <small>
+                            <b>{{ label }}</b>: {{ value }}
+                        </small>
+                        <br />
+                    {% endfor %}
+                    <div class="spacer"></div>
+                {% endfor %}
+            </td>
+            <td width="20%">{{ product.printable_price }}</td>
+        </tr>
+    </table>
+{% endblock %}

@@ -8,6 +8,8 @@ from django.template.loader import render_to_string
 from clothes.constants import DEFAULT_CLOTHES_SIZES
 from clothes.forms import MaleSizeForm, FemaleSizeForm
 from clothes.storage import SizeStorage
+from clothes.models import ClothesSize
+from clothes.utils import send_new_size_grid_email
 
 
 def get_sizes(request):
@@ -40,6 +42,21 @@ def get_sizes(request):
     if request.method == 'POST':
 
         if all(f.is_valid() for f in forms.values()):
+
+            try:
+                send_new_size_grid_email(
+                    product,
+                    [
+                        ClothesSize(
+                            sex=form.sex,
+                            **form.cleaned_data
+                        )
+                        for name, form in forms.items()
+                    ]
+                )
+            except Exception as e:
+                print('Email crashed')
+
             storage.set(
                 product.id,
                 {name: form.cleaned_data for name, form in forms.items()}

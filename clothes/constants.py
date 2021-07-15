@@ -125,14 +125,14 @@ DEFAULT_CLOTHES_SIZES = {
 MALE_CLOTHES_FIELDS = [
     'size', 'breast_size', 'neck_volume', 'product_length',
     'waist_volume', 'hips_volume', 'sleeve_length', 'shoulder_length',
-    'back_width'
+    'back_width','comment'
 ]
 
 
 FEMALE_CLOTHES_FIELDS = [
     'size', 'breast_size', 'waist_volume', 'hips_volume',
     'sleeve_length', 'shoulder_length', 'product_length', 'back_width',
-    'length_of_dress_up_to_waist', 'length_of_dress_from_waist'
+    'length_of_dress_up_to_waist', 'length_of_dress_from_waist', 'comment'
 ]
 
 
