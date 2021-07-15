@@ -103,8 +103,14 @@
     {{ block.super }}
 
     <script src="{{ STATIC_URL }}jquery.maskedinput.js"></script>
+    <script src="{{ STATIC_URL }}monosubmit.js"></script>
     <script>
         $('#{{ form.mobile.auto_id }}').mask('+380999999999');
+
+        new MonoSubmitForm({
+            $form: $('[data-role=checkout-form]'),
+            btnText: '{% trans 'Loading' %}'
+        });
     </script>
 
     {{ form.fields.delivery.media }}

@@ -2,7 +2,7 @@
 {% load i18n widget_tweaks %}
 
 
-<form action="{{ request.get_full_path }}" method="post">
+<form action="{{ request.get_full_path }}" method="post" data-role="checkout-form">
     {% csrf_token %}
 
     {% if form.errors %}
