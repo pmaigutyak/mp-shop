@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-02 20:56+0300\n"
+"POT-Creation-Date: 2021-07-15 16:00+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -192,6 +192,10 @@ msgstr "До оплати"
 #: orders/templates/orders/checkout.html:93
 msgid "Cart is empty"
 msgstr "Кошик порожній"
+
+#: orders/templates/orders/checkout.html:112
+msgid "Loading"
+msgstr "Завантажується"
 
 #: orders/templates/orders/checkout_form.html:64
 msgid "Confirm order"
