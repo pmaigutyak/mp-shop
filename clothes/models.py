@@ -143,6 +143,8 @@ class ClothesSize(models.Model):
     length_of_dress_from_waist = models.IntegerField(
         _('Length of dress from waist'), blank=True, null=True)
 
+    comment = models.TextField(_('Comment'), blank=True, max_length=1000)
+
     def get_values(self):
 
         values = [
