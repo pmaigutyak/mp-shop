@@ -1,0 +1,20 @@
+{% extends "admin/base_site.html" %}
+
+{% load i18n %}
+
+
+{% block content %}
+    <form  method="post">
+        {% csrf_token %}
+
+        {% for object in object_list %}
+            <input type="hidden" name="_selected_action" value="{{ object.pk }}" />
+        {% endfor %}
+
+        <input type="hidden" name="action" value="{{ action_name }}" />
+
+        {{ form.as_p }}
+
+        <input type="submit" class="btn btn-success" name="apply" value="{% trans 'Update prices' %}" />
+    </form>
+{% endblock %}

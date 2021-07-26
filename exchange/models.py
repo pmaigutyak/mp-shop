@@ -117,6 +117,22 @@ class MultiCurrencyPrice(models.Model):
     def format_printable_price(cls, *args, **kwargs):
         return format_printable_price(*args, **kwargs)
 
+    def calculate_old_price(self, is_percent, value):
+        if getattr(self, 'old_price') is None:
+            return
+
+        if is_percent:
+            self.old_price = self.old_price + (value * self.old_price / 100)
+        else:
+            self.old_price += value
+
+    def calculate_retail_price(self, is_percent, value):
+        if is_percent:
+            self.price_retail = (
+                self.price_retail + (value * self.price_retail / 100))
+        else:
+            self.price_retail += value
+
     @property
     def price_values(self):
 
