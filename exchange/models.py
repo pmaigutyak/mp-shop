@@ -118,7 +118,8 @@ class MultiCurrencyPrice(models.Model):
         return format_printable_price(*args, **kwargs)
 
     def calculate_old_price(self, is_percent, value):
-        if getattr(self, 'old_price') is None:
+        if not hasattr(self, 'old_price') or \
+                getattr(self, 'old_price') is None:
             return
 
         if is_percent:

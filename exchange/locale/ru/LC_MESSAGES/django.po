@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-13 20:32+0200\n"
+"POT-Creation-Date: 2021-07-26 10:52+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,38 +20,62 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: __init__.py:9
+#: exchange/__init__.py:9
 msgid "Exchange"
 msgstr "Курс валют"
 
-#: constants.py:10
+#: exchange/actions.py:12
+msgid "Value"
+msgstr ""
+
+#: exchange/actions.py:15
+msgid "Type"
+msgstr ""
+
+#: exchange/actions.py:17
+msgid "Percent %"
+msgstr ""
+
+#: exchange/actions.py:18
+msgid "Number"
+msgstr ""
+
+#: exchange/actions.py:38
+msgid "Prices updated"
+msgstr ""
+
+#: exchange/actions.py:51 exchange/templates/exchange/update_prices.html:18
+msgid "Update prices"
+msgstr ""
+
+#: exchange/constants.py:10 exchange/constants.py:22
 msgid "UAH"
 msgstr ""
 
-#: constants.py:11 models.py:23
+#: exchange/constants.py:11 exchange/models.py:24
 msgid "USD"
 msgstr ""
 
-#: constants.py:12 models.py:25
+#: exchange/constants.py:12 exchange/models.py:26
 msgid "EUR"
 msgstr ""
 
-#: models.py:27
+#: exchange/models.py:28
 msgid "USD - EUR"
 msgstr ""
 
-#: models.py:30 models.py:33 models.py:34
+#: exchange/models.py:36 exchange/models.py:39 exchange/models.py:40
 msgid "Exchange rates"
 msgstr "Курсы валют"
 
-#: models.py:41
+#: exchange/models.py:47
 msgid "Currency"
 msgstr "Валюта"
 
-#: models.py:53
+#: exchange/models.py:59
 msgid "Retail price"
 msgstr "Розничная цена"
 
-#: models.py:56
+#: exchange/models.py:62
 msgid "Wholesale price"
 msgstr "Оптовая цена"
