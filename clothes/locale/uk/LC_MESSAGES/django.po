@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-07-10 11:54+0300\n"
+"POT-Creation-Date: 2021-07-26 07:55+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,130 +19,134 @@ msgstr ""
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
 "%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
-#: clothes/__init__.py:9
+#: __init__.py:9
 msgid "Clothes"
 msgstr "Одяг"
 
-#: clothes/constants.py:11
+#: constants.py:11
 msgid "Male"
 msgstr "Чоловік"
 
-#: clothes/constants.py:12
+#: constants.py:12
 msgid "Female"
 msgstr "Жінка"
 
-#: clothes/constants.py:13
+#: constants.py:13
 msgid "Both"
 msgstr "Обидва"
 
-#: clothes/models.py:15 clothes/models.py:149
+#: models.py:15 models.py:151
 msgid "Sex"
 msgstr "Стать"
 
-#: clothes/models.py:32
+#: models.py:32
 msgid "Category"
 msgstr "Категорія"
 
-#: clothes/models.py:37
+#: models.py:37
 msgid "Size grid"
 msgstr "Розмірна сітка"
 
-#: clothes/models.py:42
+#: models.py:42
 msgid "Age"
 msgstr "Вік"
 
-#: clothes/models.py:46
+#: models.py:46
 msgid "Adult"
 msgstr "Дорослий"
 
-#: clothes/models.py:47
+#: models.py:47
 msgid "Child"
 msgstr "Дитина"
 
-#: clothes/models.py:54
+#: models.py:54
 msgid "Category profile"
 msgstr "Профіль категорії"
 
-#: clothes/models.py:55
+#: models.py:55
 msgid "Category profiles"
 msgstr "Профілі категорій"
 
-#: clothes/models.py:91
+#: models.py:91
 msgid "Size"
 msgstr "Розмір"
 
-#: clothes/models.py:96
+#: models.py:96
 msgid "Ordered product"
 msgstr "Замовлений товар"
 
-#: clothes/models.py:101
+#: models.py:101
 msgid "Breast size"
 msgstr "Обʼєм грудей (см)"
 
-#: clothes/models.py:106
+#: models.py:106
 msgid "Waist volume"
 msgstr "Обʼєм талії (см)"
 
-#: clothes/models.py:111
+#: models.py:111
 msgid "Hips volume"
 msgstr "Обʼєм стегон (см)"
 
-#: clothes/models.py:116
+#: models.py:116
 msgid "Length of the sleeve from the shoulder"
 msgstr "Довжина рукава від плеча (см)"
 
-#: clothes/models.py:121
+#: models.py:121
 msgid "Shoulder length"
 msgstr "Плече (см)"
 
-#: clothes/models.py:126
+#: models.py:126
 msgid "Product length"
 msgstr "Довжина виробу (см)"
 
-#: clothes/models.py:131
+#: models.py:131
 msgid "Back width"
 msgstr "Ширина спини (см)"
 
-#: clothes/models.py:136
+#: models.py:136
 msgid "Neck volume"
 msgstr "Обʼєм шиї (см)"
 
-#: clothes/models.py:141
+#: models.py:141
 msgid "Length of dress up to waist"
 msgstr "Довжина плаття до талії (см)"
 
-#: clothes/models.py:144
+#: models.py:144
 msgid "Length of dress from waist"
 msgstr "Довжина плаття від талії (см)"
 
-#: clothes/templates/clothes/modal.html:8
+#: models.py:146
+msgid "Comment"
+msgstr "Коментар"
+
+#: templates/clothes/modal.html:8
 msgid "Please insert sizes"
 msgstr "Будь-ласка вкажість розміри"
 
-#: clothes/templates/clothes/modal.html:21
+#: templates/clothes/modal.html:21
 msgid "Male sizes"
 msgstr "Чоловічі розміри"
 
-#: clothes/templates/clothes/modal.html:44
+#: templates/clothes/modal.html:44
 msgid "Female sizes"
 msgstr "Жіночі розміри"
 
-#: clothes/templates/clothes/modal.html:72
+#: templates/clothes/modal.html:72
 msgid "Save"
 msgstr "Зберегти"
 
-#: clothes/templates/clothes/modal.html:76
+#: templates/clothes/modal.html:76
 msgid "Cancel"
 msgstr "Відмінити"
 
-#: clothes/templates/clothes/new_size_grid_email_for_manager.html:21
+#: templates/clothes/new_size_grid_email_for_manager.html:21
 msgid "Product"
 msgstr "Товар"
 
-#: clothes/templates/clothes/new_size_grid_email_for_manager.html:22
+#: templates/clothes/new_size_grid_email_for_manager.html:22
 msgid "Price"
 msgstr "Ціна"
 
-#: clothes/utils.py:10
+#: utils.py:10
 msgid "New size grid for product"
 msgstr "Нова розмірка сітка для товару"
