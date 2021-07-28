@@ -31,7 +31,10 @@ PAYMENT_METHOD_CASHLESS_PAYMENT = 'cashless_payment'
 
 PAYMENT_METHODS = (
     (PAYMENT_METHOD_CASH, _('Cash payment')),
-    (PAYMENT_METHOD_PRIVAT24, _('Privat 24')),
+    (PAYMENT_METHOD_PRIVAT24, _('Online payment (Privat 24 / LiqPay)')),
     (PAYMENT_METHOD_CASH_ON_DELIVERY, _('Cash on delivery')),
-    (PAYMENT_METHOD_CASHLESS_PAYMENT, _('Cashless payment')),
+    (
+        PAYMENT_METHOD_CASHLESS_PAYMENT,
+        _('Bank transfer (Transfer by details)')
+    ),
 )

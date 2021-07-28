@@ -12,7 +12,7 @@ class DeliveryForm(forms.Form):
         queryset=DeliveryMethod.objects.all())
 
     city = forms.CharField(
-        label=_('City'),
+        label=_('Address'),
         required=False
     )
 

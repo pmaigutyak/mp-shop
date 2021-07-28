@@ -19,9 +19,7 @@ DeliveryForm = function (params) {
     function handleDeliveryMethodChange() {
 
         var method = $deliveryMethod.val(),
-            action = (
-                !method || method == deliveryMethods.self_delivery
-            ) ? 'hide' : 'show';
+            action = method == deliveryMethods.self_delivery ? 'hide' : 'show';
 
         $city.parent()[action]();
         $warehouse.parent()[action]();
