@@ -194,7 +194,7 @@ msgstr "Завантажується"
 
 #: templates/orders/checkout_form.html:64
 msgid "Confirm order"
-msgstr "Підтвердити замовлення"
+msgstr "Оформити замовлення"
 
 #: templates/orders/history.html:10
 msgid "Мої замовлення"
