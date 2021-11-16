@@ -38,8 +38,15 @@ class AttributeAdmin(OrderedModelAdmin, _get_attribute_admin_base_class()):
         ('type', 'slug', ),
     ]
 
-    def get_category_list(self, item):
-        return ', '.join([c.name for c in item.categories.all()])
+    def get_category_list(self, item, count=4):
+        categories = list(item.categories.all())
+
+        result = ', '.join([c.name for c in categories[:count]])
+
+        if len(categories) > count:
+            result += ' (+{})'.format(len(categories) - count)
+
+        return result
 
     get_category_list.short_description = _('Categories')
 
