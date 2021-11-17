@@ -10,6 +10,7 @@ from ordered_model.admin import OrderedModelAdmin
 from attributes.admin.forms import AttributeForm, AttributeOptionInline
 from attributes.models import Attribute
 
+from attributes.actions import categories_change_action
 
 def _get_attribute_admin_base_class():
 
@@ -37,6 +38,8 @@ class AttributeAdmin(OrderedModelAdmin, _get_attribute_admin_base_class()):
         ('is_required', 'is_visible', 'is_filter', ),
         ('type', 'slug', ),
     ]
+
+    actions = [categories_change_action]
 
     def get_category_list(self, item, count=4):
         categories = list(item.categories.all())

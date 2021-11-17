@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-03-12 17:20+0000\n"
+"POT-Creation-Date: 2021-11-17 13:12+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -20,15 +20,32 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: attributes/__init__.py:8 attributes/models/attribute.py:113
+#: attributes/__init__.py:8 attributes/models/attribute.py:164
 msgid "Attributes"
 msgstr "Атрибуты"
 
-#: attributes/admin/__init__.py:38 attributes/models/attribute.py:48
+#: attributes/actions.py:23
+msgid "Replace existing categories"
+msgstr "Заменить существующие категории"
+
+#: attributes/actions.py:31
+msgid "Apply"
+msgstr "Применить"
+
+#: attributes/actions.py:59
+msgid "Changes saved"
+msgstr "Изменения сохранены"
+
+#: attributes/actions.py:76
+#| msgid "Categories"
+msgid "Change categories"
+msgstr "Изменить категории"
+
+#: attributes/admin/__init__.py:54 attributes/models/attribute.py:49
 msgid "Categories"
 msgstr "Категории"
 
-#: attributes/admin/__init__.py:43 attributes/models/attribute.py:57
+#: attributes/admin/__init__.py:59 attributes/models/attribute.py:66
 msgid "Type"
 msgstr "Тип"
 
@@ -48,47 +65,47 @@ msgstr "Да / Нет"
 msgid "Options"
 msgstr "Опции"
 
-#: attributes/forms.py:111
+#: attributes/forms.py:150
 msgid "{} is required"
 msgstr "{} бязательное"
 
-#: attributes/forms.py:143
-msgid " [New value]"
-msgstr " [Новое значение]"
-
-#: attributes/models/attribute.py:50 attributes/models/attribute_option.py:14
+#: attributes/models/attribute.py:52 attributes/models/attribute_option.py:14
 msgid "Name"
 msgstr "Имя"
 
-#: attributes/models/attribute.py:52
+#: attributes/models/attribute.py:56
 msgid "Code"
 msgstr "Код"
 
-#: attributes/models/attribute.py:60
+#: attributes/models/attribute.py:69
 msgid "Required"
 msgstr "Обязательное"
 
-#: attributes/models/attribute.py:61
+#: attributes/models/attribute.py:71
 msgid "You will not be able to update record without filling this field"
 msgstr "Вы не сможете оновить запись не заполнив это поле"
 
-#: attributes/models/attribute.py:65
+#: attributes/models/attribute.py:75
 msgid "Is visible"
 msgstr "Видимость"
 
-#: attributes/models/attribute.py:66
+#: attributes/models/attribute.py:77
 msgid "Display this attribute for users"
 msgstr "Отображать етот аттрибут для пользователей"
 
-#: attributes/models/attribute.py:69
+#: attributes/models/attribute.py:80
 msgid "Is filter"
 msgstr "Фильтр"
 
-#: attributes/models/attribute.py:70
+#: attributes/models/attribute.py:82
 msgid "Display this attribute in records filter"
 msgstr "Отображать этот аттрибут в фильтре записей"
 
-#: attributes/models/attribute.py:112 attributes/models/attribute_option.py:11
+#: attributes/models/attribute.py:140
+msgid " [New value]"
+msgstr " [Новое значение]"
+
+#: attributes/models/attribute.py:163 attributes/models/attribute_option.py:11
 msgid "Attribute"
 msgstr "Атрибут"
 
@@ -100,10 +117,14 @@ msgstr "Опция атрибута"
 msgid "Attribute options"
 msgstr "Опции атрибутов"
 
-#: attributes/models/attribute_value.py:85
+#: attributes/models/attribute_value.py:86
 msgid "Yes"
 msgstr "Да"
 
-#: attributes/models/attribute_value.py:85
+#: attributes/models/attribute_value.py:86
 msgid "No"
 msgstr "Нет"
+
+#: attributes/templates/change_categories_action.html:16
+msgid "Items count"
+msgstr "Количество предметов"
