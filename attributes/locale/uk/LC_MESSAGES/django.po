@@ -36,7 +36,6 @@ msgid "Changes saved"
 msgstr "Зміни збережені"
 
 #: attributes/actions.py:76
-#| msgid "Categories"
 msgid "Change categories"
 msgstr "Змінити категорії"
 
@@ -126,4 +125,4 @@ msgstr "Ні"
 
 #: attributes/templates/change_categories_action.html:16
 msgid "Items count"
-msgstr "Кількість предметів"
+msgstr "Кількість елементів"

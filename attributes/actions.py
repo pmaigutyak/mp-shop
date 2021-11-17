@@ -69,7 +69,7 @@ def categories_change_action(modeladmin, request, queryset):
 
     return render(
         request,
-        'admin/change_categories_action.html',
+        'change-attr-category-action.html',
         context)
 
 

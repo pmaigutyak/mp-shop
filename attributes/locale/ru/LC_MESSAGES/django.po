@@ -127,4 +127,4 @@ msgstr "Нет"
 
 #: attributes/templates/change_categories_action.html:16
 msgid "Items count"
-msgstr "Количество предметов"
+msgstr "Количество елементов"
