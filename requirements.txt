@@ -1,11 +1,13 @@
 
 django-mp-basement==3.1.9
+django-mp-availability==0.4.2
 
 # attributes
 six==1.15.0
 
 # exchange
-django-solo==1.1.5
+django-solo==2.0.0
+django-mp-exchange==0.10.2
 
 # categories
 awesome-slugify==1.6.5
