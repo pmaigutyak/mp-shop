@@ -1,6 +1,8 @@
 
-django-mp-basement==3.1.9
+django-mp-basement==4.0.0
+django-mp-cart==0.3.1
 django-mp-availability==0.4.2
+django-mp-orders==0.7.5
 
 # attributes
 six==1.15.0

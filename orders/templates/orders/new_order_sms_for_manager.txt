@@ -1,2 +1,0 @@
-{{ title }}.
-{{ order.count }} - {{ order.printable_total }}
